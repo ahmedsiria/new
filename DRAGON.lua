@@ -387,6 +387,7 @@ if data.result.bio then
 var = data.result.bio
 end
 return var
+end
 function AddChannel(User)
 local var = true
 if database:get(bot_id..'add:ch:id') then
