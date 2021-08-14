@@ -379,6 +379,14 @@ Var = false
 end
 return Var
 end
+function getbio(User)
+local var = "لايوجد"
+local url , res = https.request("https://api.telegram.org/bot"..token.."/getchat?chat_id="..User)
+data = json:decode(url)
+if data.result.bio then
+var = data.result.bio
+end
+return var
 function AddChannel(User)
 local var = true
 if database:get(bot_id..'add:ch:id') then
@@ -12689,6 +12697,9 @@ last_name = ''
 end      
 send(msg.chat_id_, msg.id_,first_name..'\n'..last_name) 
 end,nil)
+end 
+if text == 'بايو' then   
+send(msg.chat_id_, msg.id_,getbio(msg.sender_user_id_)) 
 end 
 if text == 'ايديي' then
 send(msg.chat_id_, msg.id_,' ◉ ايديك ← '..msg.sender_user_id_)
