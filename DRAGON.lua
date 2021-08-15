@@ -4,6 +4,7 @@ serpent = dofile("./library/serpent.lua")
 json = dofile("./library/JSON.lua") 
 JSON  = dofile("./library/dkjson.lua")
 URL = require('socket.url')  
+http = require("socket.http")
 utf8 = require ('lua-utf8') 
 database = redis.connect('127.0.0.1', 6379) 
 id_server = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
@@ -4010,6 +4011,78 @@ send(msg.chat_id_,msg.id_,'تم رفع المطورين ')
 end    
 end 
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
+end
+if text == 'الاوامر المضافه' and Constructor(msg) then
+local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_..'')
+t = " ✹ قائمه الاوامر المضافه  \n𖤍━┅┄⟞⟦᪣𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼᪣⟧⟝┄┉━𖤍\n"
+for k,v in pairs(list) do
+Cmds = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
+print(Cmds)
+if Cmds then 
+t = t..""..k..">> ↝ '..v..' ↜  ⇇{"..Cmds.."}\n"
+else
+t = t..""..k..">> ↝ '..v..' ↜ \n"
+end
+end
+if #list == 0 then
+t = " ✹ لا يوجد اوامر مضافه"
+end
+send(msg.chat_id_, msg.id_,'['..t..']')
+end
+if text == 'مسح الاوامر المضافه' or text == 'مسح الاوامر المضافه' then
+if Constructor(msg) then 
+local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_)
+for k,v in pairs(list) do
+database:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
+database:del(bot_id..'List:Cmd:Group:New'..msg.chat_id_)
+end
+send(msg.chat_id_, msg.id_,' ✹ تم ازالة جميع الاوامر المضافه')  
+end
+end
+if text == 'اضف امر' and Constructor(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ✹ لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ??| اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:set(bot_id.."Set:Cmd:Group"..msg.chat_id_..':'..msg.sender_user_id_,'true') 
+send(msg.chat_id_, msg.id_,' ✹ ارسل الامر القديم')  
+return false
+end
+if text == 'مسح امر' or text == 'مسح امر' then 
+if Constructor(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ✹ لا تستطيع استخدام البوت \n ✹  يرجى الاشتراك بالقناه اولا \n ✹  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:set(bot_id.."Del:Cmd:Group"..msg.chat_id_..':'..msg.sender_user_id_,'true') 
+send(msg.chat_id_, msg.id_,' ✹ ارسل الامر الذي قمت بوضعه بدلا عن القديم')  
+return false
+end
+end
+if text and database:get(bot_id.."Set:Cmd:Group"..msg.chat_id_..':'..msg.sender_user_id_) == 'true' then
+database:set(bot_id.."Set:Cmd:Group:New"..msg.chat_id_,text)
+send(msg.chat_id_, msg.id_,' ✹ ارسل الامر الجديد')  
+database:del(bot_id.."Set:Cmd:Group"..msg.chat_id_..':'..msg.sender_user_id_)
+database:set(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_,'true1') 
+return false
+end
+if text and database:get(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_) == 'true1' then
+local NewCmd = database:get(bot_id.."Set:Cmd:Group:New"..msg.chat_id_)
+database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..text,NewCmd)
+database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,text)
+send(msg.chat_id_, msg.id_,' ✹ تم حفظ الامر')  
+database:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_)
+return false
 end
 --------------------------------------------------------------------------------------------------------------
 if text == 'قفل الدردشه' and msg.reply_to_message_id_ == 0 and Manager(msg) then 
