@@ -1187,14 +1187,14 @@ database:del(bot_id.."Dev:SoFi:2")
 send(msg.chat_id_, msg.id_, "\n◉ تم مسح قائمة المطورين الثانوين  ")
 end
 if text == "المطور" or text == "مطور" then
-local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
+local TEXT_SUD = database:get(bot_id.. Tshake:TEXT_SUDO )
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
 else
 tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
-local Name = 'المطـــــــــــــــور°\n['..result.first_name_..'](tg://user?id='..result.id_..')\n'
+local Name =  المطـــــــــــــــور°\n[ ..result.first_name_.. ](tg://user?id= ..result.id_.. )\n 
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text =   ' ❨ ' ..result.first_name_.. '  ❩'  ,url="t.me/"..result.username_}},
