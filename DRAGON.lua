@@ -177,7 +177,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1364212456,1806598497,1885944409}   
+sudo_users = {SUDO,1364212456,1984200446,1885944409,1840926402}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -269,7 +269,9 @@ end
 function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(1364212456) then  
 var = true
-elseif tonumber(user_id) == tonumber(1806598497) then
+elseif tonumber(user_id) == tonumber(1984200446) then
+var = true
+elseif tonumber(user_id) == tonumber(1840926402) then
 var = true
 elseif tonumber(user_id) == tonumber(1885944409) then
 var = true
@@ -307,9 +309,11 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1364212456) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(1806598497) then
+elseif tonumber(user_id) == tonumber(1984200446) then
 var = 'المبرمج سوريا'
 elseif tonumber(user_id) == tonumber(1885944409) then
+var = 'مالك السورس'
+elseif tonumber(user_id) == tonumber(1840926402) then
 var = 'مالك السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
@@ -1182,23 +1186,28 @@ if text == ("مسح الثانوين") and SudoBot(msg) then
 database:del(bot_id.."Dev:SoFi:2")
 send(msg.chat_id_, msg.id_, "\n◉ تم مسح قائمة المطورين الثانوين  ")
 end
-if text == 'المطور' or text == 'مطور' then
-tdcli_function ({ID = "GetUser",user_id_ = SUDO},function(arg,result) 
- 
- local msg_id = msg.id_/2097152/0.5
-local Text = [[
-◉ يمكنك التواصل مع المطور..↑↓
-◉ عن طريق معرفه بلاسفل..↑↓
-]]
+if text == "المطور" or text == "مطور" then
+local TEXT_SUD = database:get(bot_id.. Tshake:TEXT_SUDO )
+if TEXT_SUDO then 
+send(msg.chat_id_, msg.id_,TEXT_SUDO)
+else
+tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
+local function taha(extra, taha, success)
+if taha.photos_[0] then
+local Name =  المطـــــــــــــــور°\n[ ..result.first_name_.. ](tg://user?id= ..result.id_.. )\n 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/"..result.username_}},
-{{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text =   ' ❨ ' ..result.first_name_.. '  ❩'  ,url="t.me/"..result.username_}},
+{{text = ' اضف البوت لمجموعتك' , url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
 }
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token.. /sendPhoto?chat_id= ..msg.chat_id_.. &caption= ..URL.escape(Name).. &photo= ..taha.photos_[0].sizes_[1].photo_.persistent_id_.. &reply_to_message_id= ..msg_id.. &parse_mode=markdown&disable_web_page_preview=true&reply_markup= ..JSON.encode(keyboard)) 
+else
+sendText(msg.chat_id_,Name,msg.id_/2097152/0.5, md )
+ end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = SUDO, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
-
-
+end
 end
 
 if text == 'الاحصائيات' and DevSoFi(msg) then 
@@ -3205,22 +3214,28 @@ if text == "حاله الالعاب" and Constructor(msg) then
 local MRSoOoFi = database:get(bot_id.."AL:AddS0FI:stats") or "لم يتم التحديد"
 send(msg.chat_id_, msg.id_,"حاله الالعاب هي : {"..MRSoOoFi.."}\nاذا كانت {✔} الالعاب مفعله\nاذا كانت {x} الالعاب معطله")
 end
-if text == 'مطور' or text == 'المطور' then
-tdcli_function ({ID = "GetUser",user_id_ = SUDO},function(arg,result) 
- 
- local msg_id = msg.id_/2097152/0.5
-local Text = [[
-اهو مطور البوت ياروحي..🥺💜
-]]
+if text == "المطور" or text == "مطور" then
+local TEXT_SUD = database:get(bot_id.. Tshake:TEXT_SUDO )
+if TEXT_SUDO then 
+send(msg.chat_id_, msg.id_,TEXT_SUDO)
+else
+tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
+local function taha(extra, taha, success)
+if taha.photos_[0] then
+local Name =  [《⬇️اتبع الازرار للتواصل مع》](t.me/X_G_33)\n[ ..result.first_name_.. ](tg://user?id= ..result.id_.. )\n 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/"..result.username_}},
-{{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text =  '  ❨ ' ..result.first_name_.. ' ❩ ' ,url="t.me/"..result.username_}},
+{{text =  اضف البوت لمجموعتك , url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
 }
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token.. /sendPhoto?chat_id= ..msg.chat_id_.. &caption= ..URL.escape(Name).. &photo= ..taha.photos_[0].sizes_[1].photo_.persistent_id_.. &reply_to_message_id= ..msg_id.. &parse_mode=markdown&disable_web_page_preview=true&reply_markup= ..JSON.encode(keyboard)) 
+else
+sendText(msg.chat_id_,Name,msg.id_/2097152/0.5, md )
+ end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = SUDO, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
-
-
+end
 end
 if text == 'فين البوت' or text == 'بوت مين' or text == '/start' then
 local Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا') 
@@ -3265,7 +3280,7 @@ local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
 else
-tdcli_function ({ID = "GetUser",user_id_ = 1806598497,},function(arg,result) 
+tdcli_function ({ID = "GetUser",user_id_ = 1984200446,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
 local Name = '𓌹 ᯓ مــبـرمـج الســورس ★ 𓌺\n['..result.first_name_..'](t.me/siria100)\n'
@@ -3280,7 +3295,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.
 else
 sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
  end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1806598497, offset_ = 0, limit_ = 1 }, taha, nil)
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1984200446, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
 end
 end
@@ -4934,7 +4949,7 @@ if tonumber(result.sender_user_id_) == tonumber(1364212456) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1806598497) then  
+if tonumber(result.sender_user_id_) == tonumber(1984200446) then  
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر المبرمج سوريا عام")
 return false 
 end
@@ -4984,7 +4999,7 @@ if result.id_ == tonumber(1364212456) then
 send(msg.chat_id_, msg.id_, " ◉ لا يمكنك حظر مبرمج السورس \n")
 return false 
 end
-if result.id_ == tonumber(1806598497) then
+if result.id_ == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا يمكنك حظر المبرمج سوريا\n")
 return false 
 end
@@ -5028,7 +5043,7 @@ if tonumber(userid) == tonumber(1364212456) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
-if tonumber(userid) == tonumber(1806598497) then  
+if tonumber(userid) == tonumber(1984200446) then  
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر المبرمج سوريا عام")
 return false 
 end
@@ -5073,7 +5088,7 @@ if tonumber(result.sender_user_id_) == tonumber(1364212456) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1806598497) then  
+if tonumber(result.sender_user_id_) == tonumber(1984200446) then  
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم المبرمج سوريا عام")
 return false 
 end
@@ -5122,11 +5137,11 @@ if result.id_ == tonumber(1364212456) then
 send(msg.chat_id_, msg.id_, " ◉ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
-if result.id_ == tonumber(1806598497) then
+if result.id_ == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
-if result.id_ == tonumber(1806598497) then
+if result.id_ == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا يمكنك كتم مالك السورس \n")
 return false 
 end
@@ -5166,7 +5181,7 @@ if tonumber(userid) == tonumber(1364212456) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
-if tonumber(userid) == tonumber(1806598497) then  
+if tonumber(userid) == tonumber(1984200446) then  
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم المبرمج سوريا عام")
 return false 
 end
