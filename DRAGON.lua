@@ -314,7 +314,7 @@ var = 'المبرمج سوريا'
 elseif tonumber(user_id) == tonumber(1885944409) then
 var = 'مالك السورس'
 elseif tonumber(user_id) == tonumber(1840926402) then
-var = 'مالك السورس'
+var = 'سوريا الهكر'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:SoFi:2", user_id) then
@@ -892,9 +892,7 @@ if not DevSoFi(msg) then
 if text == '/start' then  
 local bl = 'مرحبا بيك عزيزي العضو اليك الاوامر في الاسفل'
 local keyboard = {
-{'━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━'},
 {'كساحه','سوريا','سوريا'},
-{'𖤍━┅┄⟞⟦᪣𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼᪣⟧⟝┄┉━𖤍'},
 {'ثيم','بايو','ايدي'},
 {'𖤍━┅┄⟞⟦᪣𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼᪣⟧⟝┄┉━𖤍'},
 {'بايو','التواصل'},
@@ -1000,7 +998,7 @@ end
 if text == 'قسم مطورين السورس والمبرمجين' then
 local Text = ' قسم مطورين السورس لدخول الي حسابتهم'
 local Key = {
-{'━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━'},
+{'━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━},
 {'التواصل','عايز بوت','يا سورس'},
 {'سوريا','سوريا'},
 {'𝔟𝔞𝔠𝔨 ⚡'},
@@ -9013,6 +9011,53 @@ database:srem(bot_id..'Mode:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 usertext = '\n ◉ العضــو ← ['..data.first_name_..'](t.me/'..(data.username_ or 's_o_op')..')'
 status  = '\n ◉ تم طلاقكم بنجاح في الجروب\n ◉ اوجعو تاني ونبي'
+send(msg.chat_id_, msg.id_, usertext..status)
+end,nil)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
+end
+if text == ("تخ") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ✹ لا تستطيع استخدام البوت \n ✹  يرجى الاشتراك بالقناه اولا \n ✹  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
+send(msg.chat_id_, msg.id_,' ✹ تم تعطيل القتل') 
+return false
+end
+function start_function(extra, result, success)
+database:sadd(bot_id..'Zahf:User'..msg.chat_id_, result.sender_user_id_)
+tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
+usertext = '\n ✹ الـعـضو   ⇇['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+local  statuss  = '\n ✹تم قتله بنجاح\n'
+send(msg.chat_id_, msg.id_, usertext..statuss)
+end,nil)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
+end
+
+if (text == ("اصحه")) and msg.reply_to_message_id_ and Mod(msg) then
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ✹ لا تستطيع استخدام البوت \n ✹  يرجى الاشتراك بالقناه اولا \n ✹  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+function start_function(extra, result, success)
+database:srem(bot_id..'Zahf:User'..msg.chat_id_, result.sender_user_id_)
+tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
+usertext = '\n ✹ الـعـضو   ⇇['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+status  = '\n ✹ تم رجوع للحياه\n'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
