@@ -13568,8 +13568,6 @@ end,nil)
 end,nil)   
 end,nil)   
 end
-end
-end
 if text == ("Id") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
 local X_G_33 = database:get(bot_id..'text:ch:user')
@@ -13652,7 +13650,7 @@ else
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
 send(msg.chat_id_, msg.id_,'[\n◉ iD 𖦹 '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
 else
-send(msg.chat_id_, msg.id_,'◉ ليس لديك صوره \n'..'\n◉ iD 𖦹 '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
+send(msg.chat_id_, msg.id_,'◉ ليس لديك صوره \n'..'\n◉ iD ?? '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
 end 
 end
 end
