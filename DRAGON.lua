@@ -177,7 +177,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1364212456,1984200446,1885944409,1840926402}   
+sudo_users = {SUDO,1364212456,1984200446,1940168571,1885944409,1840926402}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -271,6 +271,8 @@ if tonumber(user_id) == tonumber(1364212456) then
 var = true
 elseif tonumber(user_id) == tonumber(1984200446) then
 var = true
+elseif tonumber(user_id) == tonumber(1940168571) then
+var = true
 elseif tonumber(user_id) == tonumber(1840926402) then
 var = true
 elseif tonumber(user_id) == tonumber(1885944409) then
@@ -309,6 +311,8 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1364212456) then  
 var = 'مطور السورس'
+if tonumber(user_id) == tonumber(1940168571) then  
+var = 'روح قلب سوريا'
 elseif tonumber(user_id) == tonumber(1984200446) then
 var = 'المبرمج سوريا'
 elseif tonumber(user_id) == tonumber(1885944409) then
@@ -1503,7 +1507,7 @@ local Text = [[
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '《♡ 𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼》', url="t.me/X_G_33"}}, 
+{{text = '《♡ 𝙎??𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼》', url="t.me/X_G_33"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
