@@ -945,7 +945,7 @@ keyboard.inline_keyboard = {
 {text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
 },
 {
-{text = '  اضف البوت الي مجموعتك'   ,url="t.me/"..dofile("./AZIZA.lua").botUserName.."?startgroup=start"},
+{text = ' اضف البوت لمجموعتك' , url="http://t.me/"..sudos.UserName.."?startgroup=new"}
 },
 }
 local function getpro(extra, result, success) 
@@ -1280,7 +1280,7 @@ local Text = '✹انت الان المطور الاساسي في البوت \n 
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName}}, 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./AZIZA.lua").botUserName.."?startgroup=start"}}, 
+{{text = ' اضف البوت لمجموعتك' , url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -1357,7 +1357,7 @@ keyboard.inline_keyboard = {
 {text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""},
 },
 {
-{text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..dofile("./AZIZA.lua").botUserName.."?startgroup=start"},
+{text = ' اضف البوت لمجموعتك' , url="http://t.me/"..sudos.UserName.."?startgroup=new"}
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -13442,114 +13442,132 @@ send(msg.chat_id_, msg.id_,'لا تمتلك صوره في حسابك', 1, 'md')
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
 end
 
-if text == ("ايدي") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
+if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'TELETHON:Lock:ID:Bot'..msg.chat_id_) then
 if AddChannel(msg.sender_user_id_) == false then
-local X_G_33 = database:get(bot_id..'text:ch:user')
-if X_G_33 then
-send(msg.chat_id_, msg.id_,'['..X_G_33..']')
-else
-send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌔┇عذراً عزيزي ⤵️
+⌔┇أشترك في قناة البوت اولاً .
+— — — — — — — — —
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '🚹 اشترك الان   ',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end
-if not database:sismember(bot_id..'Spam:Texting'..msg.sender_user_id_,text) then
-database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text) 
-tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da)  tdcli_function ({ ID = "SendChatAction",  chat_id_ = msg.sender_user_id_, action_ = {  ID = "SendMessageTypingAction", progress_ = 100}  },function(arg,ta)  tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)  tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,sofi,success) 
-if da.status_.ID == "ChatMemberStatusCreator" then 
-rtpa = 'المالك'
-elseif da.status_.ID == "ChatMemberStatusEditor" then 
-rtpa = 'مشرف' 
-elseif da.status_.ID == "ChatMemberStatusMember" then 
+if not database:sismember(bot_id..'TELETHON:Spam:Group'..msg.sender_user_id_,text) then
+database:sadd(bot_id.."TELETHON:Spam:Group"..msg.sender_user_id_,text) 
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
 rtpa = 'عضو'
 end
-local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1) 
-local nummsggp = tonumber(msg.id_/2097152/0.5)
-local nspatfa = tonumber(Msguser / nummsggp * 100)
-local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_) or 0) 
-local NUMPGAME = tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_) or 0)
-local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
-if result.username_ then
-username = '@'..result.username_ 
-else
-username = 'لا يوجد '
-end
-local iduser = msg.sender_user_id_
-local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
-local photps = (sofi.total_count_ or 0)
-local interaction = Total_Msg(Msguser)
-local rtpg = rtpa
-local sofia = {
-" ◉ قمر ياروحي خد ممح..💋❤️",
-" ◉ صوتك عفنت غيرها بقي..💛",
-" ◉ يتي القمر نزل الارض يعمل اي🥺",
-" ◉ قلبي موجود فصوره .. 🥺❤️",
-" ◉ الله ع جمالك ياقمري..🥺💛",
-}
-local rdphoto = sofia[math.random(#sofia)]
-if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then      
-local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
-if get_id_text then
-if result.username_ then
-username = '@'..result.username_ 
-else
-username = 'لا يوجد '
-end
-get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
-get_id_text = get_id_text:gsub('#id',iduser) 
-get_id_text = get_id_text:gsub('#username',username) 
-get_id_text = get_id_text:gsub('#msgs',Msguser) 
-get_id_text = get_id_text:gsub('#edit',edit) 
-get_id_text = get_id_text:gsub('#stast',rtp) 
-get_id_text = get_id_text:gsub('#auto',interaction) 
-get_id_text = get_id_text:gsub('#game',NUMPGAME) 
-get_id_text = get_id_text:gsub('#photos',photps) 
-if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then   
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, sofi.photos_[0].sizes_[1].photo_.persistent_id_,get_id_text)       
-else 
-if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
-else
-send(msg.chat_id_, msg.id_, '\n ◉ ليس لديك صور في حسابك \n['..get_id_text..']')      
-end 
-end
-else
-if result.username_ then
-username = '@'..result.username_ 
-else
-username = 'لا يوجد '
-end
-if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, sofi.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n◉ iD 𖦹 '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
-else 
-if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n◉ iD 𖦹 '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
-else
-send(msg.chat_id_, msg.id_,'◉ ليس لديك صوره \n'..'\n◉ iD 𖦹 '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
-end 
-end
-end
-else
-local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
-if get_id_text then
-get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
-get_id_text = get_id_text:gsub('#id',iduser) 
-get_id_text = get_id_text:gsub('#username',username) 
-get_id_text = get_id_text:gsub('#msgs',Msguser) 
-get_id_text = get_id_text:gsub('#edit',edit) 
-get_id_text = get_id_text:gsub('#stast',rtp) 
-get_id_text = get_id_text:gsub('#auto',interaction) 
-get_id_text = get_id_text:gsub('#game',NUMPGAME) 
-get_id_text = get_id_text:gsub('#photos',photps) 
-send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
-else
-send(msg.chat_id_, msg.id_,'[\n◉ iD 𖦹 '..msg.sender_user_id_..'\n◉ User 𖦹 '..username..'\n◉ Rank 𖦹 '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◉ Msg 𖦹 '..Msguser..' ') 
-end
-end
 
-end,nil)
-end,nil)
-end,nil)
-end,nil)
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if data.username_ then
+UserName_User = '@'..data.username_
+else
+UserName_User = 'لا يوجد'
+end
+local Id = msg.sender_user_id_
+local NumMsg = database:get(bot_id..'TELETHON:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..Id) or Get_Rank(Id,msg.chat_id_)
+local message_edit = database:get(bot_id..'TELETHON:message_edit'..msg.chat_id_..msg.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."TELETHON:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."TELETHON:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local get_id = database:get(bot_id.."TELETHON:Klesh:Id:Bot"..msg.chat_id_) or database:get(bot_id.."TELETHON:KleshIDALLBOT")
+if not database:get(bot_id..'TELETHON:Lock:ID:Bot:Photo'..msg.chat_id_) then
+if taha.photos_[0] then
+if get_id then
+local get_id = get_id:gsub('#AddMem',Add_Mem) 
+local get_id = get_id:gsub('#id',Id) 
+local get_id = get_id:gsub('#username',UserName_User) 
+local get_id = get_id:gsub('#msgs',NumMsg) 
+local get_id = get_id:gsub('#edit',message_edit) 
+local get_id = get_id:gsub('#stast',Status_Gps) 
+local get_id = get_id:gsub('#auto',TotalMsg) 
+local get_id = get_id:gsub('#Description',Description) 
+local get_id = get_id:gsub('#game',Num_Games) 
+local get_id = get_id:gsub('#photos',Total_Photp) 
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(get_id)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id) 
+else
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=msg.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=msg.sender_user_id_.."/idearpphoto"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+local texte = '🔖꒐ '..Description..'\n🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : '..UserName_User..'\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(texte)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+else
+local texte = '\n*🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : * ['..UserName_User..']*\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..'*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=msg.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=msg.sender_user_id_.."/idearp"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(texte).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+else
+if get_id then
+local get_id = get_id:gsub('#AddMem',Add_Mem) 
+local get_id = get_id:gsub('#id',Id) 
+local get_id = get_id:gsub('#username',UserName_User) 
+local get_id = get_id:gsub('#msgs',NumMsg) 
+local get_id = get_id:gsub('#edit',message_edit) 
+local get_id = get_id:gsub('#stast',Status_Gps) 
+local get_id = get_id:gsub('#auto',TotalMsg) 
+local get_id = get_id:gsub('#Description',Description) 
+local get_id = get_id:gsub('#game',Num_Games) 
+local get_id = get_id:gsub('#photos',Total_Photp) 
+local texte = '['..get_id..']'
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(texte).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
+else
+local texte = '\n*🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : * ['..UserName_User..']*\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..'*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=msg.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=msg.sender_user_id_.."/idearp"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(texte).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end,nil)   
+end,nil)   
+end,nil)   
+end
 end
 end
 if text == ("Id") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
@@ -14332,6 +14350,218 @@ end
 end -- Chat_Type = 'GroupBot' 
 end -- end msg 
 --------------------------------------------------------------------------------------------------------------
+if Text and Text:match('(.*)/ideengphoto') then
+if tonumber(Text:match('(.*)/ideengphoto')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'TELETHON:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."TELETHON:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'TELETHON:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."TELETHON:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."TELETHON:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n🏷꒐ Id : '..Id..'\n🚹꒐ UsErNaMe : '..UserName_User..'\n⏏️꒐ StAsT : '..Status_Gps..'\n💭꒐ MsGs : '..NumMsg..' \n📊꒐ Activity : '..TotalMsg..'\n🗯꒐ GaMeS : '..Num_Games..''
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearpphoto"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageCaption?chat_id='..Chat_id..'&caption='..URL.escape(texte)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+if Text and Text:match('(.*)/idearpphoto') then
+if tonumber(Text:match('(.*)/idearpphoto')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'TELETHON:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."TELETHON:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'TELETHON:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."TELETHON:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."TELETHON:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : '..UserName_User..'\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..''
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearpphoto"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageCaption?chat_id='..Chat_id..'&caption='..URL.escape(texte)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+
+if Text and Text:match('(.*)/ideeng') then
+if tonumber(Text:match('(.*)/ideeng')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'TELETHON:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."TELETHON:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'TELETHON:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."TELETHON:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."TELETHON:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب ??",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n*🏷꒐ Id : '..Id..'\n🚹꒐ UsErNaMe : * ['..UserName_User..']*\n⏏️꒐ StAsT : '..Status_Gps..'\n💭꒐ MsGs : '..NumMsg..' \n📊꒐ Activity : '..TotalMsg..'\n🗯꒐ GaMeS : '..Num_Games..'*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearp"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(texte)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+if Text and Text:match('(.*)/idearp') then
+if tonumber(Text:match('(.*)/idearp')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'TELETHON:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."TELETHON:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'TELETHON:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."TELETHON:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."TELETHON:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n*🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : * ['..UserName_User..']*\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..'*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearp"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(texte)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
 function tdcli_update_callback(data)  -- clback
 if data.ID == "UpdateChannel" then 
 if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
