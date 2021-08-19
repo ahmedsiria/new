@@ -177,7 +177,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1364212456,1984200446,1885944409,1840926402,1940168571}   
+sudo_users = {SUDO,1364212456,1984200446,1885944409,1840926402}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -269,8 +269,6 @@ end
 function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(1364212456) then  
 var = true
-elseif tonumber(user_id) == tonumber(1940168571) then
-var = true
 elseif tonumber(user_id) == tonumber(1984200446) then
 var = true
 elseif tonumber(user_id) == tonumber(1840926402) then
@@ -317,8 +315,6 @@ elseif tonumber(user_id) == tonumber(1885944409) then
 var = 'مالك السورس'
 elseif tonumber(user_id) == tonumber(1840926402) then
 var = 'سوريا الهكر'
-if tonumber(user_id) == tonumber(1940168571) then  
-var = 'روح قلب سوريا'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:SoFi:2", user_id) then
