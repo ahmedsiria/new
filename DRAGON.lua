@@ -177,7 +177,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1364212456,1984200446,1885944409,1840926402}   
+sudo_users = {SUDO,1364212456,1984200446,1940168571,1840926402}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -273,7 +273,7 @@ elseif tonumber(user_id) == tonumber(1984200446) then
 var = true
 elseif tonumber(user_id) == tonumber(1840926402) then
 var = true
-elseif tonumber(user_id) == tonumber(1885944409) then
+elseif tonumber(user_id) == tonumber(1940168571) then
 var = true
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
@@ -311,8 +311,8 @@ if tonumber(user_id) == tonumber(1364212456) then
 var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(1984200446) then
 var = 'المبرمج سوريا'
-elseif tonumber(user_id) == tonumber(1885944409) then
-var = 'مالك السورس'
+elseif tonumber(user_id) == tonumber(1940168571) then
+var = 'روح قلب سوريا'
 elseif tonumber(user_id) == tonumber(1840926402) then
 var = 'سوريا الهكر'
 elseif tonumber(user_id) == tonumber(SUDO) then
@@ -5271,8 +5271,8 @@ if tonumber(result.sender_user_id_) == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر المبرمج سوريا عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1885944409) then  
-send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر مالك السورس عام")
+if tonumber(result.sender_user_id_) == tonumber(1940168571) then  
+send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر روح قلب سوريا عام")
 return false 
 end
 database:sadd(bot_id..'GBan:User', result.sender_user_id_)
@@ -5321,8 +5321,8 @@ if result.id_ == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا يمكنك حظر المبرمج سوريا\n")
 return false 
 end
-if result.id_ == tonumber(1885944409) then
-send(msg.chat_id_, msg.id_, " ◉ لا يمكنك حظر مالك السورس \n")
+if result.id_ == tonumber(1940168571) then
+send(msg.chat_id_, msg.id_, " ◉ لا يمكنك حظر روح قلب سوريا \n")
 return false 
 end
 usertext = '\n ◉ العضو ← ['..result.title_..'](t.me/'..(username or 'X_G_33')..')'
@@ -5365,8 +5365,8 @@ if tonumber(userid) == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر المبرمج سوريا عام")
 return false 
 end
-if tonumber(userid) == tonumber(1885944409) then  
-send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر مالك السورس عام")
+if tonumber(userid) == tonumber(1940168571) then  
+send(msg.chat_id_, msg.id_, " ◉ لا تسطيع حظر روح قلب سوريا عام")
 return false 
 end
 database:sadd(bot_id..'GBan:User', userid)
@@ -5410,8 +5410,8 @@ if tonumber(result.sender_user_id_) == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم المبرمج سوريا عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1885944409) then  
-send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم مالك السورس عام")
+if tonumber(result.sender_user_id_) == tonumber(1940168571) then  
+send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم روح قلب سوريا عام")
 return false 
 end
 database:sadd(bot_id..'Gmute:User', result.sender_user_id_)
@@ -5460,7 +5460,7 @@ send(msg.chat_id_, msg.id_, " ◉ لا يمكنك كتم مبرمج السورس
 return false 
 end
 if result.id_ == tonumber(1984200446) then
-send(msg.chat_id_, msg.id_, " ◉ لا يمكنك كتم مالك السورس \n")
+send(msg.chat_id_, msg.id_, " ◉ لا يمكنك كتم روح قلب سوريا \n")
 return false 
 end
 usertext = '\n ◉ العضو ← ['..result.title_..'](t.me/'..(username or 'X_G_33')..')'
@@ -5503,8 +5503,8 @@ if tonumber(userid) == tonumber(1984200446) then
 send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم المبرمج سوريا عام")
 return false 
 end
-if tonumber(userid) == tonumber(1885944409) then  
-send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم مالك السورس عام")
+if tonumber(userid) == tonumber(1940168571) then  
+send(msg.chat_id_, msg.id_, " ◉ لا تسطيع كتم روح قلب سوريا عام")
 return false 
 end
 database:sadd(bot_id..'Gmute:User', userid)
