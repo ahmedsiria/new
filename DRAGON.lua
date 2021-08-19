@@ -945,7 +945,7 @@ keyboard.inline_keyboard = {
 {text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
 },
 {
-{text = ' اضف البوت لمجموعتك' , url="http://t.me/"..sudos.UserName.."?startgroup=new"}
+{text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..dofile("./AZIZA.lua").botUserName.."?startgroup=start"},
 },
 }
 local function getpro(extra, result, success) 
