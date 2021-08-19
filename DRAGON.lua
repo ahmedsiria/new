@@ -13484,7 +13484,7 @@ UserName_User = 'لا يوجد'
 end
 local Id = msg.sender_user_id_
 local NumMsg = database:get(bot_id..'DRAGON:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 0
-local TotalMsg = Total_message(NumMsg)
+local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1) 
 local Status_Gps = database:get(bot_id.."DRAGON:Comd:New:rt:User:"..msg.chat_id_..Id) or Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'DRAGON:message_edit'..msg.chat_id_..msg.sender_user_id_) or 0
 local Num_Games = database:get(bot_id.."DRAGON:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
@@ -13569,6 +13569,7 @@ end,nil)
 end,nil)   
 end
 end
+
 if text == ("Id") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
 local X_G_33 = database:get(bot_id..'text:ch:user')
