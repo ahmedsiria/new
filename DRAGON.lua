@@ -13444,8 +13444,8 @@ end
 
 if text == ("ايدي") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
 local Text =[[
 ⌔┇عذراً عزيزي ⤵️
 ⌔┇أشترك في قناة البوت اولاً .
@@ -14266,7 +14266,7 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 if text == "اشتمها" or text == "اشتمه" then
-local texting = {" مبهينش حيوانات😂😂","ايه يخول انت مزعلو ليه","لو جيت جمبه هزعلك مني فل!! ","عايز اي متوحد انت","سيبك منو دا متخلف 😂💔","ده واطى وندلل فكك منو 😂💔","دا جربان اهين مين??😂😂😂 😂💔"}
+local texting = {" مبهينش حيوانات😂??","ايه يخول انت مزعلو ليه","لو جيت جمبه هزعلك مني فل!! ","عايز اي متوحد انت","سيبك منو دا متخلف 😂💔","ده واطى وندلل فكك منو 😂💔","دا جربان اهين مين??😂😂😂 😂💔"}
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 return false
 end
