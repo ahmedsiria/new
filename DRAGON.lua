@@ -289,7 +289,7 @@ elseif tonumber(user_id) == tonumber(1364212456) then
 var = true  
 elseif tonumber(user_id) == tonumber(1840926402) then
 var = true  
-elseif tonumber(user_id) == tonumber(00000) then
+elseif tonumber(user_id) == tonumber(1940168571) then
 var = true
 elseif tonumber(user_id) == tonumber(1517828021) then
 var = true
@@ -329,9 +329,9 @@ if tonumber(user_id) == tonumber(1984200446) then
 var = 'المبرمج سوريا'
 elseif tonumber(user_id) == tonumber(1364212456) then
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(00000) then
+elseif tonumber(user_id) == tonumber(1940168571) then
 var = 'قلب كوكي'
-elseif tonumber(user_id) == tonumber(00000) then
+elseif tonumber(user_id) == tonumber(1940168571) then
 var = 'روح قلب سوريا'
 elseif tonumber(user_id) == tonumber(1840926402) then
 var = 'سوريا الهكر'
@@ -575,7 +575,7 @@ elseif msgs < 7000 then
 DRAGON_Msg = 'ملك التفاعل' 
 elseif msgs < 9500 then 
 DRAGON_Msg = 'امبروطور التفاعل' 
-elseif msgs < 10000000000 then 
+elseif msgs < 1194016857 then 
 DRAGON_Msg = 'رب التفاعل'  
 end 
 return DRAGON_Msg 
@@ -3223,7 +3223,7 @@ local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
 else
-tdcli_function ({ID = "GetUser",user_id_ = 1806598497,},function(arg,result) 
+tdcli_function ({ID = "GetUser",user_id_ = 1984200446,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
 local Name = '𓌹 ᯓ مــبـرمـج الســورس ★ 𓌺\n['..result.first_name_..'](t.me/siria100)\n'
@@ -3233,7 +3233,7 @@ keyboard.inline_keyboard = {
 {text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/siria100"},
 },
 {
-{text = 'ＳＯＵＲＣＥ 𝗦 𝗜 𝗥 𝗜 𝗔  ', url="t.me/X_G_33"},
+{text = '𝙈𝙔 𝘾𝙃𝘼𝙉𝙀𝙀𝙀𝙇  ', url="t.me/X_G_33"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3241,7 +3241,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.
 else
 sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
  end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1806598497, offset_ = 0, limit_ = 1 }, taha, nil)
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1984200446, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
 end
 end
