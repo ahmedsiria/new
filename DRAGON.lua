@@ -329,7 +329,7 @@ if tonumber(user_id) == tonumber(1984200446) then
 var = 'المبرمج سوريا'
 elseif tonumber(user_id) == tonumber(1364212456) then
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(1940168571) then
+elseif tonumber(user_id) == tonumber(00000) then
 var = 'قلب كوكي'
 elseif tonumber(user_id) == tonumber(1940168571) then
 var = 'روح قلب سوريا'
@@ -14591,7 +14591,7 @@ local List = {
 ]],
 [[
 - 🇨🇰 𝒖𝒔𝒆𝒓𝒏𝒂𝒎𝒆 . #username 𖣂.
-- ??🇰 𝒔𝒕𝒂𝒔𝒕 . #stast 𖣂.
+- ??🇰 ??𝒕𝒂𝒔𝒕 . #stast 𖣂.
 - 🇨🇰 ??𝒅 . #id 𖣂.
 - 🇨🇰 𝒈𝒂𝒎𝒆𝒔 . #game ??.
 - 🇨🇰 𝒎𝒔𝒈𝒔 . #msgs 𖣂.
@@ -15042,7 +15042,7 @@ local List = {
 ♡ : 𝐼𝐷 𖠀 #id .
 ♡ : 𝑈𝑆𝐸𝑅 𖠀 #username .
 ♡ : 𝑀𝑆𝐺𝑆 𖠀 #msgs .
-♡ : 𝑆𝑇𝐴𝑇𝑆 𖠀 #stast .
+♡ : 𝑆𝑇𝐴𝑇?? 𖠀 #stast .
 ♡ : 𝐸𝐷𝐼𝑇  𖠀 #edit .
 ♡ : 𝗖𝗛 - ↝@X_G_33↜ 💞.
 ]],
