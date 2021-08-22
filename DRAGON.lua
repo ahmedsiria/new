@@ -3271,17 +3271,32 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/G8AZAL&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'غنيم' or text == 'gonnem' then  
-local Text = [[  
- °غنيم القمد يصحبي°
-]]  
-keyboard = {}   
-keyboard.inline_keyboard = {  
-{{text = '°گـآســ‘ـر آلگآمــين ، مــ’ـقطــع’ـع وشـ آلتخ ـ‘،ـين 〩°',url="t.me/U_F_G"}},  
-
-}  
-local msg_id = msg.id_/2097152/0.5  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/U_F_G&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+if text == "غنيم" then
+local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
+if TEXT_SUDO then 
+send(msg.chat_id_, msg.id_,TEXT_SUDO)
+else
+tdcli_function ({ID = "GetUser",user_id_ = 1921104817,},function(arg,result) 
+local function taha(extra, taha, success)
+if taha.photos_[0] then
+local Name = '𓌹 گـأسـ‘ـر آلگآمـين ، مـ’ـقطـع’ـع وش التخ‘،ـين 〩𓌺\n['..result.first_name_..'](t.me/U_F_G)\n'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/U_F_G"},
+},
+{
+{text = '𝙈𝙔 𝘾𝙃𝘼𝙉𝙀𝙀𝙀𝙇  ', url="t.me/X_G_33"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
+ end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1921104817, offset_ = 0, limit_ = 1 }, taha, nil)
+end,nil)
+end
 end
 
 if text == 'يوسف' or text == 'يوسف سيميستر' then  
@@ -12623,7 +12638,7 @@ end
 
 if text == ("الردود") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = " ✭ قائمه الردود \n⚚━━━━━𝗦 𝗜 𝗥 𝗜 ??  ✭━━━━━⚚\n"
+text = " ✭ قائمه الردود \n⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = 'متحركه'
@@ -14576,7 +14591,7 @@ local List = {
 ]],
 [[
 - 🇨🇰 𝒖𝒔𝒆𝒓𝒏𝒂𝒎𝒆 . #username 𖣂.
-- 🇨🇰 𝒔𝒕𝒂𝒔𝒕 . #stast 𖣂.
+- ??🇰 𝒔𝒕𝒂𝒔𝒕 . #stast 𖣂.
 - 🇨🇰 ??𝒅 . #id 𖣂.
 - 🇨🇰 𝒈𝒂𝒎𝒆𝒔 . #game ??.
 - 🇨🇰 𝒎𝒔𝒈𝒔 . #msgs 𖣂.
