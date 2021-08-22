@@ -3271,6 +3271,19 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/G8AZAL&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
+if text == 'غنيم' or text == 'gonnem' then  
+local Text = [[  
+ °غنيم القمد يصحبي°
+]]  
+keyboard = {}   
+keyboard.inline_keyboard = {  
+{{text = '°گـآســ‘ـر آلگآمــين ، مــ’ـقطــع’ـع وشـ آلتخ ـ‘،ـين 〩°',url="t.me/U_F_G"}},  
+
+}  
+local msg_id = msg.id_/2097152/0.5  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/U_F_G&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
 if text == 'يوسف' or text == 'يوسف سيميستر' then  
 local Text = [[  
 قلبــــــــيــــــــے الطــــــــيــــــــبــــــــ بــــــــق ڊبــــــــاحــــــــ 😉❤️⭐️
@@ -12610,7 +12623,7 @@ end
 
 if text == ("الردود") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = " ✭ قائمه الردود \n⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n"
+text = " ✭ قائمه الردود \n⚚━━━━━𝗦 𝗜 𝗥 𝗜 ??  ✭━━━━━⚚\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = 'متحركه'
@@ -12801,6 +12814,7 @@ sender = rpl[math.random(#rpl)]
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' .. URL.escape(sender))
 end
+
 if text == 'حصل' then
 local Text = [[
 ]]
@@ -12811,6 +12825,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/18&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+
 if text == 'كسمهم' then
 local Text = [[
 ]]
@@ -12821,6 +12836,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/19&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+
 if text == 'انا جيت' then
 local Text = [[
 ]]
@@ -12831,6 +12847,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/comxnxp/20&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+
 if text == 'النرد' then
 local Text = [[
 ]]
@@ -12871,6 +12888,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qtdao/16&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+
 if text == "تويت بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
 ght = math.random(3,300); 
 local Text =' ' 
