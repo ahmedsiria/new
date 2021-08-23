@@ -1642,16 +1642,28 @@ send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخ�
 return false
 end 
 if text=="اذاعه " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+return false
+end
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
 return false
 end  
 if text=="اذاعه بالتوجيه " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+return false
+end
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
 return false
 end 
 if text=="اذاعه بالتوجيه خاص " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+return false
+end
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
 return false
