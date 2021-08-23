@@ -13300,7 +13300,6 @@ sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil,photo,photo_caption)
 database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text) 
 end  
 end
-end
 
 -------------------------------
 if text == ""..(database:get(bot_id..'Name:Bot') or 'سوريا').." غادر" or text == 'غادر' then  
@@ -14928,7 +14927,7 @@ local List = {
 • ❉ 𝑺𝑻𝑨 : #stast .
 • ❉ 𝑰𝑫 : #id  ‌‌‏.
 • ❉  𝑴𝑺𝑮 : #msgs 𓆊.
-• ❉ 𝑾𝒆??𝒄𝒐𝒎𝒆  ⁞ .
+• ❉ 𝑾𝒆𝒍𝒄??𝒎𝒆  ⁞ .
 • ❉ 𝗖𝗛 - ↝@X_G_33↜ ✭.
 ]],
 [[
