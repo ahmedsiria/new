@@ -12424,38 +12424,38 @@ end
 send(msg.chat_id_, msg.id_," ✭ تم مسح الردود العامه")
 end
 
-if text == ("الردود العامه") and DevSoFi(msg) then 
-local list = database:smembers(bot_id..'List:Rd:Sudo')
-text = "\n ✭ قائمة الردود العامه \n⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n"
+if text == ("ردود المطور") and DevSoFi(msg) then 
+local list = database:smembers(bot_id.."List:Rd:Sudo")
+text = "\n℘︙قائمة ردود المطور \n — — — — — — — — —\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Sudo:Gif"..v) then
-db = 'متحركه'
+db = "متحركه 🎭"
 elseif database:get(bot_id.."Add:Rd:Sudo:vico"..v) then
-db = 'بصمه'
+db = "بصمه 📢"
 elseif database:get(bot_id.."Add:Rd:Sudo:stekr"..v) then
-db = 'ملصق'
+db = "ملصق 🏷"
 elseif database:get(bot_id.."Add:Rd:Sudo:Text"..v) then
-db = 'رساله'
+db = "رساله ✉"
 elseif database:get(bot_id.."Add:Rd:Sudo:Photo"..v) then
-db = 'صوره'
+db = "صوره 👤"
 elseif database:get(bot_id.."Add:Rd:Sudo:Video"..v) then
-db = 'فيديو'
+db = "فيديو 📹"
 elseif database:get(bot_id.."Add:Rd:Sudo:File"..v) then
-db = 'ملف'
+db = "ملف 📁"
 elseif database:get(bot_id.."Add:Rd:Sudo:Audio"..v) then
-db = 'اغنيه'
+db = "اغنيه 🎵"
 end
-text = text..""..k.." >> ↝ '..v..' ↜  ⇇↝ '..db..' ↜\n"
+text = text..""..k.." >> ("..v..") -› {"..db.."}\n"
 end
 if #list == 0 then
-text = " ✭ لا يوجد ردود للمطور"
+text = "℘︙لا يوجد ردود للمطور"
 end
-send(msg.chat_id_, msg.id_,'['..text..']')
+send(msg.chat_id_, msg.id_,"["..text.."]")
 end
 if text or msg.content_.sticker_ or msg.content_.voice_ or msg.content_.animation_ or msg.content_.audio_ or msg.content_.document_ or msg.content_.photo_ or msg.content_.video_ then  
-local test = database:get(bot_id..'Text:Sudo:Bot↝'..msg.sender_user_id_..'↜:'..msg.chat_id_)
-if database:get(bot_id..'Set:Rd↝'..msg.sender_user_id_..'↜:'..msg.chat_id_) == 'true1' then
-database:del(bot_id..'Set:Rd↝'..msg.sender_user_id_..'↜:'..msg.chat_id_)
+local test = database:get(bot_id.."Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
+if database:get(bot_id.."Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true1" then
+database:del(bot_id.."Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_)
 if msg.content_.sticker_ then   
 database:set(bot_id.."Add:Rd:Sudo:stekr"..test, msg.content_.sticker_.sticker_.persistent_id_)  
 end   
@@ -12466,10 +12466,10 @@ if msg.content_.animation_ then
 database:set(bot_id.."Add:Rd:Sudo:Gif"..test, msg.content_.animation_.animation_.persistent_id_)  
 end  
 if text then   
-text = text:gsub('"','') 
-text = text:gsub("'",'') 
-text = text:gsub('`','') 
-text = text:gsub('*','') 
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
 database:set(bot_id.."Add:Rd:Sudo:Text"..test, text)  
 end  
 if msg.content_.audio_ then
@@ -12496,29 +12496,9 @@ photo_in_group = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 database:set(bot_id.."Add:Rd:Sudo:Photo"..test, photo_in_group)  
 end
-send(msg.chat_id_, msg.id_,' ✭ تم حفظ الرد')
+send(msg.chat_id_, msg.id_,"℘︙تم حفظ الرد بنجاح")
 return false  
 end  
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'Set:Rd↝'..msg.sender_user_id_..'↜:'..msg.chat_id_) == 'true' then
-send(msg.chat_id_, msg.id_,' ✭ ارسل الرد الذي تريد اضافته')
-database:set(bot_id..'Set:Rd↝'..msg.sender_user_id_..'↜:'..msg.chat_id_, 'true1')
-database:set(bot_id..'Text:Sudo:Bot↝'..msg.sender_user_id_..'↜:'..msg.chat_id_, text)
-database:sadd(bot_id..'List:Rd:Sudo', text)
-return false end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'Set:On↝'..msg.sender_user_id_..'↜:'..msg.chat_id_) == 'true' then
-send(msg.chat_id_, msg.id_,' ✭ تم ازالة الرد العام')
-list = {"Add:Rd:Sudo:Audio","Add:Rd:Sudo:File","Add:Rd:Sudo:Video","Add:Rd:Sudo:Photo","Add:Rd:Sudo:Text","Add:Rd:Sudo:stekr","Add:Rd:Sudo:vico","Add:Rd:Sudo:Gif"}
-for k,v in pairs(list) do
-database:del(bot_id..v..text)
-end
-database:del(bot_id..'Set:On↝'..msg.sender_user_id_..'↜:'..msg.chat_id_)
-database:srem(bot_id..'List:Rd:Sudo', text)
-return false
-end
 end
 if text == 'اضف رد عام' and DevSoFi(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
