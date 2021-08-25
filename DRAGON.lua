@@ -1881,26 +1881,26 @@ if text and not Special(msg) then
 local DRAGON1_Msg = database:get(bot_id.."DRAGON1:Add:Filter:Rp2"..text..msg.chat_id_)   
 if DRAGON1_Msg then 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
-send(msg.chat_id_, msg.id_,'✭︙ العضو » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'siria100')..') \n✭︙ '..DRAGON1_Msg)
+send(msg.chat_id_, msg.id_,' ✭ الـعـضو   ⇇[↝'..Rutba(msg.sender_user_id_,msg.chat_id_)..'↜](T.ME/'..(data.username_ or 'textchuser')..') \n ✭ '..DRAGON1_Msg)
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
 return false
 end,nil)
 end
 end
 if database:get(bot_id..'Set:Name:Bot'..msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء✭' then   
-send(msg.chat_id_, msg.id_,"✭︙ تم الغاء حفظ اسم البوت")
+if text == 'الغاء' or text == 'الغاء ' then   
+send(msg.chat_id_, msg.id_," ✭ تم الغاء حفظ اسم البوت")
 database:del(bot_id..'Set:Name:Bot'..msg.sender_user_id_) 
 return false  
 end 
 database:del(bot_id..'Set:Name:Bot'..msg.sender_user_id_) 
 database:set(bot_id..'Name:Bot',text) 
-send(msg.chat_id_, msg.id_, "✭︙ تم حفظ الاسم")
+send(msg.chat_id_, msg.id_, " ✭ تم حفظ الاسم")
 return false
 end 
 if database:get(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء✭' then   
-send(msg.chat_id_, msg.id_,"✭︙ تم الغاء الاذاعه للخاص")
+if text == 'الغاء' or text == 'الغاء ✭' then   
+send(msg.chat_id_, msg.id_," ✭ تم الغاء الاذاعه للخاص")
 database:del(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -1927,13 +1927,13 @@ for k,v in pairs(list) do
 sendSticker(v, 0, 0, 1, nil, msg.content_.sticker_.sticker_.persistent_id_)   
 end 
 end
-send(msg.chat_id_, msg.id_,"✭︙ تمت الاذاعه الى >>{"..#list.."} مشترك في البوت ")
+send(msg.chat_id_, msg.id_," ✭ تمت الاذاعه الى >>{"..#list.."} مشترك في البوت ")
 database:del(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end
 
 if database:get(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء✭' then   
-send(msg.chat_id_, msg.id_,"✭︙ تم الغاء الاذاعه")
+if text == 'الغاء' or text == 'الغاء ✭' then   
+send(msg.chat_id_, msg.id_," ✭ تم الغاء الاذاعه")
 database:del(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -1960,13 +1960,13 @@ for k,v in pairs(list) do
 sendSticker(v, 0, 0, 1, nil, msg.content_.sticker_.sticker_.persistent_id_)   
 end 
 end
-send(msg.chat_id_, msg.id_,"✭︙ تمت الاذاعه الى >>{"..#list.."} جروب في البوت ")
+send(msg.chat_id_, msg.id_," ✭ تمت الاذاعه الى >>{"..#list.."} كروب في البوت ")
 database:del(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end
 
 if database:get(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء✭' then   
-send(msg.chat_id_, msg.id_,"✭︙ تم الغاء الاذاعه")
+if text == 'الغاء' or text == 'الغاء ✭' then   
+send(msg.chat_id_, msg.id_," ✭ تم الغاء الاذاعه")
 database:del(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -1980,13 +1980,13 @@ message_ids_ = {[0] = msg.id_},
 disable_notification_ = 0,
 from_background_ = 1},function(a,t) end,nil) 
 end   
-send(msg.chat_id_, msg.id_,"✭︙ تمت الاذاعه الى >>{"..#list.."} جروبات في البوت ")
+send(msg.chat_id_, msg.id_," ✭ تمت الاذاعه الى >>{"..#list.."} جروبات في البوت ")
 database:del(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end 
 end
 if database:get(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء✭' then   
-send(msg.chat_id_, msg.id_,"✭︙ تم الغاء الاذاعه")
+if text == 'الغاء' or text == 'الغاء ✭' then   
+send(msg.chat_id_, msg.id_," ✭ تم الغاء الاذاعه")
 database:del(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -2000,13 +2000,13 @@ message_ids_ = {[0] = msg.id_},
 disable_notification_ = 0,
 from_background_ = 1},function(a,t) end,nil) 
 end   
-send(msg.chat_id_, msg.id_,"✭︙ تمت الاذاعه الى >>{"..#list.."} مشترك في البوت ")
+send(msg.chat_id_, msg.id_," ✭ تمت الاذاعه الى >>{"..#list.."} مشترك في البوت ")
 database:del(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end 
 end
 if database:get(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-send(msg.chat_id_, msg.id_, "✭︙ تم الغاء الامر ")
+send(msg.chat_id_, msg.id_, " ✭ تم الغاء الامر ")
 database:del(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  end 
 database:del(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
@@ -2016,21 +2016,21 @@ ID = "SearchPublicChat",
 username_ = username  
 },function(arg,data) 
 if data and data.message_ and data.message_ == "USERNAME_NOT_OCCUPIED" then 
-send(msg.chat_id_, msg.id_, '✭︙ المعرف لا يوجد فيه قناة')
+send(msg.chat_id_, msg.id_, ' ✭ المعرف لا يوجد فيه قناة')
 return false  end
 if data and data.type_ and data.type_.ID and data.type_.ID == 'PrivateChatInfo' then
-send(msg.chat_id_, msg.id_, '✭︙ عذا لا يمكنك وضع معرف حسابات في الاشتراك ')
+send(msg.chat_id_, msg.id_, ' ✭ عذا لا يمكنك وضع معرف حسابات في الاشتراك ')
 return false  end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.is_supergroup_ == true then
-send(msg.chat_id_, msg.id_,'✭︙ عذا لا يمكنك وضع معرف جروب بالاشتراك ')
+send(msg.chat_id_, msg.id_,' ✭ عذا لا يمكنك وضع معرف كروب بالاشتراك ')
 return false  end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.is_supergroup_ == false then
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.ID and data.type_.channel_.status_.ID == 'ChatMemberStatusEditor' then
-send(msg.chat_id_, msg.id_,'✭︙ البوت ادمن في القناة \n✭︙ تم تفعيل الاشتراك الاجباري في \n✭︙ ايدي القناة ('..data.id_..')\n✭︙ معرف القناة ([@'..data.type_.channel_.username_..'])')
+send(msg.chat_id_, msg.id_,' ✭ البوت ادمن في القناة \n ✭ تم تفعيل الاشتراك الاجباري في \n ✭ ايدي القناة ('..data.id_..')\n ✭ معرف القناة ([@'..data.type_.channel_.username_..'])')
 database:set(bot_id..'add:ch:id',data.id_)
 database:set(bot_id..'add:ch:username','@'..data.type_.channel_.username_)
 else
-send(msg.chat_id_, msg.id_,'✭︙ عذرآ البوت ليس ادمن بالقناه ')
+send(msg.chat_id_, msg.id_,' ✭ عذرآ البوت ليس ادمن بالقناه ')
 end
 return false  
 end
@@ -2038,13 +2038,13 @@ end,nil)
 end
 if database:get(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-send(msg.chat_id_, msg.id_, "✭︙ تم الغاء الامر ")
+send(msg.chat_id_, msg.id_, " ✭ تم الغاء الامر ")
 database:del(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  end 
 database:del(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 local texxt = string.match(text, "(.*)") 
 database:set(bot_id..'text:ch:user',texxt)
-send(msg.chat_id_, msg.id_,'✭︙ تم تغيير رسالة الاشتراك ')
+send(msg.chat_id_, msg.id_,' ✭ تم تغيير رسالة الاشتراك ')
 end
 
 local status_welcome = database:get(bot_id..'Chek:Welcome'..msg.chat_id_)
