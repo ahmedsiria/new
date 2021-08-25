@@ -3122,18 +3122,19 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local msg_id = msg.id_/2097152/0.5
 local Text = [[
-◍ ᴛʜᴇ ʙᴇѕᴛ ᴇɢ ʟụᴀ ѕᴏụʀᴄᴇ ɪɴ ᴛᴇʟᴇɢʀᴀᴍ
+◍ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗘𝗚 𝗦𝗢𝗥𝗖𝗘 𝗜𝗡 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 ⶄ 
 🌖
-◍ ᴘᴍ ᴍᴇ ᴛᴏ ᴍᴀᴋᴇ ʏᴏụʀ ᴏᴡɴ ᴏɴᴇ 🐾
+◍ 𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 𝘽𝙀𝙎𝙏 𝙎𝙐𝙍𝘾𝙀 𖢝  🐾
+ᶠᵒˡˡᵒʷ ᵗʰᵉ ᵈᵉᵛᵉˡᵒᵖᵉʳ ᵇᵘᵗᵗᵒᶰˢ ᵇᵉˡᵒʷ ♰ 
 ...
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '  ◍ D𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𖣌 ',url="t.me/siria100"},{text = ' ◍ D𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𖣌 ',url="t.me/DV_ALSAHEL"}},
-{{text = '  ◍ D𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𖣌 ', url="t.me/MR_AAS"}},
-{{text = '   ◍ M𝚈 𝙲𝙷𝙰𝙽𝙽𝙴𝙻𝚂 𖣌  ', url="t.me/X_G_33"}},
+{{text = '  ◍ 𝘼𝙃𝙈𝙀𝘿 𝙎𝙄𝙍𝙄𝘼  𖣌 ',url="t.me/siria100"}},
+{{text = '  ◍ 𝙆𝘼𝙎𝘼𝙃𝘼 ↺  𖣌 ', url="t.me/MR_AAS"}},
+{{text = '   ◍ 𝙈𝙔 𝘾𝙃𝘼𝙉𝙀𝙀𝙀𝙇 𖢑  𖣌  ', url="t.me/X_G_33"}},
 }
-https.request("https://api.telegram.org/bot"..token..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation=https://t.me/siiirriiaa/4&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
@@ -9775,76 +9776,36 @@ local DRAGON_Msg = {
 send(msg.chat_id_, msg.id_,'['..DRAGON_Msg[math.random(#DRAGON_Msg)]..']') 
 return false
 end
-if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,'✭︙ الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'✭︙ لا تستطيع استخدام البوت \n ✭︙ يرجى الاشتراك بالقناه اولا \n ✭︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
+if text=="اذاعه خاص " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"✭︙ ارسل الان اذاعتك \n✭︙ للخروج ارسل الغاء") 
+send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
 return false
 end 
-if text=="اذاعه" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,'✭︙ الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'✭︙ لا تستطيع استخدام البوت \n ✭︙ يرجى الاشتراك بالقناه اولا \n ✭︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
+if text=="اذاعه " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
 return false
 end
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"✭︙ ارسل الان اذاعتك \n✭︙ للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
 return false
 end  
-if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and Sudo(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,'✭︙ الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'✭︙ لا تستطيع استخدام البوت \n ✭︙ يرجى الاشتراك بالقناه اولا \n ✭︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
+if text=="اذاعه بالتوجيه " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
 return false
 end
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"✭︙ ارسل لي التوجيه الان") 
+send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
 return false
 end 
-if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and Sudo(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,'✭︙  الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'✭︙ لا تستطيع استخدام البوت \n ✭︙ يرجى الاشتراك بالقناه اولا \n ✭︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
+if text=="اذاعه بالتوجيه خاص " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
 return false
 end
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"✭︙ ارسل لي التوجيه الان") 
+send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
 return false
 end 
 if text and text:match('^ضع اسم (.*)') and Manager(msg) or text and text:match('^وضع اسم (.*)') and Manager(msg) then 
