@@ -1638,41 +1638,76 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
-database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ◉ ارسل الان اذاعتك؟ \n ◉ للخروج ارسل الغاء ")
+if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉ الاذاعه معطله من قبل المطور الاساسي')
 return false
-end 
-if text=="اذاعه خاص " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
+send(msg.chat_id_, msg.id_," ◉ ارسل الان اذاعتك \n ◉ للخروج ارسل الغاء") 
 return false
 end 
-if text=="اذاعه " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+if text=="اذاعه" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
 return false
 end
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
+send(msg.chat_id_, msg.id_," ◉ ارسل الان اذاعتك \n ◉ للخروج ارسل الغاء ") 
 return false
 end  
-if text=="اذاعه بالتوجيه " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
 return false
 end
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
+send(msg.chat_id_, msg.id_," ◉ ارسل لي التوجيه الان") 
 return false
 end 
-if text=="اذاعه بالتوجيه خاص " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉  الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
 return false
 end
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
+send(msg.chat_id_, msg.id_," ◉ ارسل لي التوجيه الان") 
 return false
 end 
 if text == 'جلب النسخه' and DevSoFi(msg) then 
@@ -9776,36 +9811,76 @@ local DRAGON_Msg = {
 send(msg.chat_id_, msg.id_,'['..DRAGON_Msg[math.random(#DRAGON_Msg)]..']') 
 return false
 end
-if text=="اذاعه خاص " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
+send(msg.chat_id_, msg.id_," ◉ ارسل الان اذاعتك \n ◉ للخروج ارسل الغاء") 
 return false
 end 
-if text=="اذاعه " and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+if text=="اذاعه" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
 return false
 end
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل الان اذاعتك؟ \n ✭ للخروج ارسل الغاء ")
+send(msg.chat_id_, msg.id_," ◉ ارسل الان اذاعتك \n ◉ للخروج ارسل الغاء ") 
 return false
 end  
-if text=="اذاعه بالتوجيه " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
 return false
 end
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
+send(msg.chat_id_, msg.id_," ◉ ارسل لي التوجيه الان") 
 return false
 end 
-if text=="اذاعه بالتوجيه خاص " and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and Sudo(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ◉  الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local X_G_33 = database:get(bot_id..'text:ch:user')
+if X_G_33 then
+send(msg.chat_id_, msg.id_,'['..X_G_33..']')
+else
+send(msg.chat_id_, msg.id_,'    \n  ◉ اشترك اولا بلقناه \n  ['..database:get(bot_id..'add:ch:username')..']')
+end
 return false
 end
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ✭ ارسل لي التوجيه الان")
+send(msg.chat_id_, msg.id_," ◉ ارسل لي التوجيه الان") 
 return false
 end 
 if text and text:match('^ضع اسم (.*)') and Manager(msg) or text and text:match('^وضع اسم (.*)') and Manager(msg) then 
