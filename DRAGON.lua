@@ -185,7 +185,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1984200446,1840926402,1364212456}   
+sudo_users = {SUDO,1950281200,1840926402,1364212456}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -283,7 +283,7 @@ return false
 end 
 end
 function Can_or_NotCan(user_id,chat_id)
-if tonumber(user_id) == tonumber(1984200446) then  
+if tonumber(user_id) == tonumber(1950281200) then  
 var = true 
 elseif tonumber(user_id) == tonumber(1364212456) then
 var = true  
@@ -325,7 +325,7 @@ end
 return var
 end 
 function Rutba(user_id,chat_id)
-if tonumber(user_id) == tonumber(1984200446) then  
+if tonumber(user_id) == tonumber(1950281200) then  
 var = 'المبرمج سوريا'
 elseif tonumber(user_id) == tonumber(1364212456) then
 var = 'مطور السورس'
@@ -4190,7 +4190,7 @@ if tonumber(result.sender_user_id_) == tonumber(1840926402) then
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1984200446) then  
+if tonumber(result.sender_user_id_) == tonumber(1950281200) then  
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
@@ -4236,7 +4236,7 @@ if result.id_ == tonumber(1840926402) then
 send(msg.chat_id_, msg.id_, " ✭ لا يمكنك حظر مبرمج السورس \n")
 return false 
 end
-if result.id_ == tonumber(1984200446) then
+if result.id_ == tonumber(1950281200) then
 send(msg.chat_id_, msg.id_, " ✭ لا يمكنك حظر مبرمج السورس \n")
 return false 
 end
@@ -4276,7 +4276,7 @@ if tonumber(userid) == tonumber(1840926402) then
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
-if tonumber(userid) == tonumber(1984200446) then  
+if tonumber(userid) == tonumber(1950281200) then  
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
@@ -4317,7 +4317,7 @@ if tonumber(result.sender_user_id_) == tonumber(1840926402) then
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1984200446) then  
+if tonumber(result.sender_user_id_) == tonumber(1950281200) then  
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
@@ -4362,7 +4362,7 @@ if result.id_ == tonumber(1840926402) then
 send(msg.chat_id_, msg.id_, " ??‍♂️ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
-if result.id_ == tonumber(1984200446) then
+if result.id_ == tonumber(1950281200) then
 send(msg.chat_id_, msg.id_, " ✭ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
@@ -4402,7 +4402,7 @@ if tonumber(userid) == tonumber(1840926402) then
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
-if tonumber(userid) == tonumber(1984200446) then  
+if tonumber(userid) == tonumber(1950281200) then  
 send(msg.chat_id_, msg.id_, " ✭ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
@@ -14812,7 +14812,7 @@ local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
 else
-tdcli_function ({ID = "GetUser",user_id_ = 1984200446,},function(arg,result) 
+tdcli_function ({ID = "GetUser",user_id_ = 1950281200,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
 local Name = '𓌹 ✭ 𝚃𝙷𝙴 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝚁 𝙰𝙽𝙳 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𝙾𝙵 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚈𝚁𝙸𝙰 𝙸𝚂 𝙰 𝙽𝙸𝙲𝙴 𝙿𝙴𝚁𝚂𝙾𝙽 𝚆𝙸𝚃𝙷 𝙰 𝚂𝙷𝙰𝚁𝙿 𝚃𝙴𝙼𝙿𝙴𝚁. 𝙽𝙾 𝙰𝙿𝙿𝚁𝙾𝙰𝙲𝙷𝙸𝙽𝙶 ♫✭𓌺\n['..result.first_name_..'](t.me/siria100)\n'
@@ -14830,7 +14830,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.
 else
 sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
  end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1984200446, offset_ = 0, limit_ = 1 }, taha, nil)
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1950281200, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
 end
 end
