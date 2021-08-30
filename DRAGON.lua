@@ -21,34 +21,34 @@ file:write(serialized)
 file:close()  
 end  
 if not database:get(id_server..":token") then
-io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n\27')
+io.write('\27[0;31m\n ارسل لي توكن البوت الان ⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚ :\na⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n\27')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
-print('\27[0;31m⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n التوكن غير صحيح تاكد منه ثم ارسله')
+print('\27[0;31m⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n التوكن غير صحيح تاكد منه ثم ارسله')
 else
-io.write('\27[0;31m تم حفظ التوكن بنجاح \na⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n27[0;39;49m')
+io.write('\27[0;31m تم حفظ التوكن بنجاح \na⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n27[0;39;49m')
 local json = JSON.decode(url)
 database:set(id_server..":token_username",json.result.username)
 database:set(id_server..":token",token)
 end 
 else
-print('\27[0;35m⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n لم يتم حفظ التوكن ارسل لي التوكن الان')
+print('\27[0;35m⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
 os.execute('lua DRAGON.lua')
 end
 if not database:get(id_server..":SUDO:ID") then
-io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n\27[0;33;49m')
+io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚ :\na⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n\27[0;33;49m')
 local SUDOID = io.read()
 if SUDOID ~= '' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n27[0;39;49m')
+io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n27[0;39;49m')
 database:set(id_server..":SUDO:ID",SUDOID)
 else
-print('\27[0;31m⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+print('\27[0;31m⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
 
-io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
+io.write('\27[1;31m ⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
 local SUDOUSERNAME = io.read():gsub('@','')
 if SUDOUSERNAME ~= '' then
 io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
@@ -65,8 +65,14 @@ token = database:get(id_server..":token"),
 SUDO = database:get(id_server..":SUDO:ID"),
 UserName = database:get(id_server..":SUDO:USERNAME"),
  }
-create(config, "./DRAGON.lua")   
+create(config, "./kkkklInfo.lua")   
 end 
+infotnseb = {}
+infotnseb.id = database:get(id_server..":SUDO:ID")
+infotnseb.username = database:get(id_server..":SUDO:USERNAME")
+infotnseb.tokenbot = database:get(id_server..":token")
+infotnseb.userjoin = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '')
+print('\n\27[1;34m dddddoooonnnnnneeeeeeee sssseeee ennnnnnnddddddd :')
 create_config_auto()
 botUserName = database:get(id_server..":token_username")
 token = database:get(id_server..":token")
@@ -82,15 +88,15 @@ token="]]..database:get(id_server..":token")..[["
 while(true) do
 rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
-echo "⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺ ⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺"
+echo "⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚"
 echo "TG IS NOT FIND IN FILES BOT"
-echo "⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺ ⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺"
+echo "⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚ ⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚"
 exit 1
 fi
 if [ ! $token ]; then
-echo "⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺ ⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺"
-echo -e "\e[1;36mTOKEN IS NOT FIND IN FILE DRAGON.lua \e[0m"
-echo "⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺ ⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺"
+echo "⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚ ⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚"
+echo -e "\e[1;36mTOKEN IS NOT FIND IN FILE kkkklInfo.lua \e[0m"
+echo "⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚ ⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚"
 exit 1
 fi
 echo -e "\033[38;5;208m"
@@ -126,7 +132,7 @@ file:write(serialized)
 file:close() 
 end 
 local load_redis = function()  
-local f = io.open("./DRAGON.lua", "r")  
+local f = io.open("./kkkklInfo.lua", "r")  
 if not f then   
 AutoSet()  
 else   
@@ -134,7 +140,7 @@ f:close()
 database:del(id_server..":token")
 database:del(id_server..":SUDO:ID")
 end  
-local config = loadfile("./DRAGON.lua")() 
+local config = loadfile("./kkkklInfo.lua")() 
 return config 
 end 
 _redis = load_redis()  
