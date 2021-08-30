@@ -919,7 +919,7 @@ end
 if Chat_Type == 'UserBot' then
 if not DevSoFi(msg) then
 if text == '/start' or text == 'العوده✨'  then  
-local bl = '◍ انت الان العضو في البوت \n◍  سورس ناسا\n ◍ يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/ch_nasa)'
+local bl = '◍ انت الان العضو في البوت \n◍  سورس سوريا\n ◍ يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/X_G_33)'
 local keyboard = {
 {'قسم مطورين السورس'},
 {'قسم الالعاب𝟏','قسم الالعاب𝟐'},
@@ -960,15 +960,15 @@ end
 if text == 'قـسم ممـيزات php' then
 local Text = 'مميزات خاصه بي الي متفل في بوتو اغاني فقط'
 local Key = {
-{'⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺'},
+{'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'اغاني','مميزات'},
-{'⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺'},
+{'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'الافلام','العاب'},
-{'⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺'},
+{'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'قران','روايات'},
-{'⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺'},
+{'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'من سيربح المليون'},
-{'⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺'},
+{'⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺'},
 {'ثيم','الحوت الاسود'},
 {'العوده✨'},
 }
@@ -977,7 +977,7 @@ end
 
 if text == "/start" then
 if not DevSoFi(msg) then
-local Namebot = (database:get(bot_id..'Name:Bot') or 'ايفل') 
+local Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا') 
 local DRAGON_Msg = { 
 '  🤖╖ أهلآ بك عزيزي أنا بوت '..Namebot..'\n🌐╢ وظيفتي حماية المجموعات\n✅╢ لتفعيل البوت عليك اتباع مايلي \n🔘╢ أضِف البوت إلى مجموعتك\n⚡️╢ ارفعهُ » مشرف\n⬆️╜ سيتم ترقيتك مالك في البوت\n',
 } 
@@ -1028,7 +1028,7 @@ end
 return false
 end
 if DevSoFi(msg) then
-local bl =  '◍ انت الان المطور الاساسي في البوت \n◍  سورس ايفل\n ◍ يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/SourceEval )'
+local bl =  '◍ انت الان المطور الاساسي في البوت \n◍  سورس سوريا\n ◍ يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/X_G_33  )'
 local keyboard = {
 {'ضع اسم للبوت','معلومات الكيبورد'},
 {'المطور','الاحصائيات'},
@@ -1198,11 +1198,11 @@ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
 CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
 uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
 echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
-echo '⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n ◍「 الذاكره العشوائيه 」  ⇠\n* '"$memUsedPrc"'*'
-echo '⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n ◍「 وحـده الـتـخـزيـن 」  ⇠\n* '"$HardDisk"'*'
-echo '⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n ◍「 الـمــعــالــج 」  ⇠\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n ◍「 الــدخــول 」  ⇠\n* '`whoami`'*'
-echo '⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n ◍「 مـده تـشغيـل الـسـيـرفـر 」 ⇠\n* '"$uptime"'*'
+echo '⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n ◍「 الذاكره العشوائيه 」  ⇠\n* '"$memUsedPrc"'*'
+echo '⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n ◍「 وحـده الـتـخـزيـن 」  ⇠\n* '"$HardDisk"'*'
+echo '⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n ◍「 الـمــعــالــج 」  ⇠\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n ◍「 الــدخــول 」  ⇠\n* '`whoami`'*'
+echo '⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n ◍「 مـده تـشغيـل الـسـيـرفـر 」 ⇠\n* '"$uptime"'*'
 ]]):read('*all'))  
 end
 if text == 'تحديث السورس ' and DevSoFi(msg) then 
@@ -1340,7 +1340,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 if text == 'الاصدار' and DevSoFi(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,' ◍ اصدار سورس ايفل{ S:12✓}')
+send(msg.chat_id_, msg.id_,' ◍ اصدار سورس سوريا{ S:12✓}')
 end
 if text == '⇣───「 قـناه المطورين」───⇣' then
 local Text = [[ 
@@ -1349,7 +1349,7 @@ local Text = [[
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = 'مطورين السورس⚙', url="t.me/Xccppp"}}, 
+{{text = 'مطورين السورس⚙', url="t.me/USERR_SIRIA"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/vagwg/8&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -1358,7 +1358,7 @@ end
 if text == 'معلومات الكيبورد' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
-[CH](t.me/SourceEval)مرحبا بك مطوري سأشرح لك كل شئ في لوحه الاوامر بالتفصيل
+[CH](t.me/X_G_33 )مرحبا بك مطوري سأشرح لك كل شئ في لوحه الاوامر بالتفصيل
 1• الاحصائيات { لعرض عدد المجموعات، والمشتركين في البوت
  2• تفعيل التواصل{ لتفعيل التواصل عبر البوت خاص بك} 
  3• تعطيل التواصل{ لتعطيل التواصل عبر البوت خاص بك } 
@@ -1380,7 +1380,7 @@ local Text = [[
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = 'قناه السورس', url="t.me/SourceEval"}}, 
+{{text = 'قناه السورس', url="t.me/X_G_33"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -1394,33 +1394,21 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' ..token) 
 send(msg.chat_id_, msg.id_,' ') 
 end
-if text == 'باندا مبرمج السورس' and DevSoFi(msg) then
-database:del(bot_id..'Srt:Bot') 
-local Text = [[ 
-「المبرمج باندا لو حابب تتواصل معاه
-اتبع الزر إلى تحت ↓」
-]] 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'Ᏼ Ꭺ Ν Ꭰ Ꭺ~"𖥕𝖋_𝖔𝖋𝖋🇬🇺', url="t.me/Q_0_ll"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
+
 if text == 'قناه السورس' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
- ◍ من أحسن السورسات على التليجرام سورس ايفل ◍
+ ◍ من أحسن السورسات على التليجرام سورس سوريا ◍
 بجد سورس أمان جدا وفي مميزات جامده
 تع نصب بوتك عندنا لو محظور
 خش على تواصل هيدخلك لروم التواصل 
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = 'ՏΌႮᎡᏟᎬ ᎬᏙᎪᏞ', url="t.me/SourceEval"}}, 
+{{text = '𝚜𝚒𝚛𝚒𝚊 ঌ  ', url="t.me/X_G_33 "}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/SourceEval&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/X_G_33 &caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == "ضع اسم للبوت" and DevSoFi(msg) then  
@@ -1430,7 +1418,7 @@ return false
 end
 if text == ("الثانوين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:SoFi:2")
-t = "\n ◍ قائمة مطورين الثانويين للبوت \n⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n"
+t = "\n ◍ قائمة مطورين الثانويين للبوت \n⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1469,7 +1457,7 @@ return false
 end
 if text == ("المطورين") and SudoBot(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n ◍ قائمة المطورين \n⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n"
+t = "\n ◍ قائمة المطورين \n⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1485,7 +1473,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("قائمه العام") and SudoBot(msg) then
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n ◍ قائمه المحظورين عام \n⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n"
+t = "\n ◍ قائمه المحظورين عام \n⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1502,7 +1490,7 @@ return false
 end
 if text == ("قائمه الكتم العام") and SudoBot(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
-t = "\n ◍ قائمة المكتومين عام \n⩹━━━━◍『ᎬᏙᎪᏞᏞ』◍━━━━⩺\n"
+t = "\n ◍ قائمة المكتومين عام \n⩹━━━━◍『𝚜𝚒𝚛𝚒𝚊 』◍━━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1946,7 +1934,7 @@ end
 if msg.content_.ID == "MessageChatAddMembers" then 
 if msg.content_.members_[0].id_ == tonumber(bot_id) then 
 print("it is Bot")
-N = (database:get(bot_id.."Name:Bot") or "ايفل")
+N = (database:get(bot_id.."Name:Bot") or "سوريا")
 tdcli_function ({ID = "GetUser",user_id_ = bot_id,},function(arg,data) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = bot_id,offset_ = 0,limit_ = 1},function(extra,result,success) 
 if result.photos_[0] then
