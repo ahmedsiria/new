@@ -14648,6 +14648,78 @@ database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_
 send(msg.chat_id_, msg.id_," ◍ ارسل الان اذاعتك؟ \n ◍ للخروج ارسل الغاء ")
 return false
 end
+if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if database:get(bot_id..'Bc:Bots') and not Debn(msg) then 
+send(msg.chat_id_, msg.id_,' ◍ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ◍ ارسل الان اذاعتك \n ◍ للخروج ارسل الغاء") 
+return false
+end 
+if text=="اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if database:get(bot_id..'Bc:Bots') and not Debn(msg) then 
+send(msg.chat_id_, msg.id_,' ◍ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ◍ ارسل الان اذاعتك \n ◍ للخروج ارسل الغاء ") 
+return false
+end  
+if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
+if database:get(bot_id..'Bc:Bots') and not Debn(msg) then 
+send(msg.chat_id_, msg.id_,' ◍ الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ◍ ارسل لي التوجيه الان") 
+return false
+end 
+if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
+if database:get(bot_id..'Bc:Bots') and not Debn(msg) then 
+send(msg.chat_id_, msg.id_,' ◍  الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ◍ ارسل لي التوجيه الان") 
+return false
+end 
 if text == "سوريا" then
 local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
