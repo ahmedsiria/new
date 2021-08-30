@@ -14943,10 +14943,10 @@ if AddChannel(msg.sender_user_id_) == false then
 return false
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000
-},function(ta,BANDA)
+},function(ta,DRAGON)
 local t = "\nツ قائمة الاعضاء \n⩹━━━━◍『𝗦 𝗜 𝗥 𝗜 𝗔 』◍━━━━⩺ \n"
 x = 0
-local list = BANDA.members_
+local list = DRAGON.members_
 for k, v in pairs(list) do
  if tonumber(v.user_id_) ~= tonumber(bot_id) then
 chat_kick(msg.chat_id_,v.user_id_)
