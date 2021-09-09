@@ -12760,894 +12760,748 @@ local Chat_id = data.chat_id_
 local Msg_id = data.message_id_
 local msg_idd = Msg_id/2097152/0.5
 local Text = data.payload_.data_
-if Text == '/help1' then
+Ok_id  = Text:match("(%d+)")  
+if text ==  'okCaptcha'..data.sender_user_id_ then  
+DeleteMessage(Chat_id, {[0] = Msg_id}) 
+return https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id="..Ok_id .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+end
+if text ==  '/ven3' then
+if not CoSu(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
+if link then                              
+send(msg.chat_id_,msg.id_,'.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..link..')')                          
+else                
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
+if linkgpp.ok == true then 
+linkgp = '• 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..linkgpp.result..')\nـــــــــــــــــــــــــ\n  ['..linkgpp.result..']'
+else
+linkgp = ' لا يوجد رابط ارسل ضع رابط'
+end  
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+send(msg.chat_id_, msg.id_,linkgp)              
+end      
+end,nil)
+end
+if text ==  '/ven1' then
+if not CoSu(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or database:get(bot_id.."Private:Group:Link"..msg.chat_id_) 
+if linkgpp.ok == true then 
+local linkgp = '• 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..linkgpp.result..')\nـــــــــــــــــــــــــ\n  ['..linkgpp.result..']'
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = ta.title_, url=linkgpp.result}},}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(linkgp).."&parse_mode=markdown&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,'● لا يوجد رابط ارسل ضع رابط') 
+end 
+end,nil) 
+end
+if text ==  '/ven2' then
+if not CoSu(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or database:get(bot_id.."Private:Group:Link"..msg.chat_id_) 
+if linkgpp.ok == true then 
+local linkgp = '• 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..linkgpp.result..')\nـــــــــــــــــــــــــ\n  ['..linkgpp.result..']'
+local inline = {{{text = ta.title_, url=linkgpp.result}},} 
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+send_inline_key(msg.chat_id_,linkgp,nil,inline,msg.id_/2097152/0.5) 
+else 
+send(msg.chat_id_, msg.id_,'● لا يوجد رابط ارسل ضع رابط') 
+end 
+end,nil) 
+end
+if text ==  '/help1' then
 if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ اكتب الامر الذي تريد تنفيذه..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
+⇊ اوامر القفل والفتح ●
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قفل الاضافه ◉', callback_data=data.sender_user_id_.."/lockjoine"},{text = 'فتح الاضافه ◉', callback_data=data.sender_user_id_.."/unlockjoine"},
+{text = 'قفل الاباحي', callback_data="/lockdul"},{text = 'فتح الاباحي', callback_data="/oppor"},
 },
 {
-{text = 'قفل الدردشه ◉', callback_data=data.sender_user_id_.."/lock:text"},{text = 'فتح الدردشه ◉', callback_data=data.sender_user_id_.."/unlockchat"},
+{text = 'قفل الازعاج', callback_data="/ayq79"},{text = 'فتح الازعاج', callback_data="/Andrew"},
 },
 {
-{text = 'قفل الدخول ◉', callback_data=data.sender_user_id_.."/lock_joine"},{text = 'فتح الدخول ◉', callback_data=data.sender_user_id_.."/unlock_joine"},
+{text = 'قفل السب', callback_data="/Louis"},{text = 'فتح السب', callback_data="/tho"},
 },
 {
-{text = 'قفل البوتات ◉', callback_data=data.sender_user_id_.."/lockbots"},{text = 'فتح البوتات ◉', callback_data=data.sender_user_id_.."/unlockbots"},
+{text = 'قفل المحن', callback_data="/Gogh"},{text = 'فتح المحن', callback_data="/Omni"},
 },
 {
-{text = 'قفل الاشعارات ◉', callback_data=data.sender_user_id_.."/locktags"},{text = 'فتح الاشعارات ◉', callback_data=data.sender_user_id_.."/unlocktags"},
+{text = 'قفل الدردشه', callback_data="/Lokll"},{text = 'فتح الدردشه', callback_data="/openqg"},
 },
 {
-{text = 'قفل التعديل ◉', callback_data=data.sender_user_id_.."/lockedit"},{text = 'فتح التعديل ◉', callback_data=data.sender_user_id_.."/unlockedit"},
+{text = 'قفل الدخول', callback_data="/lockaghv"},{text = 'فتح الاضافه', callback_data="/oppgagf"},
 },
 {
-{text = 'قفل الروابط ◉', callback_data=data.sender_user_id_.."/locklink"},{text = 'فتح الروابط ◉', callback_data=data.sender_user_id_.."/unlocklink"},
+{text = 'قفل البوتات', callback_data="/lockbot"},{text = 'فتح البوتات', callback_data="/opabot"},
 },
 {
-{text = 'قفل المعرفات ◉', callback_data=data.sender_user_id_.."/lockusername"},{text = 'فتح المعرفات ◉', callback_data=data.sender_user_id_.."/unlockusername"},
+{text = 'قفل الاشعارات', callback_data="/lockash"},{text = 'فتح الاشعارات', callback_data="/opaash"},
 },
 {
-{text = 'قفل التاك ◉', callback_data=data.sender_user_id_.."/locktag"},{text = 'فتح التاك ◉', callback_data=data.sender_user_id_.."/unlocktag"},
+{text = 'قفل الروابط', callback_data="/locklink"},{text = 'فتح الروابط', callback_data="/opalink"},
 },
 {
-{text = 'قفل الملصقات ◉', callback_data=data.sender_user_id_.."/locksticar"},{text = 'فتح الملصقات ◉', callback_data=data.sender_user_id_.."/unlocksticar"},
+{text = 'قفل التثبيت', callback_data="/lockpin"},{text = 'فتح التثبيت', callback_data="/opapin"},
 },
 {
-{text = 'قفل المتحركه ◉', callback_data=data.sender_user_id_.."/lockgif"},{text = 'فتح المتحركه ◉', callback_data=data.sender_user_id_.."/unlockgif"},
+{text = 'قفل التعديل', callback_data="/lockedit"},{text = 'فتح التعديل', callback_data="/opaedit"},
 },
 {
-{text = 'قفل الفيديو ◉', callback_data=data.sender_user_id_.."/lockvideo"},{text = 'فتح الفيديو ◉', callback_data=data.sender_user_id_.."/unlockvideo"},
+{text = 'قفل الفارسيه', callback_data="/lockFars"},{text = 'فتح الفارسيه', callback_data="/opaFars"},
 },
 {
-{text = 'قفل الصور ◉', callback_data=data.sender_user_id_.."/lockphoto"},{text = 'فتح الصور ◉', callback_data=data.sender_user_id_.."/unlockphoto"},
+{text = 'قفل الانكليزيه', callback_data="/lockEngilsh"},{text = 'فتح الانكليزيه', callback_data="/opaEngilsh"},
 },
 {
-{text = 'قفل الاغاني ◉', callback_data=data.sender_user_id_.."/lockvoise"},{text = 'فتح الاغاني ◉', callback_data=data.sender_user_id_.."/unlockvoise"},
+{text = 'قفل تعديل الميديا', callback_data="/lockeditmed"},{text = 'فتح تعديل الميديا', callback_data="/opaeditmed"},
 },
 {
-{text = 'قفل الصوت ◉', callback_data=data.sender_user_id_.."/lockaudo"},{text = 'فتح الصوت ◉', callback_data=data.sender_user_id_.."/unlockaudo"},
+{text = 'قفل الانلاين', callback_data="/lockinline"},{text = 'فتح الانلاين', callback_data="/opainline"},
 },
 {
-{text = 'قفل التوجيه ◉', callback_data=data.sender_user_id_.."/lockfwd"},{text = 'فتح التوجيه ◉', callback_data=data.sender_user_id_.."/unlockfwd"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
 },
 {
-{text = 'قفل الملفات ◉', callback_data=data.sender_user_id_.."/lockfile"},{text = 'فتح الملفات ◉', callback_data=data.sender_user_id_.."/unlockfile"},
-},
-{
-{text = 'قفل الجهات ◉', callback_data=data.sender_user_id_.."/lockphone"},{text = 'فتح الجهات ◉', callback_data=data.sender_user_id_.."/unlockphone"},
-},
-{
-{text = 'قفل الكلايش ◉', callback_data=data.sender_user_id_.."/lockposts"},{text = 'فتح الكلايش ◉', callback_data=data.sender_user_id_.."/unlockposts"},
-},
-{
-{text = 'قفل التكرار ◉', callback_data=data.sender_user_id_.."/lockflood"},{text = 'فتح التكرار ◉', callback_data=data.sender_user_id_.."/unlockflood"},
-},
-{
-{text = 'قفل الفارسيه ◉', callback_data=data.sender_user_id_.."/lockfarse"},{text = 'فتح الفارسيه ◉', callback_data=data.sender_user_id_.."/unlockfarse"},
-},
-{
-{text = 'قفل السب ◉', callback_data=data.sender_user_id_.."/lockfshar"},{text = 'فتح السب ◉', callback_data=data.sender_user_id_.."/unlockfshar"},
-},
-{
-{text = 'قفل الانجليزيه ◉', callback_data=data.sender_user_id_.."/lockenglish"},{text = 'فتح الانجليزيه ◉', callback_data=data.sender_user_id_.."/unlockenglish"},
-},
-{
-{text = 'قفل الانلاين ◉', callback_data=data.sender_user_id_.."/lockinlene"},{text = 'فتح الانلاين ◉', callback_data=data.sender_user_id_.."/unlockinlene"},
-},
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help2' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ اكتب الامر الذي تريد تنفيذه..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'تعطيل التنزيل ◉', callback_data=data.sender_user_id_.."/lockdul"},{text = 'تفعيل التنزيل ◉', callback_data=data.sender_user_id_.."/unlockdul"},
-},
-{
-{text = 'تعطيل الرابط ◉', callback_data=data.sender_user_id_.."/lock_links"},{text = 'تفعيل الرابط ◉', callback_data=data.sender_user_id_.."/unlock_links"},
-},
-{
-{text = 'تعطيل الترحيب ◉', callback_data=data.sender_user_id_.."/lockwelcome"},{text = 'تفعيل الترحيب ◉', callback_data=data.sender_user_id_.."/unlockwelcome"},
-},
-{
-{text = 'تعطيل الردود العامه ◉', callback_data=data.sender_user_id_.."/lockrepall"},{text = 'تفعيل الردود العامه ◉', callback_data=data.sender_user_id_.."/unlockrepall"},
-},
-{
-{text = 'تعطيل الايدي ◉', callback_data=data.sender_user_id_.."/lockide"},{text = 'تفعيل الايدي ◉', callback_data=data.sender_user_id_.."/unlockide"},
-},
-{
-{text = 'تعطيل الايدي بالصوره ◉', callback_data=data.sender_user_id_.."/lockidephoto"},{text = 'تفعيل الايدي بالصوره ◉', callback_data=data.sender_user_id_.."/unlockidephoto"},
-},
-{
-{text = 'تعطيل الحظر ◉', callback_data=data.sender_user_id_.."/lockkiked"},{text = 'تفعيل الحظر ◉', callback_data=data.sender_user_id_.."/unlockkiked"},
-},
-{
-{text = 'تعطيل الرفع ◉', callback_data=data.sender_user_id_.."/locksetm"},{text = 'تفعيل الرفع ◉', callback_data=data.sender_user_id_.."/unlocksetm"},
-},
-{
-{text = 'تعطيل اطردني ◉', callback_data=data.sender_user_id_.."/lockkikedme"},{text = 'تفعيل اطردني ◉', callback_data=data.sender_user_id_.."/unlockkikedme"},
-},
-{
-{text = 'تعطيل الالعاب ◉', callback_data=data.sender_user_id_.."/lockgames"},{text = 'تفعيل الالعاب ◉', callback_data=data.sender_user_id_.."/unlockgames"},
-},
-{
-{text = 'تعطيل الردود ◉', callback_data=data.sender_user_id_.."/lockrepgr"},{text = 'تفعيل الردود ◉', callback_data=data.sender_user_id_.."/unlockrepgr"},
-},
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help3' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر الحماية..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ قـفـل او فـتـح + الامــر.
-◉ قفل او فتح الامر بالتقييد.
-◉ قفل او فتح الامر بالـطرد.
-◉ قـفل او فتح الامر بالكتم.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ الـروابـط. 
-◉ المعرفات.
-◉ الشاررحه.
-◉ التـعديل.
-◉ التـثبيت.
-◉ المتحركه.
-◉ المـلفات.
-◉ الـصـور.
-◉ الـتـاك.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ المـلصقات.
-◉ الاشعارات.
-◉ الـدردشه.
-◉ الفـيديو.
-◉ لاننلاين.
-◉ التوجيه.
-◉ الاغاني.
-◉ الصوت.
-◉ الجهات.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ المـاركداون.
-◉ الكـلايش.
-◉ الممنوعه.
-◉ السيلفي.
-◉ البوتات.
-◉ التكرار.
-◉ السب.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help4' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر الادمنية..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع او تنزيل مميز.
-◉ عدد الجروب.
-◉ الغاء تقـييد.
-◉ المحظورين.
-◉ المـكتومين.
-◉ الصتلاحيات.
-◉ قائمه الـمنع.
-◉ الغاء حظر.
-◉ تاك للكل.
-◉ الغاء كتم.
-◉ الغاء منع.
-◉ المميزين.
-◉ تقييد.
-◉ كـتـم.
-◉ حـظر.
-◉ طـرد.
-◉ مـنع.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ الغاء تثـبيت.
-◉ تـثـبـيـت.
-◉ الاعدادات.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ الرابط.
-◉ القوانين.
-◉ الترحيب.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ تفعيل او تعطيل الترحيب.↑↓
-◉ اضف او مسح صلاحيه.↑↓
-◉ وضع تكرار + العدد.↑↓
-◉ كشف البوتات.↑↓
-◉ ايـدي.
-◉ جهـاتي.
-◉ رسائـلي.
-◉ سحكاتي.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ وضع + الاوامر الادناه..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ اسـم.
-◉ رابـط.
-◉ صـوره.
-◉ وصـف.
-◉ قـوانين.
-◉ ترحـيب.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ مسح + الاوامر الادناه..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ قائمه المـنع.
-◉ الصـلاحيات.
-◉ المـحظورين.
-◉ المـكتومين.
-◉ المطرودين.
-◉ الممـيزين.
-◉ القـوانين.
-◉ البـوتات.
-◉ الصـوره.
-◉ الرابـط.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help5' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر المدراء والمنشئ..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع او تنزيل ادمن
-◉ رفع او كشف القيود
-◉ تنزيل الكل
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ تفعيل او تعطيل الايدي بالصوره
-◉ تفعيل او تعطيل الايدي
-◉ تفعيل او تعطيل الردود العامه
-◉ تفعيل او تعطيل الالعاب
-◉ تفعيل او تعطيل الردود
-◉ تفعيل او تعطيل اطردني
-◉ تفعيل او تعطيل الرفع
-◉ تفعيل او تعطيل الحظر
-◉ تفعيل او تعطيل الرابط
-◉ تفعيل او تعطيل اوامر التسليه
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ تعين او مسح الايدي..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع الادمنيه
-◉ اضف او مسح رد
-◉ الادمنيه
-◉ الردود
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ مسح + عدد
-◉ مسح الادمنيه
-◉ مسح الردود
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ اوامر المنشئين الاساسين..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع او تنزيل منشئ
-◉ مسح المنشئين
-◉ المنشئين
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ اوامر المنشئين..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ مسح او مسح الاوامر المضافه
-◉ اضف مجوهرات + العدد بالرد
-◉ اضف رسائل + العدد بالرد
-◉ تعين او مسح الايدي
-◉ اضف او مسح امر
-◉ رفع/تنزيل مدير
-◉ الاوامر المضافه
-◉ مسح المدراء
-◉ الـمـدراء
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help6' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر المطورين..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ المـطور الـعـادي..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ اذاعه بالتوجيه للمجموعات
-◉ اذاعه موجهه بالتـثبيت
-◉ جلب نسخه احتياطيه
-◉ اذاعه بالتوجيه خاص
-◉ رفع نسخه احتياطيه
-◉ تغيير رابط الجروب
-◉ رفع او تنزيل مالك
-◉ اذاعه بالمجموعات
-◉ اذاعه بالتـثبيت
-◉ مسح المالكين
-◉ اذاعه خـاص
-◉ الاحصائيات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ المطور الاساسي..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ جلب او رفع نسخه احتياطيه
-◉ اذاعه بالتوجيه للمجموعات
-◉ رفع او تنزيل  مميز عام 
-◉ اذاعه موجهه بالتثبيت
-◉ اضف او مسح رد عام
-◉ اذاعه بالتوجيه خاص
-◉ تغيير رساله المغادره
-◉ مسح المميزين عام
-◉ مسح الردود العامه
-◉ رفع او تنزيل مطور 
-◉ مسح المطورين
-◉ حظر او كتم عام 
-◉ المكتومين  عام 
-◉ المحظورين عام
-◉ ضع اسم للبوت
-◉ اذاعه بالتثبيت
-◉ الاحصائيات
-◉ المطورين 
-◉ الغاء العام
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help7' or text == 'اوامر التسليه' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر التسليه..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← الامر
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← متوحد 
-◉ تاك للمتوحدين
-◉ مسح المتوحدين
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← رقاصه
-◉ تاك للرقصات
-◉ مسح الرقصات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← ابني
-◉ تاك لولادي
-◉ مسح ولادي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← بنتي
-◉ تاك لبناتي
-◉ مسح بناتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← قطتي
-◉ تاك للقطط
-◉ مسح القطط
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← دكري
-◉ تاك للدكراتي
-◉ مسح دكراتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← فاشل
-◉ تاك للفشله
-◉ مسح الفشله
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← حيوان
-◉ تاك للحيونات
-◉ مسح الحيوانات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← خاينه
-◉ تاك للخينات
-◉ مسح الخينات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← عبيط
-◉ تاك للعبايط
-◉ مسح العبايط
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← خاين
-◉ تاك للخونه
-◉ مسح الخونه
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← مراتي
-◉ تاك لمرتاتي
-◉ مسح مرتاتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← شاذ
-◉ تاك للشواذ
-◉ مسح الشواذ
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← خطبتي
-◉ تاك لخطبتي
-◉ مسح خطبتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← علق
-◉ تاك للعلوق
-◉ مسح العلوق
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← مزه
-◉ تاك للمزز
-◉ مسح المزز
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← وتكه
-◉ تاك للوتكات
-◉ مسح الوتكات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← كلب
-◉ تاك للكلاب
-◉ مسح الكلاب
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← قرد 
-◉ تاك للقرود
-◉ مسح القرود
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← بقره
-◉ تاك للبقرات
-◉ مسح البقرات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← غبي
-◉ تاك للاغبياء
-◉ مسح الاغبياء
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← حمار
-◉ تاك للحمير
-◉ مسح الحمير
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل 
-◉ بقلبي او من قلبي
-◉ تاك للي بقلبي
-◉ مسح اللي بقلبي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← زوجتي
-◉ تاك للزوجات
-◉ مسح الزوجات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← مطلقه
-◉ تاك للمطلقات
-◉ مسح المطلقات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help8' then
-if not Sudo(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قم بأختيار اللغه.. ↑↓
-◉ Choose language.. ↑↓ 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'english 𝅘𝅥𝅮', callback_data="/add"},{text = 'عربي 𝅘𝅥𝅮', callback_data="/help90"},
-},
-{
-{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ', url="t.me/X_G_33 "},
-},
-{
-{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"},
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 
-if Text == '/help90' then
-if not Sudo(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+
+
+if text ==  '/help2' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ اهلا بك في قسم الاوامر ..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ اليك الاوامر الخاص بسورس سوريا .
-◉ اختر الامر الذي تريده من الازرار بلاسفل .
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
+⇊ 『اوامر التفعيل』 والتعطي ●
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '◉ اوامر الحمايه .', callback_data="/help3"},{text = '◉ اوامر الادمنيه .', callback_data="/help4"},
+{text = 'تفعيل اطردني', callback_data="/opCick"},{text = 'تعطيل اطردني', callback_data="/lockCick"},
 },
 {
-{text = '◉ اوامر الاداره .', callback_data="/help5"},{text = '◉ اوامر المطور .', callback_data="/help6"},
+{text = 'تفعيل التحقق', callback_data="/lockCickp"},{text = 'تعطيل التحقق', callback_data="/opCickp"},
 },
 {
-{text = '◉ اوامر التسليه .', callback_data="/help7"},
+{text = 'تفعيل الرابط', callback_data="/locklinka"},{text = 'تعطيل الرابط', callback_data="/opalinka"},
 },
 {
-{text = '◉ اوامر القفل .', callback_data="/help1"},{text = '◉ اوامر التعطيل .', callback_data="/help2"},
+{text = 'تفعيل مريم', callback_data="/Loumarem"},{text = 'تعطيل مريم', callback_data="/thomarem"},
 },
 {
-{text = '☊.BACK.☊', callback_data="/help8"},
+{text = 'تفعيل صورتي', callback_data="/lookpohi"},{text = 'تعطيل صورتي', callback_data="/opphotop"},
+},
+{
+{text = 'تفعيل الزخرفه', callback_data="/Lokzal"},{text = 'تعطيل الزخرفه', callback_data="/opeza"},
+},
+{
+{text = 'تفعيل  انا مين', callback_data="/lockanmen"},{text = 'تعطيل انا مين', callback_data="/oppganmen"},
+},
+{
+{text = 'تفعيل ضافني', callback_data="/lockbafne"},{text = 'تعطيل ضافني', callback_data="/opaDRGfe"},
+},
+{
+{text = 'تفعيل الالعاب', callback_data="/lockgams"},{text = 'تعطيل الالعاب', callback_data="/opagams"},
+},
+{
+{text = 'تفعيل الايدي', callback_data="/lockid"},{text = 'تعطيل الايدي', callback_data="/opaid"},
+},
+{
+{text = 'تفعيل الترحيب', callback_data="/lockwelcm"},{text = 'تعطيل الترحيب', callback_data="/opawelcm"},
+},
+{
+{text = 'تفعيل نسبه الكره', callback_data="/locnspm"},{text = 'تعطيل نسبه الكره', callback_data="/opansamp"},
+},
+{
+{text = 'تفعيل نسبه الانوثه ', callback_data="/locknsamgk"},{text = 'تعطيل نسبه الانوثه ', callback_data="/opansamg"},
+},
+{
+{text = 'تفعيل نسبة الحب', callback_data="/locknsak"},{text = 'تعطيل نسبة الحب', callback_data="/opanams"},
+},
+{
+{text = 'تفعيل نسبة الرجوله', callback_data="/lockman"},{text = 'تعطيل  نسبة الرجوله', callback_data="/opamanh"},
+},
+{
+{text = 'تفعيل نسبه جمالي', callback_data="/lockgmale"},{text = 'تعطيل نسبه جمالي', callback_data="/opagmale"},
+},
+{
+{text = 'تفعيل حساب العمر', callback_data="/lockamr"},{text = 'تعطيل حساب العمر', callback_data="/opamar"},
+},
+{
+{text = 'تفعيل all', callback_data="/lockall"},{text = 'تعطيل all', callback_data="/opaall"},
+},
+{
+{text = 'تفعيل ردود السورس', callback_data="/lockreb"},{text = 'تعطيل ردود السورس', callback_data="/opareb"},
+},
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
------------------------------- callback add dev mr sofi
-if Text == '/mute-name' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+
+if text ==  '/help3' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉️ ❬ m 1 ❭ Orders Protect Group ⇊
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Lock «Open + it
-◉ Lock «» Open ❬ All ❭
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Chat
-◉ Knows
-◉ Pictures
-◉ videos
-◉ Sticker
-◉ files
+ ●️ 『 m 1 』 Orders Protect Group ⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Lock ↵Open + it
+● Lock ↵» Open 『 All 』
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Chat
+● Knows
+● Pictures
+● videos
+● Sticker
+● files
 Mobile moving
-◉ Lift
-◉ Audio
-◉ Optiments
-◉ Welcome
-◉ The decorative
-◉ Translate
-◉ Responses
-◉ Guidance
-◉ Notifications
-◉ Crown
-◉ Delete link
-◉ expulsion
-◉ Games
-◉ Novels
-◉ towers
-◉ Meanings of names
-◉ Welcome
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Links
-◉ Guidance
-◉ popcorn
-◉ Bots
-◉ Prohibited
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+● Lift
+● Audio
+● Optiments
+● Welcome
+● The decorative
+● Translate
+● Responses
+● Guidance
+● Notifications
+● Crown
+● Delete link
+● expulsion
+● Games
+● Novels
+● towers
+● Meanings of names
+● Welcome
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Links
+● Guidance
+● popcorn
+● Bots
+● Prohibited
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/sofi' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text ==  '/help4' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 2 ❭ 2 ◉ entertainment orders ⇊
-◉ Lifting «» Download + it
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ and Take
-◉ Crown for Soutat
-◉ Wipe Wattat
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉
-◉ Crown for drapes
-◉ Clear Docks
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Jeep
-◉ Crown for bodies
-◉ Scanning
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ animal
-◉ Crown for animals
-◉ Animals
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ failed
-◉ Crown for failure
-◉ Scan of failure
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Dermatology
-◉ Crown for perforation
-◉ Scanning
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Catte
-◉ Crown for cats
-◉ Cats survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
+ ● 『 m 3 』 3 ● Tall orders ⇊
+● Lifting ↵ Download + it
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● my son
+● Crown for children
+● Survey sons
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Crown for girls
+● Clear the girls
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+    ● Habayeb survey..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● my husDRGd
+● Crown for couples
+● Survey of couples
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● My wife
+● Crown for the wives
+● Wipe waves
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Khayen
+● Crown for him
+● Clear the moon
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Crown for the two
+● Khiennine survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Abit
+● Crown for the mixture
+● Survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Crown for Paradise
+● Storage survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☊.BACK.☊', callback_data="/add"}},
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
+},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-names' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text ==  '/hiddnt' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 3 ❭ 3 ◉ Tall orders ⇊
-◉ Lifting «← Download + it
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ my son
-◉ Crown for children
-◉ Survey sons
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Crown for girls
-◉ Clear the girls
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ Habayeb survey..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ my husband
-◉ Crown for couples
-◉ Survey of couples
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ My wife
-◉ Crown for the wives
-◉ Wipe waves
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Khayen
-◉ Crown for him
-◉ Clear the moon
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Crown for the two
-◉ Khiennine survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Abit
-◉ Crown for the mixture
-◉ Survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Crown for Paradise
-◉ Storage survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+● 『 m 4 』 Orders of members ⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Age account
+● Picture ↵
+● Quran
+● Settings
+● Qatari
+● Delete ↵ Sell 『 Qatari
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● My messages ↵ Delete 
+● Decorating ↵ Songs
+● Movies ↵ Cartoon
+● Translate + novels
+● YouTube ↵ Games
+● Weather + area
+● Dark ↵link
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● My name is 
+● My Juices ↵ Delete my juices
+● Powers ↵ Ping
+● Say + word
+● Prohibited Words
+● I am Maine
+● Say + word
+● Qatah ↵ dog
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Source ↵Developer
+● link ↵hands
+● Rank ↵ Revealed
+● Reply you, Bot
+● Any your opinion Yapot
+● Hino ↵ Hinha
+● Boso ↵ her pussy
+● Mido ↵ 
+● Delete link
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-id' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text ==  '/help5' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 4 ❭ Orders of members ⇊
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Age account
-◉ Picture «←
-◉ Quran
-◉ Settings
-◉ Qatari
-◉ Delete «← Sell ❬ Qatari
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ My messages «← Delete 
-◉ Decorating «← Songs
-◉ Movies «← Cartoon
-◉ Translate + novels
-◉ YouTube ← Games
-◉ Weather + area
-◉ Dark «link
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ My name is 
-◉ My Juices «← Delete my juices
-◉ Powers «← Ping
-◉ Say + word
-◉ Prohibited Words
-◉ I am Maine
-◉ Say + word
-◉ Qatah «← dog
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Source «Developer
-◉ link «hands
-◉ Rank «← Revealed
-◉ Reply you, Bot
-◉ Any your opinion Yapot
-◉ Hino «← Hinha
-◉ Boso «← her pussy
-◉ Mido «← ←
-◉ Delete link
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+ ●مرحب بيك في اوامر للمطورين ●
+اوامر المطورين ⇊
+『المطور 』  ⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●تفعيل ⋙ تعطيل 
+ ●المجموعات ⋙ المشتركين ⋙ الاحصائيات
+ ●رفع ⋙ تنزيل منشئ اساسي
+ ●مسح الاساسين ⋙ المنشئين الاساسين
+ ●مسح المنشئين ⋙ المنشئين
+ ●اسم ~ ايدي + بوت غادر 
+ ●اذاعه 
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+『المطور الاساسي+ المطور الثانوي』
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●تفعيل
+ ●تعطيل
+ ●مسح الاساسين
+ ●المنشئين الاساسين
+ ●رفع/تنزيل منشئ اساسي
+ ●رفع/تنزيل مطور اساسي 
+ ●  رفع/تنزيل مدير عام
+ ●  رفع /تنزيل ادمن عام
+ ●مسح المطورين
+ ●المطورين
+ ●رفع | تنزيل مطور
+ ●اسم البوت + غادر
+ ●غادر
+ ●اسم بوت + الرتبه
+ ●تحديث السورس
+ ●حضر عام
+ ●كتم عام
+ ●الغاء العام
+ ●قائمه العام
+ ●مسح قائمه العام
+ ●جلب النسخه
+ ●رفع النسخه
+ ● جلب المشتركين
+ ● رفع المشتركين
+ ●اذاعه خاص
+ ●اذاعه
+ ●اذاعه بالتوجيه
+ ●اذاعه بالتوجيه خاص
+ ●اذاعه بالتثبيت
+ ●جلب نسخه البوت
+ ●رفع نسخه البوت
+ ●ضع عدد الاعضاء + العدد
+ ●ضع كليشه المطور
+ ●تفعيل/تعطيل الاذاعه
+ ●تفعيل/تعطيل البوت الخدمي
+ ●تفعيل/تعطيل التواصل
+ ●تغير اسم البوت
+ ●اضف/مسح رد عام
+ ●الردود العامه
+ ●مسح الردود العامه
+ ●الاشتراك الاجباري
+ ●تعطيل الاشتراك الاجباري
+ ●تفعيل الاشتراك الاجباري
+ ●مسح رساله الاشتراك
+ ●تغير رساله الاشتراك
+ ●تغير الاشتراك
+ ●الاحصائيات
+ ●المشتركين
+ ●المجموعات 
+ ●تفعيل/تعطيل المغادره
+ ●مسح الجروبات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-photo' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text ==  '/help6' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 5 ❭ Orders of developers ⇊
-◉ Developer ←⇊
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Lifting «download ❬ owner ❭
-◉ Change the group link
-◉ Destination of groups
-◉ Destination by guidance for groups
-◉ A radio face
-◉ Special radio
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ A special guidance
-◉ Fix the installation
-◉ bring back copy
-◉ raise its backup copy
-◉ Statistics
-◉ Delete owners
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ Basic Developer..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Add "← Delete a general response
-◉ Lifting «download ❬ special year ❭
-◉ Featured Survey
-◉ General responses
-◉ Delete public responses
-◉ A special guidance
-◉ Destination by guidance for groups
-◉ Fix the installation
-◉ A radio face
-◉ bring «← raising 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Statistics
-◉ Lifting «download ❬ Developer ❭
-◉ Developers «← Delete developers
-◉ Put the name of the bot
-◉ Change the departing message
-◉ Prohibition «← Mute ❬ General ❭
-◉ General makers
-◉ Preventors General
-◉ Canceling the general
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+    『اوامر الاعضاء ⇊』     
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●   غنيلي ⇔ حساب العمر   
+ ●   صورتي ⇔ نسبه جمالي
+ ●   نقاطي
+ ●    مسح ⇔ بيع 『نقاطي 』 
+ ●   رسائلي ⇔  مسح 『رسائلي 』 
+ ●   زخرفه ⇔ اغاني 
+ ●   اسمي ⇔ الرتبه
+ ●  جهاتي 
+ ●  صلاحياتي
+ ●  قول +الكلمه
+ ●  تفعيل  تعطيل+ اطردني   
+ ●   سورس ⇔ المطور
+ ●   الرابط ⇔ ايدي
+ ●   رتبتي ⇔ كشف
+ ●   رد  انت يا بوت
+ ●  ي رايك يابوت
+ ●   هينو ⇔ هينها
+ ●   بوسو ⇔ بوسها
+ ●   بتحب دي ⇔ بتحب ده
+ ●  بوت الحذف⇔رابط الحذف
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
---- callback added
-if Text == '/add' then
+if text ==  '/help7' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
 local Teext =[[
-◉ Welcome to the orders section.. ↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ You can use the buttons..↑↓
-◉ By putting pressure on them..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+اوامر 『التسليه』  ⇊
+رفع ⇔ تنزيل + الامر
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ متوحد
+ ●تاك للمتوحدين
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ كلب
+ ●تاك للكلاب
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ قرد
+ ●تاك للقرود
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ زوجتي
+ ●تاك للزوجات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ قلبي
+ ●تاك لقلبي
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ بقره
+ ●تاك للبقرات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ ارمله
+ ●تاك للارامل
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ خول
+ ●تاك للخولات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ حمار
+ ●تاك للحمير
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ مزه
+ ●تاك للمزز
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ وتكه
+ ●تاك للوتكات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ كس
+ ●تاك للاكساس
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ ابني
+ ●تاك لولادي 
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ بنتي
+ ●تاك لبناتي
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ خاين
+ ●تاك للخاينين
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع  ⋙ علي زبي
+ ●تنزيل ⋙من زبي 
+ ●تاك للمتناكين
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '◉ protection', callback_data="/mute-name"},{text = '◉ addictive', callback_data="/sofi"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
 },
 {
-{text = '◉ Administration', callback_data="/change-names"},
-},
-{
-{text = '◉ Developer', callback_data="/change-id"},{text = '◉ Disabled orders', callback_data="/change-photo"},
-},
-{
-{text = '☊.BACK.☊', callback_data="/help8"},
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
+
+if text ==  '/hide' then
+local hide = 'تم اخفاء الاوامر'
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(hide)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
 end
-if data.ID == "UpdateNewMessage" then  -- new msg
-msg = data.message_
-text = msg.content_.text_
+if text ==  '/help8' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Teext =[[
+ اهلا بك في قسم الاوامر ..↑↓
+اختر الامر الذي تريدها .↑↓
+ده من الازرار بلاسفل . ↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '◗اوامر المطورين◖', callback_data="/help5"},{text = '◗اوامر التسليه◖', callback_data="/help7"},
+},
+{
+{text = '◗اوامر الاعضاء◖', callback_data="/help6"},
+},
+{
+{text = '◗اوامر التعطيل◖', callback_data="/help2"},{text = '◗اوامر القفل◖', callback_data="/help1"},
+},
+{
+{text = '•تــغــير الــلــغــه•', callback_data="/help90"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+
+if text ==  '/help9' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Teext =[[
+● 『 m 5 』 Orders of developers ⇊
+● Developer ⋙⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Lifting «download 『 owner 』
+● Change the group link
+● Destination of groups
+● Destination by guidance for groups
+● A radio face
+● Special radio
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● A special guidance
+● Fix the installation
+● bring back copy
+● raise its backup copy
+● Statistics
+● Delete owners
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+   ● Basic Developer..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Add "← Delete a general response
+● Lifting «download 『 special year 』
+● Featured Survey
+● General responses
+● Delete public responses
+● A special guidance
+● Destination by guidance for groups
+● Fix the installation
+● A radio face
+● bring ↵ raising 
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Statistics
+● Lifting «download 『 Developer 』
+● Developers ↵ Delete developers
+● Put the name of the bot
+● Change the departing message
+● Prohibition ↵ Mute 『 General 』
+● General makers
+● Preventors General
+● Canceling the general
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text ==  '/help10' then
+local help_text = database:get(bot_id..'help10_text')
+local Teext =[[
+● 『 m 2 』 2 ● entertainment orders ⇊
+● Lifting ↵» Download + it
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● and Take
+● Crown for Soutat
+● Wipe Wattat
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+●
+● Crown for drapes
+● Clear Docks
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Jeep
+● Crown for bodies
+● Scanning
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● animal
+● Crown for animals
+● Animals
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● failed
+● Crown for failure
+● Scan of failure
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Dermatology
+● Crown for perforation
+● Scanning
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Catte
+● Crown for cats
+● Cats survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+
+if text ==  '/help90' then
+local Teext =[[
+● Welcome to the orders section↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '˹protection˼', callback_data="/help3"},{text = '˹addictive˼', callback_data="/help10"},
+},
+{
+{text = '˹Administration˼', callback_data="/help4"},
+},
+{
+{text = '˹Developer˼', callback_data="/help9"},{text = '˹Disabled orders˼', callback_data="/hiddnt"},
+},
+{
+{text = '•تــغــير الــلــغــه•', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
 ------------------------------ callback add dev mr sofi
 if Text == '/mute-name' then
 local Teext =[[
