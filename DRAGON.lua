@@ -15602,7 +15602,7 @@ DeleteMessage(msg.chat_id_, {[0] = msg.id_})
 return false
 end
 --------------------------------------------------------------------------------------------------------------
-if msg.sender_user_id_ and GBan_User(msg.sender_user_id_) then 
+if msg.sender_user_id_ and GDRG_User(msg.sender_user_id_) then 
 chat_kick(msg.chat_id_,msg.sender_user_id_) 
 DeleteMessage(msg.chat_id_, {[0] = msg.id_}) 
 return false 
