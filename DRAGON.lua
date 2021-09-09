@@ -1073,7 +1073,7 @@ end
 
 ------by-banda--
 if Chat_Type == 'UserBot' then
-if text ==  '/start' or text == '『رجوع』' then 
+if text == '/start' or text == '『رجوع』' then 
 if DevSoFi(msg) then
 if not msa3d(msg) then
 local bl = '●انت الان المطور الثانوي في البوت \n● سورس سوريا\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/X_G_33)'
@@ -1131,7 +1131,7 @@ end
 --------------------------------------------------------------------------------------------------------------
 
 if Chat_Type == 'UserBot' then
-if text ==  '/start' or text == '『رجوع』' then  
+if text == '/start' or text == '『رجوع』' then  
 if msa3d(msg) then
 local bl = '●انت الان المطور الاساسي في البوت \n● سورس سوريا\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/X_G_33)'
 local keyboard = {
@@ -1170,7 +1170,7 @@ if result.forward_info_.sender_user_id_ then
 id_user = result.forward_info_.sender_user_id_    
 end     
 tdcli_function ({ID = "GetUser",user_id_ = id_user},function(arg,data) 
-if text ==  'حظر' then
+if text == 'حظر' then
 local Name = '['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..id_user..')'
 local Text = ' ●المستخدم ⋙ 『'..Name..'』\n ●تم حظره من التواصل'
 sendText(SUDO,Text,msg.id_/2097152/0.5,'md')
@@ -1233,7 +1233,7 @@ end,nil)
 end,nil)
 end 
 
-if text ==  'تفعيل التواصل ' and DevSoFi(msg) then  
+if text == 'تفعيل التواصل ' and DevSoFi(msg) then  
 if database:get(bot_id..'Tuasl:Bots') then
 database:del(bot_id..'Tuasl:Bots') 
 Text = '\n ● تم تفعيل التواصل ' 
@@ -1242,7 +1242,7 @@ Text = '\n ● بالتاكيد تم تفعيل التواصل '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text ==  'تعطيل التواصل ' and DevSoFi(msg) then  
+if text == 'تعطيل التواصل ' and DevSoFi(msg) then  
 if not database:get(bot_id..'Tuasl:Bots') then
 database:set(bot_id..'Tuasl:Bots',true) 
 Text = '\n ● تم تعطيل التواصل' 
@@ -1251,7 +1251,7 @@ Text = '\n ● بالتاكيد تم تعطيل التواصل'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text ==  'تفعيل البوت الخدمي ' and DevSoFi(msg) then  
+if text == 'تفعيل البوت الخدمي ' and DevSoFi(msg) then  
 if database:get(bot_id..'Free:Bots') then
 database:del(bot_id..'Free:Bots') 
 Text = '\n ● تم تفعيل البوت الخدمي ' 
@@ -1260,7 +1260,7 @@ Text = '\n ● بالتاكيد تم تفعيل البوت الخدمي '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text ==  'تعطيل البوت الخدمي ' and DevSoFi(msg) then  
+if text == 'تعطيل البوت الخدمي ' and DevSoFi(msg) then  
 if not database:get(bot_id..'Free:Bots') then
 database:set(bot_id..'Free:Bots',true) 
 Text = '\n ● تم تعطيل البوت الخدمي' 
@@ -1270,7 +1270,7 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text and database:get(bot_id..'Start:Bots') then
-if text ==  'الغاء' or text == 'الغاء' then   
+if text == 'الغاء' or text == 'الغاء' then   
 send(msg.chat_id_, msg.id_,' ● الغاء حفظ كليشه ستارت')
 database:del(bot_id..'Start:Bots') 
 return false
@@ -1280,25 +1280,25 @@ send(msg.chat_id_, msg.id_,' ● تم حفظ كليشه ستارت')
 database:del(bot_id..'Start:Bots') 
 return false
 end
-if text ==  'اضف رد استارت' and DevSoFi(msg) then 
+if text == 'اضف رد استارت' and DevSoFi(msg) then 
 database:set(bot_id..'Tuasl:Bots',true) 
 send(msg.chat_id_, msg.id_,' ● ارسل لي رد الان')
 return false
 end
-if text ==  'مسح رد استارت' and DevSoFi(msg) then 
+if text == 'مسح رد استارت' and DevSoFi(msg) then 
 database:del(bot_id..'Tuasl:Bots') 
 send(msg.chat_id_, msg.id_,' ● تم مسح رد استارت')
 end
-if text ==  'ضع كليشه ستارت' and DevSoFi(msg) then 
+if text == 'ضع كليشه ستارت' and DevSoFi(msg) then 
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,' ● ارسل لي الكليشه الان')
 return false
 end
-if text ==  'مسح كليشه ستارت' and DevSoFi(msg) then 
+if text == 'مسح كليشه ستارت' and DevSoFi(msg) then 
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,' ● تم مسح كليشه ستارت')
 end
-if text ==  'معلومات السيرفر' and msa3d(msg) then 
+if text == 'معلومات السيرفر' and msa3d(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -1314,13 +1314,13 @@ echo '●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●\n 👨🏾‍�
 echo '●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●\n 🔌l •⊱ 『 مـده تـشغيـل الـسـيـرفـر 』 ⊰•\n『* '"$uptime"'*』'
 ]]):read('*all'))  
 end
-if text ==  'تحديث السورس ' and DevSoFi(msg) then 
+if text == 'تحديث السورس ' and DevSoFi(msg) then 
 os.execute('rm -rf DRAGON.lua')
 os.execute('wget https://raw.githubusercontent.com/gret7/new/main/DRAGON.lua')
 send(msg.chat_id_, msg.id_,' ● تم تحديث السورس')
 dofile('DRAGON.lua')  
 end
-if text ==  'جلب المشتركين' and DevSoFi(msg) then 
+if text == 'جلب المشتركين' and DevSoFi(msg) then 
 local list = database:smembers(bot_id..'User_Bot') 
 local t = '{"users":['   
 for k,v in pairs(list) do 
@@ -1337,7 +1337,7 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './users.json', ' عدد المشتركين { '..#list..'}') 
 end
 
-if text ==  'رفع المشتركين' and DevSoFi(msg) then 
+if text == 'رفع المشتركين' and DevSoFi(msg) then 
 function by_reply(extra, result, success)    
 if result.content_.document_ then  
 local ID_FILE = result.content_.document_.document_.persistent_id_  
@@ -1355,7 +1355,7 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
 end
 
-if text ==  '『تواصل لسورس』' and DevSoFi(msg) then 
+if text == '『تواصل لسورس』' and DevSoFi(msg) then 
 local Text = 'قسم مطورين السورس لدخول الي حسابتهم'
 local Key = {
 {'⇣───『 قـناه المطورين』───⇣'},
@@ -1364,7 +1364,7 @@ local Key = {
 }
 send_inline_key(msg.chat_id_,Text,Key)
 end 
-if text ==  '『اوامر اضف』' and DevSoFi(msg) then 
+if text == '『اوامر اضف』' and DevSoFi(msg) then 
 local Text = 'قسم مسح واضف مثلا اضف رد عام مسح رد عام'
 local Key = {
 {'اضف رد عام','مسح رد عام'},
@@ -1380,7 +1380,7 @@ send_inline_key(msg.chat_id_,Text,Key)
 end 
 
 
-if text ==  '『اوامر التفعيل』' and DevSoFi(msg) then 
+if text == '『اوامر التفعيل』' and DevSoFi(msg) then 
 local Text = 'قسم التفعيل والتعطيل لتفعيل كل شئ في البوت'
 local Key = {
 {'تعطيل الاذاعه','تفعيل الاذاعه'},
@@ -1393,7 +1393,7 @@ local Key = {
 }
 send_inline_key(msg.chat_id_,Text,Key)
 end 
-if text ==  '『اوامر الحمايه』' and DevSoFi(msg) then 
+if text == '『اوامر الحمايه』' and DevSoFi(msg) then 
 local Text = 'قسم الحمايه يوجد في المطورين والثانوين والخ...'
 local Key = {
 {'قائمه الكتم العام','المطورين','قائمه العام'},
@@ -1405,7 +1405,7 @@ local Key = {
 }
 send_inline_key(msg.chat_id_,Text,Key)
 end 
-if text ==  '『اوامر الاذاعه』' and DevSoFi(msg) then 
+if text == '『اوامر الاذاعه』' and DevSoFi(msg) then 
 local Text = 'قسم الاذاعات لعمل اذاعه في البوت'
 local Key = {
 {'اذاعه ','اذاعه خاص '},
@@ -1417,7 +1417,7 @@ send_inline_key(msg.chat_id_,Text,Key)
 end 
 
 
-if text ==  'جلب المطورين' and DevSoFi(msg) then  
+if text == 'جلب المطورين' and DevSoFi(msg) then  
 local list = database:smembers(bot_id..'Sudo:User') 
 local t = '{"users":['   
 for k,v in pairs(list) do 
@@ -1433,7 +1433,7 @@ File:write(t)
 File:close() 
 sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './sudos3.json', ' عدد المطورين { '..#list..'}') 
 end 
-if text ==  'رفع المطورين' and DevSoFi(msg) then 
+if text == 'رفع المطورين' and DevSoFi(msg) then 
 function by_reply(extra, result, success)    
 if result.content_.document_ then  
 local ID_FILE = result.content_.document_.document_.persistent_id_  
@@ -1450,11 +1450,11 @@ end
 end 
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
 end
-if text ==  'الاصدار' and DevSoFi(msg) then 
+if text == 'الاصدار' and DevSoFi(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ● اصدار سورس سوريا{ S:1✓}')
 end
-if text ==  '⇣───『 قـناه المطورين』───⇣' then
+if text == '⇣───『 قـناه المطورين』───⇣' then
 local Text = [[ 
 قناه مطورين السورس 🍂
 محتاج تنصب بوت حمايه ببلاش تواصل معانا✅
@@ -1468,7 +1468,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 
-if text ==  'معلومات الكيبورد' and DevSoFi(msg) then
+if text == 'معلومات الكيبورد' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
 [CH](t.me/X_G_33)مرحبا بك مطوري سأشرح لك كل شئ في لوحه الاوامر بالتفصيل
@@ -1507,7 +1507,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' ..token) 
 send(msg.chat_id_, msg.id_,' ') 
 end
-if text ==  'سوريا مبرمج السورس' and DevSoFi(msg) then
+if text == 'سوريا مبرمج السورس' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
 『المبرمج سوريا لو حابب تتواصل معاه
@@ -1520,7 +1520,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text ==  'قناه السورس' and DevSoFi(msg) then
+if text == 'قناه السورس' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
  ● من أحسن السورسات على التليجرام سورس سوريا ●
@@ -1559,21 +1559,21 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 
-if text ==  'الاحصائيات' and msa3d(msg) then 
+if text == 'الاحصائيات' and msa3d(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = ' ● الاحصائيات  \n'..' ● عدد الجروبات  ⋙ {'..Groups..'}'..'\n ●  عدد المشتركين  ⋙ {'..Users..'}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text ==  'المشتركين' and msa3d(msg) then 
+if text == 'المشتركين' and msa3d(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n ● المشتركين ⋙{`'..Users..'`}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text ==  'الجروبات ' and msa3d(msg) then 
+if text == 'الجروبات ' and msa3d(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n ● الجروبات ⋙{`'..Groups..'`}'
@@ -1650,7 +1650,7 @@ database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_i
 send(msg.chat_id_, msg.id_," ● ارسل لي التوجيه الان")
 return false
 end 
-if text ==  'جلب النسخه' and DevSoFi(msg) then 
+if text == 'جلب النسخه' and DevSoFi(msg) then 
 GetFile_Bot(msg)
 end
 if text ==  "تنظيف المشتركين " and msa3d(msg) then 
@@ -1863,7 +1863,7 @@ end,nil)
 end
 end
 if database:get(bot_id..'Set:Name:Bot'..msg.sender_user_id_) then 
-if text ==  'الغاء' or text == 'الغاء ' then   
+if text == 'الغاء' or text == 'الغاء ' then   
 send(msg.chat_id_, msg.id_," ● تم الغاء حفظ اسم البوت")
 database:del(bot_id..'Set:Name:Bot'..msg.sender_user_id_) 
 return false  
@@ -1874,7 +1874,7 @@ send(msg.chat_id_, msg.id_, " ● تم حفظ الاسم")
 return false
 end 
 if database:get(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text ==  'الغاء' or text == 'الغاء ●' then   
+if text == 'الغاء' or text == 'الغاء ●' then   
 send(msg.chat_id_, msg.id_," ● تم الغاء الاذاعه للخاص")
 database:del(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1908,7 +1908,7 @@ end
 if database:get(bot_id.."YYYBD_aza3h3" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 local msa3d = database:get(bot_id.."id:msa3d:ban")
-if text ==  'الغاء' or text == 'الغاء ●' then   
+if text == 'الغاء' or text == 'الغاء ●' then   
 send(msg.chat_id_, msg.id_," ● تم الغاء الرساله للمطور")
 database:del(bot_id.."YYYBD_aza3h3" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1927,7 +1927,7 @@ end
 end,nil)
 end
 if database:get(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text ==  'الغاء' or text == 'الغاء ●' then   
+if text == 'الغاء' or text == 'الغاء ●' then   
 send(msg.chat_id_, msg.id_," ● تم الغاء الاذاعه")
 database:del(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1960,7 +1960,7 @@ database:del(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_i
 end
 
 if database:get(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text ==  'الغاء' or text == 'الغاء ●' then   
+if text == 'الغاء' or text == 'الغاء ●' then   
 send(msg.chat_id_, msg.id_," ● تم الغاء الاذاعه")
 database:del(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
@@ -1980,7 +1980,7 @@ database:del(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_
 end 
 end
 if database:get(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text ==  'الغاء' or text == 'الغاء ●' then   
+if text == 'الغاء' or text == 'الغاء ●' then   
 send(msg.chat_id_, msg.id_," ● تم الغاء الاذاعه")
 database:del(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
@@ -2042,7 +2042,7 @@ database:set(bot_id..'text:ch:user',texxt)
 send(msg.chat_id_, msg.id_,' ● تم تغيير رسالة الاشتراك ')
 end
 
-if text ==  'تفعيل' and Sudo(msg) then
+if text == 'تفعيل' and Sudo(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database :get(bot_id ..'text:ch:user')
 if textchuser then
@@ -2089,7 +2089,7 @@ end,nil)
 end,nil) 
 end,nil)
 end
-if text ==  'تعطيل' and Sudo(msg) then
+if text == 'تعطيل' and Sudo(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database :get(bot_id ..'text:ch:user')
 if textchuser then
@@ -2126,7 +2126,7 @@ end
 end,nil) 
 end,nil) 
 end
-if text ==  'تفعيل' and not Sudo(msg) and not database :get(bot_id ..'Free:Bots') then
+if text == 'تفعيل' and not Sudo(msg) and not database :get(bot_id ..'Free:Bots') then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database :get(bot_id ..'text:ch:user')
 if textchuser then
@@ -8489,55 +8489,56 @@ send(msg.chat_id_, msg.id_,Textt)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 end
-if text == ("رفع مشرف") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
+if text ==  ("رفع مشرف") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 function start_function(extra, result, success)
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
-return false  
-end
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n✭︙  العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'siria100')..')'
-status  = '\n✭︙  الايدي » `'..result.sender_user_id_..'`\n✭︙  تم رفعه مشرف '
-send(msg.chat_id_, msg.id_, usertext..status)
-https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=True&can_restrict_members=false&can_pin_messages=True&can_promote_members=false")
-end,nil)
+https.request("https://api.telegram.org/bot" .. token .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_invite_users=True")
+local Text = "● تم ترقيته مشرف"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تعديل الصلاحيات', callback_data='amr@'..msg.sender_user_id_..'/user@'..result.sender_user_id_.."/setiinginfo"}
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
 if text and text:match("^رفع مشرف @(.*)$") and Constructor(msg) then
 local username = text:match("^رفع مشرف @(.*)$")
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
-return false  
-end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"✭︙  عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"● عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
-end      
-usertext = '\n✭︙ العضو » ['..result.title_..'](t.me/'..(username or 'siria100')..')'
-status  = '\n✭︙  تم رفعه مشرف '
-texts = usertext..status
-send(msg.chat_id_, msg.id_, texts)
-https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=True&can_restrict_members=false&can_pin_messages=True&can_promote_members=false")
+end
+https.request("https://api.telegram.org/bot" .. token .. "/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_invite_users=True")
+local Text = "● تم ترقيته مشرف"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تعديل الصلاحيات', callback_data='amr@'..msg.sender_user_id_..'/user@'..result.id_.."/setiinginfo"}
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-send(msg.chat_id_, msg.id_, '✭︙  لا يوجد حساب بهاذا المعرف')
+send(msg.chat_id_, msg.id_,"● لا يوجد حساب بهاذا المعرف")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text == ("تنزيل مشرف") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
+if text ==  ("تنزيل مشرف") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 function start_function(extra, result, success)
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
+send(msg.chat_id_, msg.id_,' ● البوت ليس ادمن يرجى ترقيتي !') 
 return false  
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n✭︙  العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'siria100')..')'
-status  = '\n✭︙  الايدي » `'..result.sender_user_id_..'`\n✭︙  تم تنزيله ادمن من الجروب'
+usertext = '\n ●  الـعـضو   ⋙ ['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+status  = '\n ●  الايدي  ⋙ `'..result.sender_user_id_..'`\n ●  تم تنزيله ادمن من الجروب'
 send(msg.chat_id_, msg.id_, usertext..status)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 end,nil)
@@ -8548,104 +8549,22 @@ end
 if text and text:match("^تنزيل مشرف @(.*)$") and Constructor(msg) then
 local username = text:match("^تنزيل مشرف @(.*)$")
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
+send(msg.chat_id_, msg.id_,' ● البوت ليس ادمن يرجى ترقيتي !') 
 return false  
 end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"✭︙  عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ●  عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
-usertext = '\n✭︙  العضو » ['..result.title_..'](t.me/'..(username or 'siria100')..')'
-status  = '\n✭︙  تم تنزيله ادمن من الجروب'
+usertext = '\n ●  الـعـضو   ⋙ ['..result.title_..'](t.me/'..(username or 'textchuser')..')'
+status  = '\n ●  تم تنزيله ادمن من الجروب'
 texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 else
 send(msg.chat_id_, msg.id_, '⚠¦ لا يوجد حساب بهاذا المعرف')
-end
-end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
-return false
-end
-
-
-if text == ("رفع مشرف") and msg.reply_to_message_id_ ~= 0 and BasicConstructor(msg) then
-function start_function(extra, result, success)
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
-return false  
-end
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n✭︙  العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'siria100')..')'
-status  = '\n ​✭︙ الايدي » `'..result.sender_user_id_..'`\n✭︙  تم رفعه مشرف بكل الصلاحيات'
-send(msg.chat_id_, msg.id_, usertext..status)
-https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=True")
-end,nil)
-end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
-return false
-end
-if text and text:match("^رفع مشرف @(.*)$") and BasicConstructor(msg) then
-local username = text:match("^رفع مشرف @(.*)$")
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
-return false  
-end
-function start_function(extra, result, success)
-if result.id_ then
-if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"✭︙  عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
-return false 
-end      
-usertext = '\n✭︙  العضو » ['..result.title_..'](t.me/'..(username or 'siria100')..')'
-status  = '\n✭︙  تم رفعه مشرف بكل الصلاحيات'
-texts = usertext..status
-send(msg.chat_id_, msg.id_, texts)
-https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=True")
-else
-send(msg.chat_id_, msg.id_, '✭︙  لا يوجد حساب بهاذا المعرف')
-end
-end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
-return false
-end
-if text == ("تنزيل مشرف") and msg.reply_to_message_id_ ~= 0 and BasicConstructor(msg) then
-function start_function(extra, result, success)
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
-return false  
-end
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n✭︙  العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'siria100')..')'
-status  = '\n✭︙  الايدي » `'..result.sender_user_id_..'`\n✭︙  تم تنزيله ادمن من الجروب بكل الصلاحيات'
-send(msg.chat_id_, msg.id_, usertext..status)
-https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
-end,nil)
-end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
-return false
-end
-if text and text:match("^تنزيل مشرف @(.*)$") and BasicConstructor(msg) then
-local username = text:match("^تنزيل مشرف @(.*)$")
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,'✭︙ البوت ليس ادمن يرجى ترقيتي !') 
-return false  
-end
-function start_function(extra, result, success)
-if result.id_ then
-if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"⚠¦ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
-return false 
-end      
-usertext = '\n✭︙  العضو » ['..result.title_..'](t.me/'..(username or 'siria100')..')'
-status  = '\n✭︙  تم تنزيله ادمن من الجروب بكل الصلاحيات'
-texts = usertext..status
-send(msg.chat_id_, msg.id_, texts)
-https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
-else
-send(msg.chat_id_, msg.id_, '✭︙  لا يوجد حساب بهاذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -9134,19 +9053,32 @@ database:del(bot_id.."Link_Group:status"..msg.chat_id_)
 send(msg.chat_id_, msg.id_," 🔴︙ تم تعطيل الرابط") 
 return false end
 end
-if text == 'المطور' or text == 'مطور' then
-tdcli_function ({ID = "GetUser",user_id_ = SUDO},function(arg,result) 
- 
- local msg_id = msg.id_/2097152/0.5
-local Text = [[
- المطور
-]]
+if text ==  "المطور" or text == "مطور" then
+local TEXT_SUD = database:get(bot_id..'TEXT_SUDO')
+if TEXT_SUDO then 
+send(msg.chat_id_, msg.id_,TEXT_SUDO)
+else
+tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
+local function taha(extra, taha, success)
+if taha.photos_[0] then
+local Name = 'ᎠᎬᏙ ΝᎬᎷᎬ -> ['..result.first_name_..'](tg://user?id='..result.id_..')\n'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '  💅 ⁽'..result.first_name_..'₎ 💅 ',url="t.me/"..result.username_}},}
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+keyboard.inline_keyboard = {
+{
+{text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""},
+},
+{
+{text = 'اضغط لاضافه البوت لمجمعتك✅ ' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else 
+sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
+ end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = SUDO, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
-
-
+end
 end
 ---------------------
 
@@ -9163,18 +9095,19 @@ database:del(bot_id.."my_photo:status"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"✭︙ تم تعطيل الصوره") 
 return false end
 end
-if text == "الرابط" then 
-tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
-local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or database:get(bot_id.."Private:Group:Link"..msg.chat_id_) 
-if linkgpp.ok == true then 
-local Teext = '✰┇'..ta.title_..'\n'..linkgpp.result 
-local inline = {{{text = ta.title_, url=linkgpp.result}},} 
-send_inline_key(msg.chat_id_,Teext,nil,inline,msg.id_/2097152/0.5) 
-else 
-send(msg.chat_id_, msg.id_,'✰┇لا يوجد رابط ارسل ضع رابط') 
-end 
-end,nil) 
-end  
+if text == 'الرابط' or text == 'رابط'  then
+local Text = [[
+•اختار نوع الرابط الي ترودي⇣
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'رابط اونلاين', callback_data="/ven2"},{text = 'رابط بالصور', callback_data="/ven1"}},   
+{{text = 'رابط بنص', callback_data="/ven3"}},
+{{text = '•ᴍʏ ᴄʜᴀɴɴᴇʟ♪', url="t.me/X_G_33"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
 if text == 'مسح الرابط' or text == 'حذف الرابط' then
 if Mod(msg) then     
 if AddChannel(msg.sender_user_id_) == false then
@@ -10815,20 +10748,187 @@ local Textxt = text:match("^قول (.*)$")
 send(msg.chat_id_, msg.id_, '['..Textxt..']')
 end
 
-if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
-data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
-if res == 200 then
-audios = json:decode(data)
-if audios.Info == true then
-local Text ='✭︙تم اختيار المقطع الصوتي لك'
-keyboard = {} 
+if text ==  "غنيلي" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(3,42); 
+local Text ='دوس علي الزرار لاختيار أغنيه أخري 🍁' 
+keyboard = {}  
 keyboard.inline_keyboard = {
-{{text = '𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙎𝙊𝙐𝙍𝘾𝙀 𝘼𝙇𝙊𝙉𝙀.',url="t.me/siria100"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+{{text = 'اغنيه اخري', callback_data="/allstate"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/faioo8/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 end
+if text == '770@#_&' then 
+Num = math.random(8,83)
+Mhm = math.random(108,143)
+Mhhm = math.random(166,179)
+Mmhm = math.random(198,216)
+Mhmm = math.random(257,626)
+local Texting = {Num,Mhm,Mhhm,Mmhm,Mhmm}
+local Rrr = Texting[math.random(#Texting)]
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/mmsst13/'..Rrr..'') 
+end
+if text == 'غنيلي تامر حسني' then 
+T = math.random(3,12)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي عمرو دياب' then 
+T = math.random(20,23)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي تامر عاشور' then 
+T = math.random(25,28)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي محمد فؤاد' then 
+T = math.random(30,38)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي حماقي' then 
+T = math.random(51,61)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي ابو الانوار' then 
+T = math.random(63,67)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي رامي صبري' then 
+T = math.random(69,73)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي مسلم' then 
+T = math.random(83,92)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي ويجز' then 
+T = math.random(94,102)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي عمار حسني' then 
+T = math.random(104,110)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي عنبه' then 
+T = math.random(113,122)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي مهرجانات' then 
+T = math.random(124,133)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي اصاله' then 
+T = math.random(135,147)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي اليسا' then 
+T = math.random(149,159)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي كايروكي' then 
+T = math.random(161,175)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي بابلو' then 
+T = math.random(177,183)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+if text == 'غنيلي محمد منير' then 
+T = math.random(187,199)
+local abc = msg.id_/2097152/0.5
+https.request('https://api.telegram.org/bot'..token..'/sendVoice?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&voice=https://t.me/emeuii/'..T..'') 
+end
+
+if text ==  "استوري" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(4,74); 
+local Text ='دوس علي الزرار لاختيار استوري أخري 🍁' 
+keyboard = {}  
+keyboard.inline_keyboard = {
+{{text = 'استوري أخري', callback_data="/lklpo"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qapplu/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+if text ==  "كتبات بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(3,49); 
+local Text ='✨🌻' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = 'استوري أخري', callback_data="/lp8qy"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/dfk9apa/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text ==  "تويت بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(1,28); 
+local Text ='مرحبا إليك تويت بالصوره✨🌚' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = 'تويت أخري', callback_data="/ljljkj"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/wffhvv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text ==  "لو خيروك بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(1,24); 
+local Text ='مرحبا اليك لو خيروك بالصوره🍁🌝' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = 'كتبات أخري', callback_data="/asr4"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/kbbnv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+
+if text ==  "حروف بالصور" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(1,15); 
+local Text ='مرحبا إليك حروف بالصوره✨🌚' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = 'اضغط لاضافه البوت لمجمعتك✅' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ffadi8/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text ==  "مستقبلي" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(1,14); 
+local Text ='حظك زي شكلك..😂💛' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = 'اضغط لاضافه البوت لمجمعتك✅' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/dyiotu/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+if text ==  "تفعيل تنظيف التلقائي" and BasicConstructor(msg)  then
+database:set(bot_id.."LoMsg"..msg.chat_id_,true)
+send(msg.chat_id_, msg.id_, '●  مـن قبـل  ⋙ [『'..Rutba(msg.sender_user_id_,msg.chat_id_)..'』](T.ME/'..(data.username_ or 'textchuser')..') \n● تم تفعيل التنظيف التلقائي ')
+return false
+end
+if text ==  "تعطيل تنظيف التلقائي" and BasicConstructor(msg) then
+database:del(bot_id.."LoMsg"..msg.chat_id_)
+send(msg.chat_id_, msg.id_, '●  مـن قبـل  ⋙ [『'..Rutba(msg.sender_user_id_,msg.chat_id_)..'』](T.ME/'..(data.username_ or 'textchuser')..') \n● تم تعطيل التنظيف التلقائي ')
+return false
 end
 
 if text == "راسلني" then
@@ -11130,12 +11230,12 @@ database:srem(bot_id..'Chek:Groups',msg.chat_id_)
 end
 return false  
 end
-if text == "بوت" then
+if text ==  "بوت" then
 local Namebot = (database:get(bot_id..'Name:Bot') or 'سوريا') 
 local DRAGON_Msg = { 
 'اسمي  '..Namebot..' يا قلبي 🤤💚',
 'اسمي '..Namebot..' يا روحي🙈❤️',
-'اسمي  '..Namebot..' يعمري♥️',
+'اسمي  '..Namebot..' يعمري🌚🌹',
 'اسمي  '..Namebot..' يا قمر 🐭🤍',
 'اسمي  '..Namebot..' يامزه 🥺❤️',
 'اسمي  '..Namebot..' يعم 😒',
@@ -11149,10 +11249,10 @@ local msg_id = msg.id_/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+{text = ' مــطــور الــبــوت🔰', url="http://t.me/"..sudos.UserName},
 },
 {
-{text = 'اضف البوت الي مجموعتك ↯' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"},
+{text = 'اضغط لاضافه البوت لمجمعتك✅ ' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"},
 },
 }
 local function getpro(extra, result, success) 
@@ -11164,19 +11264,96 @@ end
 end 
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = bot_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end
+if text ==  "تفعيل الاذاعه" and SudoBot(msg) then 
+database:del(bot_id.."Status:Ss") 
+send(msg.chat_id_, msg.id_,"\n٭ تم تفعيل الاذاعه " ) 
+return false
+end 
+if text ==  "تعطيل الاذاعه" and SudoBot(msg) then 
+database:set(bot_id.."Status:Ss",true) 
+send(msg.chat_id_, msg.id_,"\n٭ تم تعطيل الاذاعه") 
+return false
+end 
 
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'Set:On'..msg.sender_user_id_..':'..msg.chat_id_) == 'true' then
-send(msg.chat_id_, msg.id_,' 𖠪 تم ازالة الرد العام')
-list = {"Add:Rd:Sudo:Audio","Add:Rd:Sudo:File","Add:Rd:Sudo:Video","Add:Rd:Sudo:Photo","Add:Rd:Sudo:Text","Add:Rd:Sudo:stekr","Add:Rd:Sudo:vico","Add:Rd:Sudo:Gif"}
-for k,v in pairs(list) do
-database:del(bot_id..v..text)
-end
-database:del(bot_id..'Set:On'..msg.sender_user_id_..':'..msg.chat_id_)
-database:srem(bot_id..'List:Rd:Sudo', text)
+if text=="اذاعه عام" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if database:get(bot_id.."Status:Ss") and not SudoBot(msg) then 
+send(msg.chat_id_, msg.id_,"٭ الاذاعه معطله من قبل المطور الاساسي")
 return false
 end
+database:setex(bot_id.."Ss:Cs" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_,"٭ ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n٭ للخروج ارسل الغاء ") 
+return false
+end 
+
+if database:get(bot_id.."Ss:Cs" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
+if text ==  "الغاء" or text == "الغاء" then 
+send(msg.chat_id_, msg.id_,"٭ تم الغاء الاذاعه") 
+database:del(bot_id.."Ss:Cs" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+return false
+end 
+local list = database:smembers(bot_id..'UsersBot') 
+if msg.content_.text_ then
+for k,v in pairs(list) do 
+send(v, 0,"["..msg.content_.text_.."]") 
 end
+elseif msg.content_.photo_ then
+if msg.content_.photo_.sizes_[0] then
+photo = msg.content_.photo_.sizes_[0].photo_.persistent_id_
+elseif msg.content_.photo_.sizes_[1] then
+photo = msg.content_.photo_.sizes_[1].photo_.persistent_id_
+end
+for k,v in pairs(list) do 
+sendPhoto(v, 0, photo,(msg.content_.caption_ or ""))
+end 
+elseif msg.content_.animation_ then
+for k,v in pairs(list) do 
+sendDocument(v, 0, msg.content_.animation_.animation_.persistent_id_,(msg.content_.caption_ or "")) 
+end 
+elseif msg.content_.sticker_ then
+for k,v in pairs(list) do 
+sendSticker(v, 0, msg.content_.sticker_.sticker_.persistent_id_) 
+end 
+end
+send(msg.chat_id_, msg.id_,"٭ تمت الاذاعه الى المشتركين والمجموعات ") 
+database:del(bot_id.."Ss:Cs" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
+return false
+end
+if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and msa3d(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ● الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n ●  يرجى الاشتراك بالقناه اولا \n ??  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ● ارسل لي التوجيه الان") 
+return false
+end 
+if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and msa3d(msg) then 
+if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_,' ●  الاذاعه معطله من قبل المطور الاساسي')
+return false
+end
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n ●  يرجى الاشتراك بالقناه اولا \n ●  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ● ارسل لي التوجيه الان") 
+return false
+end 
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
@@ -11379,31 +11556,34 @@ if text == 'رتبتي' then
 local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
 send(msg.chat_id_, msg.id_,'✭︙ رتبتك في البوت » '..rtp)
 end
-if text == "اسمي"  then 
+if text ==  "اسمي"  then 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 if result.first_name_  then
-first_name = '✭︙ اسمك الاول » {`'..(result.first_name_)..'`}'
+first_name = ' ● اسمك الاول  ⋙ {`'..(result.first_name_)..'`}'
 else
 first_name = ''
 end   
 if result.last_name_ then 
-last_name = '✭︙ اسمك الثاني » {`'..result.last_name_..'`}' 
+last_name = ' ● اسمك الثاني  ⋙ {`'..result.last_name_..'`}' 
 else
 last_name = ''
 end      
 send(msg.chat_id_, msg.id_,first_name..'\n'..last_name) 
 end,nil)
 end 
+if text == 'بايو' then   
+send(msg.chat_id_, msg.id_,getbio(msg.sender_user_id_)) 
+end 
 if text == 'ايديي' then
-send(msg.chat_id_, msg.id_,'✭︙ ايديك » '..msg.sender_user_id_)
+send(msg.chat_id_, msg.id_,' ● ايديك  ⋙ '..msg.sender_user_id_)
 end
 if text == 'الرتبه' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
-local username = ' ['..data.first_name_..'](t.me/'..(data.username_ or 'siria100')..')'
+local username = ' ['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
 local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,'*- العضو » (*'..username..'*)\n- الرتبه » ('..rtp..')*\n')
+send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 『*'..username..'*』\n- الرتبه ↭ 『'..rtp..'』*\n')
 end,nil)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
@@ -11417,7 +11597,7 @@ tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data)
 local rtp = Rutba(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.id_
-send(msg.chat_id_, msg.id_,'*- العضو » (*'..username..'*)\n- الرتبه » ('..rtp..')*\n')
+send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 『*'..username..'*』\n- الرتبه ↭ 『'..rtp..'』*\n')
 end,nil)
 else
 send(msg.chat_id_, msg.id_,'- المعرف غير صحيح ')
@@ -11425,13 +11605,29 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
+if text and text:match("^الرتبه @(.*)$") then
+local userid = text:match("^الرتبه @(.*)$")
+function start_function(extra, result, success) 
+if userid then 
+tdcli_function ({ID = "GetUser",user_id_ = userid},function(extra,data)  
+local rtp = Rutba(userid,msg.chat_id_) 
+local username = ('[@'..data.username_..']' or 'لا يوجد') 
+local iduser = userid 
+send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 『*'..username..'*』\n- الرتبه ↭ 『'..rtp..'』*\n')
+end,nil) 
+else 
+send(msg.chat_id_, msg.id_,' ● الايدي غير صحيح') 
+end 
+end 
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil) 
+end
 if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,'✭︙ الايدي » ('..iduser..')\n✭︙ المعرف » ('..username..')\n✭︙ الرتبه » ('..rtp..')\n✭︙ نوع الكشف » بالرد')
+send(msg.chat_id_, msg.id_,'● الايدي ↭ 『'..iduser..'』\n● المعرف ↭ 『'..username..'』\n● الرتبه ↭ 『'..rtp..'』\n● نوع الكشف ↭ بالرد')
 end,nil)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
@@ -11445,30 +11641,78 @@ tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data)
 local rtp = Rutba(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.id_
-send(msg.chat_id_, msg.id_,'✭︙ الايدي » ('..iduser..')\n✭︙ المعرف » ('..username..')\n✭︙ الرتبه » ('..rtp..')\n✭︙ نوع الكشف » بالمعرف')
+send(msg.chat_id_, msg.id_,'● الايدي ↭ 『'..iduser..'』\n● المعرف ↭ 『'..username..'』\n● الرتبه ↭ 『'..rtp..'』\n● نوع الكشف ↭ بالمعرف')
 end,nil)
 else
-send(msg.chat_id_, msg.id_,'✭︙ المعرف غير صحيح')
+send(msg.chat_id_, msg.id_,'● المعرف غير صحيح')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
-if text==('عدد الجروب') and Mod(msg) then  
+if text and text:match("^كشف (.*)$") then 
+local userid = text:match("^كشف (.*)$") 
+function start_function(extra, result, success) 
+if userid then 
+tdcli_function ({ID = "GetUser",user_id_ = userid},function(extra,data)  
+local rtp = Rutba(userid,msg.chat_id_) 
+local username = ('[@'..data.username_..']' or 'لا يوجد') 
+local iduser = userid 
+send(msg.chat_id_, msg.id_,'● الايدي ↭ 『'..iduser..'』\n● المعرف ↭ 『'..username..'』\n● الرتبه ↭ 『'..rtp..'』\n● نوع الكشف↭ الايدي')
+end,nil) 
+else 
+send(msg.chat_id_, msg.id_,' ● الايدي غير صحيح') 
+end 
+end 
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil) 
+end
+if text==('معلومات الجروب') and Mod(msg) then  
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_,msg.id_,"✭︙ البوت ليس ادمن \n") 
+send(msg.chat_id_,msg.id_," ● البوت ليس ادمن \n") 
 return false  
 end 
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(arg,data) 
-local sofi = '✭︙ عدد الادمنيه : '..data.administrator_count_..
-'\n\n✭︙ عدد المطرودين : '..data.kicked_count_..
-'\n\n✭︙ عدد الاعضاء : '..data.member_count_..
-'\n\n✭︙ عدد رسائل الجروب : '..(msg.id_/2097152/0.5)..
-'\n\n✭︙  اسم الجروب : ['..ta.title_..']'
-send(msg.chat_id_, msg.id_, sofi) 
+local ban = ' ● عدد الادمنيه : '..data.administrator_count_..
+'\n\n ● عدد المطرودين : '..data.kicked_count_..
+'\n\n ● عدد الاعضاء : '..data.member_count_..
+'\n\n ● عدد رسائل الجروب : '..(msg.id_/2097152/0.5)..
+'\n\n ●  اسم الجروب : ['..ta.title_..']'
+send(msg.chat_id_, msg.id_, ban) 
 end,nil)
 end,nil)
 end 
+
+if text and text:match("^صيح (.*)$") then
+local username = text:match("^صيح (.*)$") 
+if not database:get(bot_id..'Seh:User'..msg.chat_id_) then
+function start_function(extra, result, success)
+if result and result.message_ and result.message_ == "USERNAME_NOT_OCCUPIED" then 
+send(msg.chat_id_, msg.id_,' ● المعرف غلط ') 
+return false  
+end
+if result and result.type_ and result.type_.channel_ and result.type_.channel_.ID == "Channel" then
+send(msg.chat_id_, msg.id_,' ● لا استطيع اصيح معرف قنوات') 
+return false  
+end
+if result.type_.user_.type_.ID == "UserTypeBot" then
+send(msg.chat_id_, msg.id_,' ● لا استطيع اصيح معرف بوتات') 
+return false  
+end
+if result and result.type_ and result.type_.channel_ and result.type_.channel_.is_supergroup_ == true then
+send(msg.chat_id_, msg.id_,'⚠| لا اسطيع صيح معرفات الجروبات') 
+return false  
+end
+if result.id_ then
+send(msg.chat_id_, msg.id_,' ● 😾تع يعم كلم الود دا قرفني [@『'..username..'』]') 
+return false
+end
+end
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
+else
+send(msg.chat_id_, msg.id_,' ● تم تعطيل امر صيح') 
+end
+return false
+end
 if text == 'اطردني' or text == 'طردني' then
 if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
 if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
@@ -11652,7 +11896,7 @@ local List = {
 [[
 ⚕ 𓆰 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑻𝒐 𝑮𝒓𝒐𝒖𝒑 ★
 • 🖤 | 𝑼𝑬𝑺 : #username ‌‌‏⚚
-• 🖤 | 𝑺𝑻𝑨 : #stast 🧙🏻‍♂ ☥
+• 🖤 | 𝑺??𝑨 : #stast 🧙🏻‍♂ ☥
 • 🖤 | 𝑰𝑫 : #id ‌‌‏♕
 • 🖤 | 𝑴𝑺𝑮 : #msgs 𓆊
 ]],
@@ -12315,77 +12559,29 @@ end
 ---------------------- الاوامر الجديدة
 if text == 'الاوامر' then
 if not Mod(msg) then
-send(msg.chat_id_, msg.id_,'◉ ليس لديك رتبه لاستخدام هذه الاوامر 🙂')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local X_G_33  = database:get(bot_id..'text:ch:user')
-if X_G_33  then
-send(msg.chat_id_, msg.id_,'['..X_G_33 ..']')
-else
-send(msg.chat_id_, msg.id_,'◉لا تستطيع استخدام البوت \n ◉يرجى الاشتراك بالقناه اولا \n ◉اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
+send(msg.chat_id_, msg.id_,' ● هذا الامر خدد ليس لك\n  اكتب 『اوامر الاعضاء』لعرض اوامر الاعضاء')
 return false
 end
 local Text =[[
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ قم بأختيار اللغه.. ↑↓
-◉ Choose language.. ↑↓ 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ](t.me/X_G_33 )
+● اهلا بك في قسم الاوامر ..↑↓
+اختر الامر الذي تريدها .↑↓
+ده من الازرار بلاسفل . ↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'english 𝅘𝅥𝅮', callback_data="/add"},{text = 'عربي 𝅘𝅥𝅮', callback_data="/help90"},
+{text = '◗اوامر المطورين◖', callback_data="/help5"},{text = '◗اوامر التسليه◖', callback_data="/help7"},
 },
 {
-{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ', url="t.me/X_G_33 "},
+{text = '◗اوامر الاعضاء◖', callback_data="/help6"},
 },
 {
-{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"},
-},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
-end
-----------------------------------------------------------------------------
-if text == 'الاضافات' then
-if not Constructor(msg) then
-send(msg.chat_id_, msg.id_,'✭︙ هاذا الامر خاص بالادمنيه\n✭︙ ارسل {م10} لعرض اوامر الاعضاء')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local MRSoOoFi = database:get(bot_id.."AL:AddS0FI:stats") or "لم يتم التحديد"
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'✭︙ لا تستطيع استخدام البوت \n ✭︙ يرجى الاشتراك بالقناه اولا \n ✭︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
-local Text =[[
-*اهلا انتツفي اضافات البوت*
-*𖠕━┅┅┄⟞❲🆂🅸🆁🅸🅰❳⟝┄┉┉━𖠕*
-* يمكنك معرفة حاله تفعيل الاضافات *
-* من خلال ارسال حاله الاضافات *
-*𖠕━┅┅┄⟞❲🆂🅸🆁🅸🅰❳⟝┄┉┉━𖠕*
-*يمكنك تصفح الاضافات من خلال*
-*الكيبورد الموجود في الأسفل*
-*𖠕━┅┅┄⟞❲🆂🅸🆁🅸🅰❳⟝┄┉┉━𖠕*
-➫ .[ ❍ ┇⟞❲🆂🅸🆁🅸🅰❳⟝. ](t.me/siria100)➤
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/sofi"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = '◗اوامر التعطيل◖', callback_data="/help2"},{text = '◗اوامر القفل◖', callback_data="/help1"},
 },
 {
-{text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
-},
-{
-{text = '𝐃𝐑𝐀𝐆𝐎𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/siria100"},
+{text = '•تــغــير الــلــغــه•', callback_data="/help90"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -12394,64 +12590,1456 @@ return false
 end
 ----------------------------------------------------------------------------
 if text == 'الالعاب' then
+local Text = [[
+ اهلا بك في قسم الالعاب ..↑↓
+ اختر العبه الذي تريدها .↑↓
+ده من الازرار بلاسفل . ↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ 
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '◗العاب السورس◖', callback_data="/mute-name"},{text = '◗الاضافات◖', callback_data="/change-photo"},
+},
+{
+{text = '◗ متطوره◖', callback_data="/DRG"},
+},
+{
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/35&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'امر الـعـضو ' or text == 'اوامر الأعضاء' or text == 'اوامر الاعضاء' then
+local Text = [[
+ اتبع الاوامر الاعضاء
+ تحت لي في الزر الأسفل↓
+ 
+ ..
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'اوامر الاعضاء', callback_data="/change-names"},
+},
+{
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'اصنع يوزر' or text == 'اصنع' then
+local Text = [[
+-اختار يوزرك من الأسفل-
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '@jjjx33', callback_data="/jjjx33"},{text = '@Xccp', callback_data="/Xccp"},
+},
+{
+{text = '@Lj_llIll', callback_data="/Lj_llIll"},{text = '@pivsn', callback_data="/pivsn"},
+},
+{
+{text = '•@k1op', callback_data="/k1op"},{text = '@Q10d', callback_data="/Q10d"},
+},
+{
+{text = '@llll_iiij', callback_data="/whoop"},{text = '@Xjak', callback_data="/Xjak"},
+},
+{
+{text = '@Xjljlj', callback_data="/Xjljlj"},{text = '@jk1bn', callback_data="/jk1bn"},
+},
+{
+{text = '@A0op', callback_data="/A0op"},{text = '@vip_iij', callback_data="/vip_iij"},
+},
+{
+{text = '@iii_llij', callback_data="/iii_llij"},{text = '@YtIIIl', callback_data="/YtIIIl"},
+},
+{
+{text = '@hjljilj', callback_data="/hjljilj"},{text = '@vbvy', callback_data="/vbvy"},
+},
+{
+{text = '@Diiolk', callback_data="/Diiolk"},{text = '@Bi01j', callback_data="/Bi01j"},
+},
+{
+{text = '@frrili', callback_data="/frrili"},{text = '@Xcvb', callback_data="/Xcvb"},
+},
+{
+{text = '@Dlik', callback_data="/Dlik"},
+},
+{
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
+if text == 'مريم' then
+local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
+if not my_ph then
+send(msg.chat_id_, msg.id_," ● مريم  معطله") 
+return false  
+end
+local Text = [[
+🥀اطفي النور واستمتع بلعبه •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'حسنا', callback_data="/may"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/37&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
+if text == 'اسالني' or text == 'اختار' or text == 'لغز' or text == 'الغاز' then
+local Text = [[
+⍆ هل انت جهاز للعب ⍆
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'ابدا العب', callback_data="/guitar"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/40&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'اختبار الذكاء' or text == 'نسبه الذكاء' then
+local Text = [[
+رجل اشترى جهاز كهربائي بخصم 20% من إجمالي قيمة الجهاز، وهي نسبة تساوي 150 ريال؟.ما هي قيمة الجهاز؟.
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '600', callback_data="/verp"},{text = '700', callback_data="/plling"},
+},
+{
+{text = '550', callback_data="/pullin"},{text = '237', callback_data="/pulng"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/38&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
+
+if text == 'الابراج' then
+local Text = [[
+• أختر برجك عزيزي •📮،⍆
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '• الاسد ،🦁', callback_data="/zking"},{text = '• الثور 🐂', callback_data="/zzor"},
+},
+{
+{text = '• العقرب 🦂', callback_data="/zakrb"},{text = '• القوس 🏹', callback_data="/zkos"},
+},
+{
+{text = '• الحمل 🐐', callback_data="/zBanda"},
+},
+{
+{text = '• السرطان 🦀', callback_data="/zsltan"},{text = '• العذراء 🦋', callback_data="/zazra"},
+},
+{
+{text = '• الميزان ⚖', callback_data="/zmezan"},{text = '• الجدي 🦌', callback_data="/zgagy"},
+},
+{
+{text = ' معرفة برجك 🧭', callback_data="/zporg"},
+},
+{
+{text = '• الحوت 🐋', callback_data="/zhot"},
+},
+{
+{text = '• الجوزاء 🌩', callback_data="/zguza"},{text = '• الدلو 🦯', callback_data="/zdlu"},
+},
+{
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/36&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'نزلني' or text == 'نزيلني' and GetChannelMember(msg) then 
+if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then 
+local Text = ": هل انت متاكد  من تنزيلك من جميع الرتب: "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="نعم",callback_data="nzllne"..msg.sender_user_id_},{text="لا",callback_data="noKikedMe"..msg.sender_user_id_}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end 
+end
+if text == 'اطردني' or text == 'طردني' and GetChannelMember(msg) then   
+if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
+if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
+send(msg.chat_id_, msg.id_, '\n ●عذرا لا استطيع طرد ( '..Rutba(msg.sender_user_id_,msg.chat_id_)..' )')
+return false
+end
+local Text = "قم بتأكيد العمليه الان"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="تأكيد الامر",callback_data="OkKikedMe"..msg.sender_user_id_},{text="الغاء الامر",callback_data="noKikedMe"..msg.sender_user_id_}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+if text == 'اذاعه' then   
+local Text = "اختار\nاذاعة خاص\nاذاعة جروبات\nرساله للمطور الاساسي"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text="اذاعة جروبات",callback_data="YYYBD_aza3h1"..msg.sender_user_id_},{text="اذاعة خاص",callback_data="YYYBD_aza3h2"..msg.sender_user_id_}},
+{{text="رساله للمطور الاساسي",callback_data="YYYBD_aza3h3"..msg.sender_user_id_}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+----------------------------------------------------------------- انتهئ الاوامر الجديدة
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+local Text = [[
+W𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒖𝒓𝒔𝒆 𝒔𝒊𝒓𝒊𝒂 ⧫ 𝙼⇣
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '•ᴍʏ ᴅᴇᴠ♪', callback_data="/units"},{text = '•ᴍʏ ᴄʜᴀɴɴᴇʟ♪', callback_data="/theytry"}},   
+{{text = '♪مــطــور الــبــوت•', url="http://t.me/"..sudos.UserName}},
+{{text = '♪ اضغط لاضافه البوت لمجمعتك •' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"}}, 
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/X_G_33/1469&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+local tokenget = '1950786270:AAHMSD9_nLfo5Cch7shLb7f0EneNgim41rQ'
+if text == 'احمد سوريا' or text == 'ahmed siria' then
+local id = '1925760763'
+local urrl = https.request('https://api.telegram.org/bot'..tokenget..'/getchat?chat_id='..id)
+local json = JSON.decode(urrl)
+local name = json.result.first_name
+local user = json.result.username
+local bio = json.result.bio
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = name,url="t.me/"..user}},}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..user..'&caption=' .. URL.escape(bio).."&reply_to_message_id="..msg_id.."&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+if text == 'سوريا' or text == 'siria' or text == ' احمد سوريا' then
+local Text = [[
+ᴘʀᴏɢʀᴀᴍᴍᴇʀ ᴘᴀɴᴅᴀ
+ ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, 
+ғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ  
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝘼 𝙈🇦🇽 𝙎 𝙄 𝙍 𝙄 𝘼 ✹ 🇬🇺',url="t.me/AHMED_MERO_love"}},
+{{text = '•الــقــنــوات♪', callback_data="/Ajobanf"},{text = '•الــبــارات♪', callback_data="/banfai"}},  
+{{text = '•الــبــوتــات♪', callback_data="/gqjik"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/68&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+
+if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
+send(msg.chat_id_, msg.id_," ● ارسل الان اذاعتك؟ \n ● للخروج ارسل الغاء ")
+return false
+end
+if text ==  "£¢€$$__€€¢¥^^" and Developers(msg) then
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,DRAGON)
+local list = DRAGON.members_
+for k, v in pairs(list) do
+if tonumber(v.user_id_) ~= tonumber(bot_id) then
+chat_kick(msg.chat_id_,v.user_id_)
+end
+end
+end,nil)
+end
+
+if text ==  "توكن البوت" and Developers(msg) then 
+if not SudoBot(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بي سوريا فقط')
+return false
+end
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' ..token) 
+send(msg.chat_id_, msg.id_,' ') 
+end
+if text ==  "تويت" or text == "كت تويت" then 
+local vBandav_Msg = { 
+"مرتبط؟ ", 
+" هل بتكراش ع حد في حياتك؟", 
+" ينفع نرتبط؟", 
+" ممكن توريني صوره بتحبها؟", 
+" ممكن نبقي صحااب ع الفيس؟", 
+" هل لسه بتحب الاكس؟", 
+"عندك كام اكس في حياتك؟ ", 
+"ينفع تبعتلي رقمك؟ ", 
+" ما تيجي اعزمني ع حاجه بحبها؟", 
+"ينفع احضنك؟ ", 
+"قولي ع اكبر غلطه ندمان عليهاا؟ ", 
+"عندك كام سنه؟ ", 
+" عامل بلوك لكام واحد عندك؟", 
+" قولي سر محدش يعرفه؟", 
+" عندك كام اكس في حياتك؟", 
+"بتعرف تقلش وتهزر؟ ", 
+" لونك المفضل هو؟", 
+" مين أقرب حد ليك الفتره دي ؟", 
+" قولي ع اكبر غلطه ندمان عليهاا؟", 
+" مين مغنيك المفضل؟", 
+" حابب تبقي اي في المستقبل؟", 
+"راضي عن حياتك بنسبه كام؟ ", 
+"اكتر حاجه بتلفت انتباهك في البنت او الولد؟ ", 
+"اي رأيك في صوره البروفايل بتاعتي؟ ", 
+" هل باين عليا اني شخص لطيف؟", 
+" توافق ترجع للاكس؟", 
+"ممكن تضحي بحياتك لمين؟ ", 
+"سافرت بلاد برا مصر واي هي؟ ", 
+" اي رأيك في صوره البروفايل بتاعتي؟", 
+" هل بتعتبر نفسك حلو وبتحب شكلك؟", 
+" نفسك تزور انهي بلد في العالم؟", 
+" شخصيه ع السوشيال شايف انها مميزه؟", 
+"عندك فوبيا من اي؟ ", 
+" ممكن تورينا لينك الصراحه؟", 
+"عمرك عيطت ع حاجه؟ ", 
+" شايف اي أسوأ صفه فيك؟", 
+"هل شلت مواد قبل كد وعدت السنه؟ ", 
+"بتغير ع الل بتحبهم وبيبان عليك لو غيرت؟ ", 
+"معاك كام فلوس دلوقتي؟ ", 
+" بتفضل صحابك البنات ولا الولاد؟", 
+" مسامح الل ظلمك؟", 
+" ممثلك الافضل؟", 
+" ممكن تقول رساله لحد مش هيشوفها؟", 
+"انت اهلاوي ولا زملكاوي؟ ", 
+" اي حيوانك المفضل؟", 
+"اخر افلام شاهدتها", 
+"بتعرف تكلم لغه تانيه واي هي؟ ", 
+"ما هي وظفتك الحياه", 
+"اعز اصدقائك ?", 
+"اخر اغنية سمعتها ?", 
+"تكلم عن نفسك", 
+"ليه انت مش سالك", 
+"ما هيا عيوب سورس سوريا؟ ", 
+"اخر كتاب قرآته", 
+"روايتك المفضله ?", 
+"اخر اكله اكلتها", 
+"اخر كتاب قرآته", 
+"ليه سوريا جدع؟ ", 
+"افضل يوم ف حياتك", 
+"ليه مضيفتش كل جهاتك", 
+"حكمتك ف الحياه", 
+"لون عيونك", 
+"كتابك المفضل", 
+"هوايتك المفضله", 
+"علاقتك مع اهلك", 
+" ما السيء في هذه الحياة ؟ ", 
+"أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
+"سؤال ينرفزك ؟ ", 
+" هل يعجبك سورس سوريا؟؟ ", 
+" اكثر ممثل تحبه ؟ ", 
+"قد تخيلت شي في بالك وصار ؟ ", 
+"شيء عندك اهم من الناس ؟ ", 
+"تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
+"وش أخر شي ضيعته؟ ", 
+"اي رايك في سورس سوريا؟ ", 
+"كم مره حبيت؟ ", 
+" اكثر المتابعين عندك باي برنامج؟", 
+" آخر مره ضربت عشره كانت متى ؟", 
+" نسبه الندم عندك للي وثقت فيهم ؟", 
+"تحب ترتبط بكيرفي ولا فلات؟", 
+" جربت شعور احد يحبك بس انت مو قادر تحبه؟", 
+" تجامل الناس ولا اللي بقلبك على لسانك؟", 
+" عمرك ضحيت باشياء لاجل شخص م يسوى ؟", 
+"مغني تلاحظ أن صوته يعجب الجميع إلا أنت؟ ", 
+" آخر غلطات عمرك؟ ", 
+" مسلسل كرتوني له ذكريات جميلة عندك؟ ", 
+" ما أكثر تطبيق تقضي وقتك عليه؟ ", 
+" أول شيء يخطر في بالك إذا سمعت كلمة نجوم ؟ ", 
+" قدوتك من الأجيال السابقة؟ ", 
+" أكثر طبع تهتم بأن يتواجد في شريك/ة حياتك؟ ", 
+"أكثر حيوان تخاف منه؟ ", 
+" ما هي طريقتك في الحصول على الراحة النفسية؟ ", 
+" إيموجي يعبّر عن مزاجك الحالي؟ ", 
+" أكثر تغيير ترغب أن تغيّره في نفسك؟ ", 
+"أكثر شيء أسعدك اليوم؟ ", 
+"اي رايك في الدنيا دي ؟ ", 
+"ما هو أفضل حافز للشخص؟ ", 
+"ما الذي يشغل بالك في الفترة الحالية؟", 
+"آخر شيء ندمت عليه؟ ", 
+"شاركنا صورة احترافية من تصويرك؟ ", 
+"تتابع انمي؟ إذا نعم ما أفضل انمي شاهدته ", 
+"يرد عليك متأخر على رسالة مهمة وبكل برود، موقفك؟ ", 
+"نصيحه تبدا ب -لا- ؟ ", 
+"كتاب أو رواية تقرأها هذه الأيام؟ ", 
+"فيلم عالق في ذهنك لا تنساه مِن روعته؟ ", 
+"يوم لا يمكنك نسيانه؟ ", 
+"شعورك الحالي في جملة؟ ", 
+"كلمة لشخص بعيد؟ ", 
+"صفة يطلقها عليك الشخص المفضّل؟ ", 
+"أغنية عالقة في ذهنك هاليومين؟ ", 
+"أكلة مستحيل أن تأكلها؟ ", 
+"كيف قضيت نهارك؟ ", 
+"تصرُّف ماتتحمله؟ ", 
+"موقف غير حياتك؟ ", 
+"اكثر مشروب تحبه؟ ", 
+"القصيدة اللي تأثر فيك؟ ", 
+"متى يصبح الصديق غريب ", 
+"وين نلقى السعاده برايك؟ ", 
+"تاريخ ميلادك؟ ", 
+"قهوه و لا شاي؟ ", 
+"من محبّين الليل أو الصبح؟ ", 
+"حيوانك المفضل؟ ", 
+"كلمة غريبة ومعناها؟ ", 
+"كم تحتاج من وقت لتثق بشخص؟ ", 
+"اشياء نفسك تجربها؟ ", 
+"يومك ضاع على؟ ", 
+"كل شيء يهون الا ؟ ", 
+"اسم ماتحبه ؟ ", 
+"وقفة إحترام للي إخترع ؟ ", 
+"أقدم شيء محتفظ فيه من صغرك؟ ", 
+"كلمات ماتستغني عنها بسوالفك؟ ", 
+"وش الحب بنظرك؟ ", 
+"حب التملك في شخصِيـتك ولا ؟ ", 
+"تخطط للمستقبل ولا ؟ ", 
+"موقف محرج ماتنساه ؟ ", 
+"من طلاسم لهجتكم ؟ ", 
+"اعترف باي حاجه ؟ ", 
+"عبّر عن مودك بصوره ؟ ",
+"آخر مره ضربت عشره كانت متى ؟", 
+"اسم دايم ع بالك ؟ ", 
+"اشياء تفتخر انك م سويتها ؟ ", 
+" لو بكيفي كان ؟ ", 
+  "أكثر جملة أثرت بك في حياتك؟ ",
+  "إيموجي يوصف مزاجك حاليًا؟ ",
+  "أجمل اسم بنت بحرف الباء؟ ",
+  "كيف هي أحوال قلبك؟ ",
+  "أجمل مدينة؟ ",
+  "كيف كان أسبوعك؟ ",
+  "شيء تشوفه اكثر من اهلك ؟ ",
+  "اخر مره فضفضت؟ ",
+  "قد كرهت احد بسبب اسلوبه؟ ",
+  "قد حبيت شخص وخذلك؟ ",
+  "كم مره حبيت؟ ",
+  "اكبر غلطة بعمرك؟ ",
+  "نسبة النعاس عندك حاليًا؟ ",
+  "شرايكم بمشاهير التيك توك؟ ",
+  "ما الحاسة التي تريد إضافتها للحواس الخمسة؟ ",
+  "اسم قريب لقلبك؟ ",
+  "مشتاق لمطعم كنت تزوره قبل الحظر؟ ",
+  "أول شيء يخطر في بالك إذا سمعت كلمة (ابوي يبيك)؟ ",
+  "ما أول مشروع تتوقع أن تقوم بإنشائه إذا أصبحت مليونير؟ ",
+  "أغنية عالقة في ذهنك هاليومين؟ ",
+  "متى اخر مره قريت قرآن؟ ",
+  "كم صلاة فاتتك اليوم؟ ",
+  "تفضل التيكن او السنقل؟ ",
+  "وش أفضل بوت برأيك؟ ",
+"كم لك بالتلي؟ ",
+"وش الي تفكر فيه الحين؟ ",
+"كيف تشوف الجيل ذا؟ ",
+"منشن شخص وقوله، تحبني؟ ",
+"لو جاء شخص وعترف لك كيف ترده؟ ",
+"مر عليك موقف محرج؟ ",
+"وين تشوف نفسك بعد سنتين؟ ",
+"لو فزعت/ي لصديق/ه وقالك مالك دخل وش بتسوي/ين؟ ",
+"وش اجمل لهجة تشوفها؟ ",
+"قد سافرت؟ ",
+"افضل مسلسل عندك؟ ",
+"افضل فلم عندك؟ ",
+"مين اكثر يخون البنات/العيال؟ ",
+"متى حبيت؟ ",
+  "بالعادة متى تنام؟ ",
+  "شيء من صغرك ماتغير فيك؟ ",
+  "شيء بسيط قادر يعدل مزاجك بشكل سريع؟ ",
+  "تشوف الغيره انانيه او حب؟ ",
+"حاجة تشوف نفسك مبدع فيها؟ ",
+  "مع او ضد : يسقط جمال المراة بسبب قبح لسانها؟ ",
+  "عمرك بكيت على شخص مات في مسلسل ؟ ",
+  "‏- هل تعتقد أن هنالك من يراقبك بشغف؟ ",
+  "تدوس على قلبك او كرامتك؟ ",
+  "اكثر لونين تحبهم مع بعض؟ ",
+  "مع او ضد : النوم افضل حل لـ مشاكل الحياة؟ ",
+  "سؤال دايم تتهرب من الاجابة عليه؟ ",
+  "تحبني ولاتحب الفلوس؟ ",
+  "العلاقه السريه دايماً تكون حلوه؟ ",
+  "لو أغمضت عينيك الآن فما هو أول شيء ستفكر به؟ ",
+"كيف ينطق الطفل اسمك؟ ",
+  "ما هي نقاط الضعف في شخصيتك؟ ",
+  "اكثر كذبة تقولها؟ ",
+  "تيكن ولا اضبطك؟ ",
+  "اطول علاقة كنت فيها مع شخص؟ ",
+  "قد ندمت على شخص؟ ",
+  "وقت فراغك وش تسوي؟ ",
+  "عندك أصحاب كثير؟ ولا ينعد بالأصابع؟ ",
+  "حاط نغمة خاصة لأي شخص؟ ",
+  "وش اسم شهرتك؟ ",
+  "أفضل أكلة تحبه لك؟ ",
+"عندك شخص تسميه ثالث والدينك؟ ",
+  "عندك شخص تسميه ثالث والدينك؟ ",
+  "اذا قالو لك تسافر أي مكان تبيه وتاخذ معك شخص واحد وين بتروح ومين تختار؟ ",
+  "أطول مكالمة كم ساعة؟ ",
+  "تحب الحياة الإلكترونية ولا الواقعية؟ ",
+  "كيف حال قلبك ؟ بخير ولا مكسور؟ ",
+  "أطول مدة نمت فيها كم ساعة؟ ",
+  "تقدر تسيطر على ضحكتك؟ ",
+  "أول حرف من اسم الحب؟ ",
+  "تحب تحافظ على الذكريات ولا تمسحه؟ ",
+  "اسم اخر شخص زعلك؟ ",
+"وش نوع الأفلام اللي تحب تتابعه؟ ",
+  "أنت انسان غامض ولا الكل يعرف عنك؟ ",
+  "لو الجنسية حسب ملامحك وش بتكون جنسيتك؟ ",
+  "عندك أخوان او خوات من الرضاعة؟ ",
+  "إختصار تحبه؟ ",
+  "إسم شخص وتحس أنه كيف؟ ",
+  "وش الإسم اللي دايم تحطه بالبرامج؟ ",
+  "وش برجك؟ ",
+  "لو يجي عيد ميلادك تتوقع يجيك هدية؟ ",
+  "اجمل هدية جاتك وش هو؟ ",
+  "الصداقة ولا الحب؟ ",
+"الصداقة ولا الحب؟ ",
+  "الغيرة الزائدة شك؟ ولا فرط الحب؟ ",
+  "قد حبيت شخصين مع بعض؟ وانقفطت؟ ",
+  "وش أخر شي ضيعته؟ ",
+  "قد ضيعت شي ودورته ولقيته بيدك؟ ",
+  "تؤمن بمقولة اللي يبيك مايحتار فيك؟ ",
+  "سبب وجوك بالتليجرام؟ ",
+  "تراقب شخص حاليا؟ ",
+  "عندك معجبين ولا محد درا عنك؟ ",
+  "لو نسبة جمالك بتكون بعدد شحن جوالك كم بتكون؟ ",
+  "أنت محبوب بين الناس؟ ولاكريه؟ ",
+"كم عمرك؟ ",
+  "لو يسألونك وش اسم امك تجاوبهم ولا تسفل فيهم؟ ",
+  "تؤمن بمقولة الصحبة تغنيك الحب؟ ",
+  "وش مشروبك المفضل؟ ",
+  "قد جربت الدخان بحياتك؟ وانقفطت ولا؟ ",
+  "أفضل وقت للسفر؟ الليل ولا النهار؟ ",
+  "انت من النوع اللي تنام بخط السفر؟ ",
+  "عندك حس فكاهي ولا نفسية؟ ",
+  "تبادل الكراهية بالكراهية؟ ولا تحرجه بالطيب؟ ",
+  "أفضل ممارسة بالنسبة لك؟ ",
+  "لو قالو لك تتخلى عن شي واحد تحبه بحياتك وش يكون؟ ",
+"لو احد تركك وبعد فتره يحاول يرجعك بترجع له ولا خلاص؟ ",
+  "برأيك كم العمر المناسب للزواج؟ ",
+  "اذا تزوجت بعد كم بتخلف عيال؟ ",
+  "فكرت وش تسمي أول اطفالك؟ ",
+  "من الناس اللي تحب الهدوء ولا الإزعاج؟ ",
+  "الشيلات ولا الأغاني؟ ",
+  "عندكم شخص مطوع بالعايلة؟ ",
+  "تتقبل النصيحة من اي شخص؟ ",
+  "اذا غلطت وعرفت انك غلطان تحب تعترف ولا تجحد؟ ",
+  "جربت شعور احد يحبك بس انت مو قادر تحبه؟ ",
+  "دايم قوة الصداقة تكون بإيش؟ ",
+"أفضل البدايات بالعلاقة بـ وش؟ ",
+  "وش مشروبك المفضل؟ او قهوتك المفضلة؟ ",
+  "تحب تتسوق عبر الانترنت ولا الواقع؟ ",
+  "انت من الناس اللي بعد ماتشتري شي وتروح ترجعه؟ ",
+  "أخر مرة بكيت متى؟ وليش؟ ",
+  "عندك الشخص اللي يقلب الدنيا عشان زعلك؟ ",
+  "أفضل صفة تحبه بنفسك؟ ",
+  "كلمة تقولها للوالدين؟ ",
+  "أنت من الناس اللي تنتقم وترد الاذى ولا تحتسب الأجر وتسامح؟ ",
+  "كم عدد سنينك بالتليجرام؟ ",
+  "تحب تعترف ولا تخبي؟ ",
+"انت من الناس الكتومة ولا تفضفض؟ ",
+  "أنت بعلاقة حب الحين؟ ",
+  "عندك اصدقاء غير جنسك؟ ",
+  "أغلب وقتك تكون وين؟ ",
+  "لو المقصود يقرأ وش بتكتب له؟ ",
+  "تحب تعبر بالكتابة ولا بالصوت؟ ",
+  "عمرك كلمت فويس احد غير جنسك؟ ",
+  "لو خيروك تصير مليونير ولا تتزوج الشخص اللي تحبه؟ ",
+  "لو عندك فلوس وش السيارة اللي بتشتريها؟ ",
+  "كم أعلى مبلغ جمعته؟ ",
+  "اذا شفت احد على غلط تعلمه الصح ولا تخليه بكيفه؟ ",
+"قد جربت تبكي فرح؟ وليش؟ ",
+  "تتوقع إنك بتتزوج اللي تحبه؟ ",
+  "ما هو أمنيتك؟ ",
+  "وين تشوف نفسك بعد خمس سنوات؟ ",
+  "هل انت حرامي تويت بتعت سوريا؟ ",
+  "لو خيروك تقدم الزمن ولا ترجعه ورا؟ ",
+  "لعبة قضيت وقتك فيه بالحجر المنزلي؟ ",
+  "تحب تطق الميانة ولا ثقيل؟ ",
+  "باقي معاك للي وعدك ما بيتركك؟ ",
+  "اول ماتصحى من النوم مين تكلمه؟ ",
+  "عندك الشخص اللي يكتب لك كلام كثير وانت نايم؟ ",
+  "قد قابلت شخص تحبه؟ وولد ولا بنت؟ ",
+   "هل انت تحب سوريا؟ ",
+"اذا قفطت احد تحب تفضحه ولا تستره؟ ",
+  "كلمة للشخص اللي يسب ويسطر؟ ",
+  "آية من القران تؤمن فيه؟ ",
+  "تحب تعامل الناس بنفس المعاملة؟ ولا تكون أطيب منهم؟ ",
+"حاجة ودك تغيرها هالفترة؟ ",
+  "كم فلوسك حاليا وهل يكفيك ام لا؟ ",
+  "وش لون عيونك الجميلة؟ ",
+  "من الناس اللي تتغزل بالكل ولا بالشخص اللي تحبه بس؟ ",
+  "اذكر موقف ماتنساه بعمرك؟ ",
+  "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
+  "ألطف شخص مر عليك بحياتك؟ ",
+   "هل سوريا لطيف؟ ",
+"انت من الناس المؤدبة ولا نص نص؟ ",
+  "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
+  "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
+  "أكثر شي تخاف منه بالحياه وش؟ ",
+  "اكثر المتابعين عندك باي برنامج؟ ",
+  "متى يوم ميلادك؟ ووش الهدية اللي نفسك فيه؟ ",
+  "قد تمنيت شي وتحقق؟ ",
+  "قلبي على قلبك مهما صار لمين تقولها؟ ",
+  "وش نوع جوالك؟ واذا بتغيره وش بتأخذ؟ ",
+  "كم حساب عندك بالتليجرام؟ ",
+  "متى اخر مرة كذبت؟ ",
+"كذبت في الاسئلة اللي مرت عليك قبل شوي؟ ",
+  "تجامل الناس ولا اللي بقلبك على لسانك؟ ",
+  "قد تمصلحت مع أحد وليش؟ ",
+  "وين تعرفت على الشخص اللي حبيته؟ ",
+  "قد رقمت او احد رقمك؟ ",
+  "وش أفضل لعبته بحياتك؟ ",
+  "أخر شي اكلته وش هو؟ ",
+  "حزنك يبان بملامحك ولا صوتك؟ ",
+  "لقيت الشخص اللي يفهمك واللي يقرا افكارك؟ ",
+  "فيه شيء م تقدر تسيطر عليه ؟ ",
+  "منشن شخص متحلطم م يعجبه شيء؟ ",
+"اكتب تاريخ مستحيل تنساه ",
+  "شيء مستحيل انك تاكله ؟ ",
+  "تحب تتعرف على ناس جدد ولا مكتفي باللي عندك ؟ ",
+  "انسان م تحب تتعامل معاه ابداً ؟ ",
+  "شيء بسيط تحتفظ فيه؟ ",
+  "فُرصه تتمنى لو أُتيحت لك ؟ ",
+   "لي سوريا ناك اليكس؟ ",
+  "شيء مستحيل ترفضه ؟. ",
+  "لو زعلت بقوة وش بيرضيك ؟ ",
+  "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
+  "ردك المعتاد اذا أحد ناداك ؟ ",
+  "مين الي تحب يكون مبتسم دائما ؟ ",
+" إحساسك في هاللحظة؟ ",
+  "وش اسم اول شخص تعرفت عليه فالتلقرام ؟ ",
+  "اشياء صعب تتقبلها بسرعه ؟ ",
+  "شيء جميل صار لك اليوم ؟ ",
+  "اذا شفت شخص يتنمر على شخص قدامك شتسوي؟ ",
+  "يهمك ملابسك تكون ماركة ؟ ",
+  "ردّك على شخص قال (أنا بطلع من حياتك)؟. ",
+  "مين اول شخص تكلمه اذا طحت بـ مصيبة ؟ ",
+  "تشارك كل شي لاهلك ولا فيه أشياء ما تتشارك؟ ",
+  "كيف علاقتك مع اهلك؟ رسميات ولا ميانة؟ ",
+  "عمرك ضحيت باشياء لاجل شخص م يسوى ؟ ",
+"اكتب سطر من اغنية او قصيدة جا فـ بالك ؟ ",
+  "شيء مهما حطيت فيه فلوس بتكون مبسوط ؟ ",
+  "مشاكلك بسبب ؟ ",
+  "نسبه الندم عندك للي وثقت فيهم ؟ ",
+  "اول حرف من اسم شخص تقوله? بطل تفكر فيني ابي انام؟ ",
+  "اكثر شيء تحس انه مات ف مجتمعنا؟ ",
+  "لو صار سوء فهم بينك وبين شخص هل تحب توضحه ولا تخليه كذا  لان مالك خلق توضح ؟ ",
+  "كم عددكم بالبيت؟ ",
+  "عادي تتزوج من برا القبيلة؟ ",
+  "أجمل شي بحياتك وش هو؟ ",
+} 
+send(msg.chat_id_, msg.id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "كتبات" or text == "حكمه" or text == "قصيده" then 
+local vBandav_Msg = { 
+"‏من ترك أمرهُ لله، أعطاه الله فوق ما يتمنَّاه💙 ", 
+"‏من علامات جمال المرأة .. بختها المايل ! ",
+"‏ انك الجميع و كل من احتل قلبي🫀🤍",
+"‏ ‏ لقد تْعَمقتُ بكَ كَثيراً والمِيمُ لام .♥️",
+"‏ ‏ممكن اكون اختارت غلط بس والله حبيت بجد🖇️",
+"‏ علينا إحياء زَمن الرّسائل الورقيّة وسط هذه الفوضى الالكترونية العَارمة. ●💜",
+"‏ يجي اي الصاروخ الصيني ده جمب الصاروخ المصري لما بيلبس العبايه السوده.🤩♥️",
+"‏ كُنت أرقّ من أن أتحمّل كُل تلك القَسوة من عَينيك .🍍",
+"‏أَكَان عَلَيَّ أَنْ أغْرَس انيابي فِي قَلْبِك لتشعر بِي ؟.",
+"‏ : كُلما أتبع قلبي يدلني إليك .",
+"‏ : أيا ليت من تَهواه العينُ تلقاهُ .",
+"‏ ‏: رغبتي في مُعانقتك عميقة جداً .??",
+"ويُرهقني أنّي مليء بما لا أستطيع قوله.✨",
+"‏ من مراتب التعاسه إطالة الندم ع شيء إنتهى. ● ",
+"‏ ‏كل العالم يهون بس الدنيا بينا تصفي 💙",
+"‏ بعض الاِعتذارات يجب أن تُرفَضّ.",
+"‏ ‏تبدأ حياتك محاولاً فهم كل شيء، وتنهيها محاولاً النجاة من كل ما فهمت.",
+"‏ إن الأمر ينتهي بِنا إلى أعتياد أي شيء.",
+"‏ هل كانت كل الطرق تؤدي إليكِ، أم أنني كنتُ أجعلها كذلك.",
+"‏ ‏هَتفضل توآسيهُم وآحد ورآ التآني لكن أنتَ هتتنسي ومحدِش هَيوآسيك.",
+"‏ جَبَرَ الله قلوبِكُم ، وقَلبِي .🍫",
+"‏ بس لما أنا ببقى فايق، ببقى أبكم له ودان.💖",
+"‏ ‏مقدرش عالنسيان ولو طال الزمن 🖤",
+"‏ أنا لستُ لأحد ولا احد لي ، أنا إنسان غريب أساعد من يحتاجني واختفي.",
+"‏ ‏أحببتك وأنا منطفئ، فما بالك وأنا في كامل توهجي ؟",
+"‏ لا تعودني على دفء شمسك، إذا كان في نيتك الغروب .َ",
+"‏ وانتهت صداقة الخمس سنوات بموقف.",
+"‏ ‏لا تحب أحداً لِدرجة أن تتقبّل أذاه.",
+"‏ إنعدام الرّغبة أمام الشّيء الّذي أدمنته ، انتصار.",
+"‏مش جايز , ده اكيد التأخير وارهاق القلب ده وراه عوضاً عظيماً !💙 ",
+" مش جايز , ده اكيد التأخير وارهاق القلب ده وراه عوضاً عظيماً !💙",
+"فـ بالله صبر  وبالله يسر وبالله عون وبالله كل شيئ ♥️. ",
+"أنا بعتز بنفسي جداً كصاحب وشايف اللي بيخسرني ، بيخسر أنضف وأجدع شخص ممكن يشوفه . ",
+"فجأه جاتلى قافله ‏خلتنى مستعد أخسر أي حد من غير ما أندم عليه . ",
+"‏اللهُم قوني بك حين يقِل صبري... ",
+"‏يارب سهِل لنا كُل حاجة شايلين هَمها 💙‏ ",
+"انا محتاج ايام حلوه بقي عشان مش نافع كدا ! ",
+"المشكله مش اني باخد قررات غلط المشكله اني بفكر كويس فيها قبل ما اخدها .. ",
+"تخيل وانت قاعد مخنوق كدا بتفكر فالمزاكره اللي مزكرتهاش تلاقي قرار الغاء الدراسه .. ",
+" مكانوش يستحقوا المعافرة بأمانه.",
+"‏جمل فترة في حياتي، كانت مع اكثر الناس الذين أذتني نفسيًا. ",
+" ‏إحنا ليه مبنتحبش يعني فينا اي وحش!",
+"أيام مُمله ومستقبل مجهول ونومٌ غير منتظموالأيامُ تمرُ ولا شيَ يتغير ", 
+"عندما تهب ريح المصلحه سوف ياتي الجميع رتكدون تحت قدمك ❤️. ",
+"عادي مهما تعادي اختك قد الدنيا ف عادي ❤. ",
+"بقيت لوحدي بمعنا اي انا اصلا من زمان لوحدي.❤️ ",
+"- ‏تجري حياتنا بما لاتشتهي أحلامنا ! ",
+"تحملين كل هذا الجمال، ‏ألا تتعبين؟",
+"البدايات للكل ، والثبات للصادقين ",
+"مُؤخرًا اقتنعت بالجملة دي جدا : Private life always wins. ",
+" الافراط في التسامح بيخللي الناس تستهين بيك🍍",
+"مهما كنت كويس فـَ إنت معرض لـِ الاستبدال.. ",
+"فخوره بنفسي جدًا رغم اني معملتش حاجه فـ حياتي تستحق الذكر والله . ",
+"‏إسمها ليلة القدر لأنها تُغير الأقدار ,اللهُمَّ غير قدري لحالٍ تُحبه وعوضني خير .. ",
+"فى احتمال كبير انها ليلة القدر ادعوا لنفسكم كتير وأدعو ربنا يشفى كل مريض. 💙 ",
+"أنِر ظُلمتي، وامحُ خطيئتي، واقبل توبتي وأعتِق رقبتي يا اللّٰه. إنكَ عفوٌّ تُحِبُّ العفوَ؛ فاعفُ عني 💛 ", 
+} 
+send(msg.chat_id_, msg.id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "انصحني" or text == "انصحنى" or text == "انصح" then 
+local vBandav_Msg = { 
+"عامل الناس بأخلاقك ولا بأخلاقهم", 
+"الجمال يلفت الأنظار لكن الطيبه تلفت القلوب ", 
+"الاعتذار عن الأخطاء لا يجرح كرامتك بل يجعلك كبير في نظر الناس ",
+"لا ترجي السماحه من بخيل.. فما في البار لظمان ماء",
+"لا تحقرون صغيره إن الجبال من الحصي",
+"لا تستحي من إعطاء فإن الحرمان أقل منه ", 
+"لا تظلم حتى لا تتظلم ",
+"لا تقف قصاد الريح ولا تمشي معها ",
+"لا تكسب موده التحكم الا بالتعقل",
+"لا تمد عينك في يد غيرك ",
+"لا تملح الا لمن يستحقاها ويحافظ عليها",
+"لا حياه للإنسان بلا نبات",
+"لا حياه في الرزق.. ولا شفاعه في الموت",
+"كما تدين تدان",
+"لا دين لمن لا عهد له ",
+"لا سلطان على الدوق فيما يحب أو بكره",
+"لا مروه لمن لادين له ",
+"لا يدخل الجنه من لايأمن من جازه بوائقه",
+"يسروا ولا تعسروا... ويشورا ولا تنفروا",
+"يدهم الصدر ما يبني العقل الواسع ",
+"أثقل ما يوضع في الميزان يوم القيامة حسن الخلق ",
+"أجهل الناس من ترك يقين ما عنده لظن ما عند الناس ",
+"أحياناً.. ويصبح الوهم حقيقه ",
+"مينفعش تعاتب حد مبيعملش حساب لزعلك عشان متزعلش مرتين . ",
+"السفر ومشاهده اماكن مختلفه وجديده ",
+"عدم تضيع الفرص واسثمارها لحظه مجبئها ",
+" اعطاء الاخرين اكثر من ما يتوقعون",
+"معامله الناس بلطف ولكن عدم السماح لاحد بستغالال ذالك ",
+"تكوين صدقات جديده مع الحفظ بلاصدقاء القودامي ",
+"تعلم اصول المهنه بدلا من تضيع الوقت ف تعلم حيل المهنه ",
+"مدح ع الاقل ثلاث اشخاص يوميا ",
+"النظر ف عيون الشخاص عند مخاطبتهم ",
+"التحلي بلسماح مع الاخرين او النفس ",
+"الاكثار من قول كلمه شكرا ",
+" مصافحه الاخرين بثبات وقوة ",
+"الابتعاد عن المناطق السيئه السمعه لتجنب الاحداث السئه ",
+" ادخار 10٪ع الاقل من الدخل",
+" تجنب المخاوف من خلال التعلم من تجارب مختلفه",
+" الحفاظ ع السمعه لانها اغلي ما يملك الانسان",
+" تحويل الاعداء الي اصدقاء من خلال القيام بعمل جيد",
+"لا تصدق كل ما تسمعع. ولا تنفق كل ما تمتلك . ولا تنم قدر ما ترغب ",
+" اعتني بسمعتك جيدا فستثبت للك الايام انها اغلي ما تملك",
+"حين تقول والدتك ستندم ع فعل ذالك ستندم عليه غالبا.. ",
+" لا تخش العقبات الكبيره فخلفها تقع الفرص العظيمه",
+"قد لا يتطلب الامر اكثر من شخص واحد لقلب حياتك رأس ع عقب ",
+"اختر رفيقه حياتك بحرص فهو قرار سيشكل 90٪من سعادتك او بؤسك ",
+" اقلب اداءك الاصدقاء بفعل شي جميل ومفجائ لهم",
+"حين تدق الفرصه ع باباك ادعوها للبيت ",
+"تعلم القواعد جيدا ثن اكسر بعدها ",
+"احكم ع نجاحك من خلال قدرتك ع العطاء وليس الاخذ ",
+" لا تتجاهل الشيطان مهما بدل ثيابه",
+"ركز ع جعل الاشياء افضل وليس اكبر او اعظم ",
+"كن سعيد  بما تمتلك واعمل لامتلاك ما تريد ",
+"اعط الناس اكثر من ما يتوقعون ",
+" لا تكن منشغل لدرجه عدم التعرف ع اصدقاء جدد",
+"استحمه يوم العيد يمعفن🤓",
+"مش تحب اي حد يقرب منك ",
+" خليك مع البت راجل خليك تقيل🥥",
+" انصح نفسك بنفسك بمت😆",
+" كنت نصحت نفسي ياخويا😹", 
+} 
+send(msg.chat_id_, msg.id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "نكته" or text == "قولي نكته" or text == "عايز اضحك" then 
+local vBandav_Msg = { 
+" مرة واحد مصري دخل سوبر ماركت في الكويت عشان يشتري ولاعة..    راح عشان يحاسب بيقوله الولاعة ديه بكام؟   قاله دينار..  قاله منا عارف ان هي نار بس بكام 🤓😂", 
+"بنت حبت تشتغل مع رئيس عصابة..   شغلها في غسيل الأموال 🤓😂 ", 
+"واحد بيشتكي لصاحبه بيقوله أنا مافيش حد بيحبني ولا يفتكرني أبدًا، ومش عارف أعمل إيه.. قاله سهلة.. استلف من الناس فلوس هيسألوا عليك كل يوم! 🤓😂",
+"ﻣﺮه واﺣﺪ ﻣﺴﻄﻮل ﻣﺎﺷﻰ ﻓﻰ اﻟﺸﺎرع ﻟﻘﻰ مذﻳﻌﻪ ﺑﺘﻘﻮﻟﻪ ﻟﻮ ﺳﻤﺤﺖ ﻓﻴﻦ اﻟﻘﻤﺮ؟    ﻗﺎﻟﻬﺎ اﻫﻮه..   ﻗﺎﻟﺘﻠﻮ ﻣﺒﺮوك ﻛﺴﺒﺖ ﻋﺸﺮﻳﻦ ﺟﻨﻴﻪ..   ﻗﺎﻟﻬﺎ ﻓﻰ واﺣﺪ ﺗﺎﻧﻰ ﻫﻨﺎك اﻫﻮه. 🤓😂",
+"واحده ست سايقه على الجي بي اس..  قالها انحرفي قليلًا..   قلعت الطرحة. 🤓😂 ",
+"مرة واحد غبي معاه عربية قديمة جدًا وبيحاول يبيعها وماحدش راضي يشتريها.. راح لصاحبه حكاله المشكلة.. صاحبه قاله عندي لك فكرة جهنمية هاتخليها تتباع الصبح.. أنت تجيب علامة مرسيدس وتحطها عليها. بعد أسبوعين صاحبه شافه صدفة قاله بعت العربية ولا لاء؟ قاله انت  مجنون؟ حد يبيع مرسيدس؟ 🤓😂",
+"مره واحد بلديتنا كان بيدق مسمار فى الحائط فالمسمار وقع منه فقال له :تعالى ف مجاش, فقال له: تعالي ف مجاش. فراح بلديتنا رامي على المسمار شوية مسمامير وقال: هاتوه. 🤓😂",
+"واحدة عملت حساب وهمي ودخلت تكلم جوزها منه.. ومبسوطة أوي وبتضحك.. سألوها بتضحكي على إيه؟ قالت لهم أول مرة يقول لي كلام حلو من ساعة ما اتجوزنا. 🤓😂",
+"بنت حبت تشتغل مع رئيس عصابة..   شغلها في غسيل الأموال 🤓😂",
+"مره واحد اشترى فراخ..   علشان يربيها فى قفص صدره.🤓😂",
+"مرة واحد من الفيوم مات..   أهله صوصوا عليه.🤓😂",
+"ﻣﺮه واﺣﺪ ﻣﺴﻄﻮل ﻣﺎﺷﻰ ﻓﻰ اﻟﺸﺎرع ﻟﻘﻰ مذﻳﻌﻪ ﺑﺘﻘﻮﻟﻪ ﻟﻮ ﺳﻤﺤﺖ ﻓﻴﻦ اﻟﻘﻤﺮ؟    ﻗﺎﻟﻬﺎ اﻫﻮه..   ﻗﺎﻟﺘﻠﻮ ﻣﺒﺮوك ﻛﺴﺒﺖ ﻋﺸﺮﻳﻦ ﺟﻨﻴﻪ..   ﻗﺎﻟﻬﺎ ﻓﻰ واﺣﺪ ﺗﺎﻧﻰ ﻫﻨﺎك اﻫﻮه.🤓😂",
+"مره واحد شاط كرة فى المقص..   اتخرمت. 🤓😂",
+"مرة واحد رايح لواحد صاحبه.. فا البواب وقفه بيقول له انت طالع لمين.. قاله طالع أسمر شوية لبابايا.. قاله يا أستاذ طالع لمين في العماره 🤓😂",
+} 
+send(msg.chat_id_, msg.id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "خيرني" or text == "لو خيروك" or text == "خيروك" then 
+local vBandav_Msg = { 
+"لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",
+"لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
+"لو خيروك |  أن تعيش قصة فيلم هل تختار الأكشن أو الكوميديا؟ ",
+"لو خيروك |  بين تناول البيتزا وبين الآيس كريم وذلك بشكل دائم؟ ",
+"لو خيروك |  بين إمكانية تواجدك في الفضاء وبين إمكانية تواجدك في البحر؟ ",
+"لو خيروك |  بين تغيير وظيفتك كل سنة أو البقاء بوظيفة واحدة طوال حياتك؟ ",
+"لو خيروك |  أسئلة محرجة أسئلة صراحة ماذا ستختار؟ ",
+"لو خيروك |  بين الذهاب إلى الماضي والعيش مع جدك أو بين الذهاب إلى المستقبل والعيش مع أحفادك؟ ",
+"لو كنت شخص آخر هل تفضل البقاء معك أم أنك ستبتعد عن نفسك؟ ",
+"لو خيروك |  بين الحصول على الأموال في عيد ميلادك أو على الهدايا؟ ",
+"لو خيروك |  بين القفز بمظلة من طائرة أو الغوص في أعماق البحر؟ ",
+"لو خيروك |  بين الاستماع إلى الأخبار الجيدة أولًا أو الاستماع إلى الأخبار السيئة أولًا؟ ",
+"لو خيروك |  بين أن تكون رئيس لشركة فاشلة أو أن تكون موظف في شركة ناجحة؟ ",
+"لو خيروك |  بين أن يكون لديك جيران صاخبون أو أن يكون لديك جيران فضوليون؟ ",
+"لو خيروك |  بين أن تكون شخص مشغول دائمًا أو أن تكون شخص يشعر بالملل دائمًا؟ ",
+"لو خيروك |  بين قضاء يوم كامل مع الرياضي الذي تشجعه أو نجم السينما الذي تحبه؟ ",
+"لو خيروك |  بين استمرار فصل الشتاء دائمًا أو بقاء فصل الصيف؟ ",
+"لو خيروك |  بين العيش في القارة القطبية أو العيش في الصحراء؟ ",
+"لو خيروك |  بين أن تكون لديك القدرة على حفظ كل ما تسمع أو تقوله وبين القدرة على حفظ كل ما تراه أمامك؟ ",
+"لو خيروك |  بين أن يكون طولك 150 سنتي متر أو أن يكون 190 سنتي متر؟ ",
+"لو خيروك |  بين إلغاء رحلتك تمامًا أو بقائها ولكن فقدان الأمتعة والأشياء الخاص بك خلالها؟ ",
+"لو خيروك |  بين أن تكون اللاعب الأفضل في فريق كرة فاشل أو أن تكون لاعب عادي في فريق كرة ناجح؟ ",
+"لو خيروك |  بين ارتداء ملابس البيت لمدة أسبوع كامل أو ارتداء البدلة الرسمية لنفس المدة؟ ",
+"لو خيروك |  بين امتلاك أفضل وأجمل منزل ولكن في حي سيء أو امتلاك أسوأ منزل ولكن في حي جيد وجميل؟ ",
+"لو خيروك |  بين أن تكون غني وتعيش قبل 500 سنة، أو أن تكون فقير وتعيش في عصرنا الحالي؟ ",
+"لو خيروك |  بين ارتداء ملابس الغوص ليوم كامل والذهاب إلى العمل أو ارتداء ملابس جدك/جدتك؟ ",
+"لو خيروك |  بين قص شعرك بشكل قصير جدًا أو صبغه باللون الوردي؟ ",
+"لو خيروك |  بين أن تضع الكثير من الملح على كل الطعام بدون علم أحد، أو أن تقوم بتناول شطيرة معجون أسنان؟ ",
+"لو خيروك |  بين قول الحقيقة والصراحة الكاملة مدة 24 ساعة أو الكذب بشكل كامل مدة 3 أيام؟ ",
+"لو خيروك |  بين تناول الشوكولا التي تفضلها لكن مع إضافة رشة من الملح والقليل من عصير الليمون إليها أو تناول ليمونة كاملة كبيرة الحجم؟ ",
+"لو خيروك |  بين وضع أحمر الشفاه على وجهك ما عدا شفتين أو وضع ماسكارا على شفتين فقط؟ ",
+"لو خيروك |  بين الرقص على سطح منزلك أو الغناء على نافذتك؟ ",
+"لو خيروك |  بين تلوين شعرك كل خصلة بلون وبين ارتداء ملابس غير متناسقة لمدة أسبوع؟ ",
+"لو خيروك |  بين تناول مياه غازية مجمدة وبين تناولها ساخنة؟ ",
+"لو خيروك |  بين تنظيف شعرك بسائل غسيل الأطباق وبين استخدام كريم الأساس لغسيل الأطباق؟ ",
+"لو خيروك |  بين تزيين طبق السلطة بالبرتقال وبين إضافة البطاطا لطبق الفاكهة؟ ",
+"لو خيروك |  بين اللعب مع الأطفال لمدة 7 ساعات أو الجلوس دون فعل أي شيء لمدة 24 ساعة؟ ",
+"لو خيروك |  بين شرب كوب من الحليب أو شرب كوب من شراب عرق السوس؟ ",
+"لو خيروك |  بين الشخص الذي تحبه وصديق الطفولة؟ ",
+"لو خيروك |  بين أمك وأبيك؟ ",
+"لو خيروك |  بين أختك وأخيك؟ ",
+"لو خيروك |  بين نفسك وأمك؟ ",
+"لو خيروك |  بين صديق قام بغدرك وعدوك؟ ",
+"لو خيروك |  بين خسارة حبيبك/حبيبتك أو خسارة أخيك/أختك؟ ",
+"لو خيروك |  بإنقاذ شخص واحد مع نفسك بين أمك أو ابنك؟ ",
+"لو خيروك |  بين ابنك وابنتك؟ ",
+"لو خيروك |  بين زوجتك وابنك/ابنتك؟ ",
+"لو خيروك |  بين جدك أو جدتك؟ ",
+"لو خيروك |  بين زميل ناجح وحده أو زميل يعمل كفريق؟ ",
+"لو خيروك |  بين لاعب كرة قدم مشهور أو موسيقي مفضل بالنسبة لك؟ ",
+"لو خيروك |  بين مصور فوتوغرافي جيد وبين مصور سيء ولكنه عبقري فوتوشوب؟ ",
+"لو خيروك |  بين سائق سيارة يقودها ببطء وبين سائق يقودها بسرعة كبيرة؟ ",
+"لو خيروك |  بين أستاذ اللغة العربية أو أستاذ الرياضيات؟ ",
+"لو خيروك |  بين أخيك البعيد أو جارك القريب؟ ",
+"لو خيروك |  يبن صديقك البعيد وبين زميلك القريب؟ ",
+"لو خيروك |  بين رجل أعمال أو أمير؟ ",
+"لو خيروك |  بين نجار أو حداد؟ ",
+"لو خيروك |  بين طباخ أو خياط؟ ",
+"لو خيروك |  بين أن تكون كل ملابس بمقاس واحد كبير الحجم أو أن تكون جميعها باللون الأصفر؟ ",
+"لو خيروك |  بين أن تتكلم بالهمس فقط طوال الوقت أو أن تصرخ فقط طوال الوقت؟ ",
+"لو خيروك |  بين أن تمتلك زر إيقاف موقت للوقت أو أن تمتلك أزرار للعودة والذهاب عبر الوقت؟ ",
+"لو خيروك |  بين أن تعيش بدون موسيقى أبدًا أو أن تعيش بدون تلفاز أبدًا؟ ",
+"لو خيروك |  بين أن تعرف متى سوف تموت أو أن تعرف كيف سوف تموت؟ ",
+"لو خيروك |  بين العمل الذي تحلم به أو بين إيجاد شريك حياتك وحبك الحقيقي؟ ",
+"لو خيروك |  بين معاركة دب أو بين مصارعة تمساح؟ ",
+"لو خيروك |  بين إما الحصول على المال أو على المزيد من الوقت؟ ",
+"لو خيروك |  بين امتلاك قدرة التحدث بكل لغات العالم أو التحدث إلى الحيوانات؟ ",
+"لو خيروك |  بين أن تفوز في اليانصيب وبين أن تعيش مرة ثانية؟ ",
+"لو خيروك |  بأن لا يحضر أحد إما لحفل زفافك أو إلى جنازتك؟ ",
+"لو خيروك |  بين البقاء بدون هاتف لمدة شهر أو بدون إنترنت لمدة أسبوع؟ ",
+"لو خيروك |  بين العمل لأيام أقل في الأسبوع مع زيادة ساعات العمل أو العمل لساعات أقل في اليوم مع أيام أكثر؟ ",
+"لو خيروك |  بين مشاهدة الدراما في أيام السبعينيات أو مشاهدة الأعمال الدرامية للوقت الحالي؟ ",
+"لو خيروك |  بين التحدث عن كل شيء يدور في عقلك وبين عدم التحدث إطلاقًا؟ ",
+"لو خيروك |  بين مشاهدة فيلم بمفردك أو الذهاب إلى مطعم وتناول العشاء بمفردك؟ ",
+"لو خيروك |  بين قراءة رواية مميزة فقط أو مشاهدتها بشكل فيلم بدون القدرة على قراءتها؟ ",
+"لو خيروك |  بين أن تكون الشخص الأكثر شعبية في العمل أو المدرسة وبين أن تكون الشخص الأكثر ذكاءً؟ ",
+"لو خيروك |  بين إجراء المكالمات الهاتفية فقط أو إرسال الرسائل النصية فقط؟ ",
+"لو خيروك |  بين إنهاء الحروب في العالم أو إنهاء الجوع في العالم؟ ",
+"لو خيروك |  بين تغيير لون عينيك أو لون شعرك؟ ",
+"لو خيروك |  بين امتلاك كل عين لون وبين امتلاك نمش على خديك؟ ",
+"لو خيروك |  بين الخروج بالمكياج بشكل مستمر وبين الحصول على بشرة صحية ولكن لا يمكن لك تطبيق أي نوع من المكياج؟ ",
+"لو خيروك |  بين أن تصبحي عارضة أزياء وبين ميك آب أرتيست؟ ",
+"لو خيروك |  بين مشاهدة كرة القدم أو متابعة الأخبار؟ ",
+"لو خيروك |  بين موت شخصية بطل الدراما التي تتابعينها أو أن يبقى ولكن يكون العمل الدرامي سيء جدًا؟ ",
+"لو خيروك |  بين العيش في دراما قد سبق وشاهدتها ماذا تختارين بين الكوميديا والتاريخي؟ ",
+"لو خيروك |  بين امتلاك القدرة على تغيير لون شعرك متى تريدين وبين الحصول على مكياج من قبل خبير تجميل وذلك بشكل يومي؟ ",
+"لو خيروك |  بين نشر تفاصيل حياتك المالية وبين نشر تفاصيل حياتك العاطفية؟ ",
+"لو خيروك |  بين البكاء والحزن وبين اكتساب الوزن؟ ",
+"لو خيروك |  بين تنظيف الأطباق كل يوم وبين تحضير الطعام؟ ",
+"لو خيروك |  بين أن تتعطل سيارتك في نصف الطريق أو ألا تتمكنين من ركنها بطريقة صحيحة؟ ",
+"لو خيروك |  بين إعادة كل الحقائب التي تملكينها أو إعادة الأحذية الجميلة الخاصة بك؟ ",
+"لو خيروك |  بين قتل حشرة أو متابعة فيلم رعب؟ ",
+"لو خيروك |  بين امتلاك قطة أو كلب؟ ",
+"لو خيروك |  بين الصداقة والحب ",
+"لو خيروك |  بين تناول الشوكولا التي تحبين طوال حياتك ولكن لا يمكنك الاستماع إلى الموسيقى وبين الاستماع إلى الموسيقى ولكن لا يمكن لك تناول الشوكولا أبدًا؟ ",
+"لو خيروك |  بين مشاركة المنزل مع عائلة من الفئران أو عائلة من الأشخاص المزعجين الفضوليين الذين يتدخلون في كل كبيرة وصغيرة؟ ",
+} 
+send(msg.chat_id_, msg.id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "حروف" or text == "حرف" or text == "الحروف" then 
+local vBandav_Msg = { 
+" جماد بحرف ⋙ ر  ", 
+" مدينة بحرف ⋙ ع  ",
+" حيوان ونبات بحرف ⋙ خ  ", 
+" اسم بحرف ⋙ ح  ", 
+" اسم ونبات بحرف ⋙ م  ", 
+" دولة عربية بحرف ⋙ ق  ", 
+" جماد بحرف ⋙ ي  ", 
+" نبات بحرف ⋙ ج  ", 
+" اسم بنت بحرف ⋙ ع  ", 
+" اسم ولد بحرف ⋙ ع  ", 
+" اسم بنت وولد بحرف ⋙ ث  ", 
+" جماد بحرف ⋙ ج  ",
+" حيوان بحرف ⋙ ص  ",
+" دولة بحرف ⋙ س  ",
+" نبات بحرف ⋙ ج  ",
+" مدينة بحرف ⋙ ب  ",
+" نبات بحرف ⋙ ر  ",
+" اسم بحرف ⋙ ك  ",
+" حيوان بحرف ⋙ ظ  ",
+" جماد بحرف ⋙ ذ  ",
+" مدينة بحرف ⋙ و  ",
+" اسم بحرف ⋙ م  ",
+" اسم بنت بحرف ⋙ خ  ",
+" اسم و نبات بحرف ⋙ ر  ",
+" نبات بحرف ⋙ و  ",
+" حيوان بحرف ⋙ س  ",
+" مدينة بحرف ⋙ ك  ",
+" اسم بنت بحرف ⋙ ص  ",
+" اسم ولد بحرف ⋙ ق  ",
+" نبات بحرف ⋙ ز  ",
+"  جماد بحرف ⋙ ز  ",
+"  مدينة بحرف ⋙ ط  ",
+"  جماد بحرف ⋙ ن  ",
+"  مدينة بحرف ⋙ ف  ",
+"  حيوان بحرف ⋙ ض  ",
+"  اسم بحرف ⋙ ك  ",
+"  نبات و حيوان و مدينة بحرف ⋙ س  ", 
+"  اسم بنت بحرف ⋙ ج  ", 
+"  مدينة بحرف ⋙ ت  ", 
+"  جماد بحرف ⋙ ه  ", 
+"  اسم بنت بحرف ⋙ ر  ", 
+" اسم ولد بحرف ⋙ خ  ", 
+" جماد بحرف ⋙ ع  ",
+" حيوان بحرف ⋙ ح  ",
+" نبات بحرف ⋙ ف  ",
+" اسم بنت بحرف ⋙ غ  ",
+" اسم ولد بحرف ⋙ و  ",
+" نبات بحرف ⋙ ل  ",
+"مدينة بحرف ⋙ ع  ",
+"دولة واسم بحرف ⋙ ب  ",
+} 
+send(msg.chat_id_, msg.id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "اشتمو" or text == "اشتم" or text == "نيكو" then 
+local vBandav_Msg = { 
+"  كسمك يبن الوسخه", 
+" كسمسكك ",
+" هنيكك",
+" اركب امك❤. ",
+" ي ابن الاحبه😁:]] ",
+" هنيك امك فله^^ ",
+" يعرص",
+" ي ابن الوتس",
+" ابوك خول😁:]]",
+" تيزك😁:]]",
+" لا حبيبي❤.",
+" خلاص كسمك😁:]]",
+" كس اختك🙂 ",
+" بز امك^^",
+"ناك ابوك عل وتس🥺⚡...!؟",
+"انيكك🤝🏻😂...!؟",
+" كسمك ي هقر🤾🏻‍♂️😂...!؟",
+" ابوك عرص🏃🏻‍♀️😂...!؟",
+" امك لبوه🏂😂...!؟",
+" بيب بيب هنيك امك عند بتاع الانبيب 😂🤭...!؟",
+" انت بتناك ليه 😂...!؟",
+" كسمك ي خول😂...!؟",
+" هديك زبي 😂...!؟",
+" شششش مراتي🤭♥️...!؟",
+" كتفمك يخول🙂...!؟",
+" يبن الفيس😂...!؟",
+" ههينك ي ود مراتي😂...!؟ ",
+" بهزر معاك🙂...!؟",
+" خد زبي😉...!؟",
+" امك لبوه ياه🙂...!؟",
+" وه ي كسمك😂♥️...!؟",
+" ي ابن المتناكه🤝🏻😂...!؟",
+" تيزك فيها كام خرمه😂...!؟",
+" كسك🤾🏻‍♂️😂...!؟",
+" كسمك تاني😂😂...!؟ ",
+" هنيك امك😂...!؟",
+" كسمين امك😂...!؟ ",
+" كس اختك تاني😂🏂...!؟",
+" ي متناك😂⚡...!؟",
+" ي شرموط ",
+" ي مايح  ",
+" يبن الزانيه ",
+" ي كسمك  ",
+" ي منيوك ",
+" ي ابن المتناكة ",
+" يا لي امك احبهه ",
+" كسمينك",
+" كفياك كدا❤'✓",
+
+} 
+send(msg.chat_id_, msg.reply_to_message_id_,'['..vBandav_Msg[math.random(#vBandav_Msg)]..']')  
+return false 
+end
+if text ==  "حفل" and Sudo(msg) or text == 'حفل عليه' and Sudo(msg) then
+local t7fel = { 
+'يمتهان', 
+} 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']') 
+send(msg.chat_id_, msg.reply_to_message_id_, 'يكسمك')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يخول')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يديوث')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يهطل')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يمنيوك')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يكوس')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يقله')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يبن الاحبه')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يخورم')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يميت')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'رد يبني')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'نت ميت لي') 
+send(msg.chat_id_, msg.reply_to_message_id_, 'يبني')   
+send(msg.chat_id_, msg.reply_to_message_id_, 'تع بس')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'روحت فين')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'يدينمي')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'علي الضحك')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'نت بطي نيك')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'ها رد يكسمك')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'الحق الواد هرب')  
+send(msg.chat_id_, msg.reply_to_message_id_, 'هقوره😿')  
+return false 
+end
+
+if text ==  "ثيم" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ban = math.random(1,57); 
+local Text ='اضغط علي الزر لاختيار ثيم اخر' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = 'ثيم أخري', callback_data="/chair"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. msg.chat_id_ .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text and text:match('^الحساب (%d+)$') then
+local id = text:match('^الحساب (%d+)$')
+local text = 'اضغط لمشاهده الحساب'
+tdcli_function ({ID="SendMessage", chat_id_=msg.chat_id_, reply_to_message_id_=msg.id_, disable_notification_=0, from_background_=1, reply_markup_=nil, input_message_content_={ID="InputMessageText", text_=text, disable_web_page_preview_=1, clear_draft_=0, entities_={[0] = {ID="MessageEntityMentionName", offset_=0, length_=19, user_id_=id}}}}, dl_cb, nil)
+end
+local function oChat(chat_id,cb)
+tdcli_function ({
+ID = "OpenChat",
+chat_id_ = chat_id
+}, cb, nil)
+end
+if text and text:match("^كشف (.*)$") then 
+local userid = text:match("^كشف (.*)$") 
+function start_function(extra, result, success) 
+if userid then 
+tdcli_function ({ID = "GetUser",user_id_ = userid},function(extra,data)  
+local rtp = Rutba(userid,msg.chat_id_) 
+local username = ('[@'..data.username_..']' or 'لا يوجد') 
+local iduser = userid 
+send(msg.chat_id_, msg.id_,'  ●الايدي ⋙ 『'..iduser..'』\n ●المعرف ⋙ 『'..username..'』\n ●الرتبه ⋙ 『'..rtp..'』\n ●نوع الكشف ⋙ بالمعرف') 
+end,nil) 
+else 
+send(msg.chat_id_, msg.id_,'  ●المعرف غير صحيح') 
+end 
+end 
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil) 
+end
+if text == 'قناة السورس' then
 local Text = [[ 
- ─────── ◉ ───────
-◉ لستخدام الالعاب اتبع مايلي ..↑↓
- ─────── ◉ ───────
-◉ منوعات اولاين ← لبدء العبه
-◉ مسبقات اولاين ← لبدء العبه
-◉ اكشن اولاين ← لبدء العبه
-◉ لعبه الذكاء ← لبدء العبه
-◉ لو خيروك ← لبدء العبه
-◉ مستقبلي  ← لبدء العبه
-◉ المليون ← لبدء اللعبه
-◉ نمله  ← لبدء اللعبه
-◉ اسئله ← لبدء العبه
-◉ مهنتي  ← لبدء العبه
-◉ تحليل ← لبدء العبه
-◉ تحليل ← لبدء العبه
-◉ كشف الكدب ← لبدء العبه
-◉ العاب مطوره ← لبدء العبه
- ─────── ◉ ───────
-◉ اليك ايضا قائمه العاب السورس
- ─────── ◉ ───────
-◉ لعبة السمايلات ← سمايلات
-◉ لعبة المختلف ← المختلف
-◉ لعبة الصراحه ← صراحه
-◉ لعبة بوستات ← بوستات
-◉ لعبة كت تويت ← تويت
-◉ لعبة منشورات ← كتبات
-◉ لعبة العكس ← العكس 
-◉ لعبة الحزوره ← حزوره
-◉ لعبة انصح ← انصحني
-◉ لعبه الاسرع ← الاسرع
-◉ لعبة المعاني ← معاني
-◉ لعبة التخمين ← خمن
-◉ لعبة الامثله ← امثله
-◉ لعبه النكت← نكته
-◉ لعبة البـات ← بات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+[قناه سورس الديبادخل وتابع الجديد](t.me/X_G_33)
+]] 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/41&caption=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text == '●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●' then
+local Text = [[ 
+ ●من أحسن السورسات على التليجرام سورس الديب●
+بجد سورس أمان جدا وفي مميزات جامده
+تع نصب بوتك عندنا لو محظور
+خش على تواصل هيدخلك لروم التواصل 
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ◉', url="t.me/X_G_33"}}, 
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/mmsst13/871&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/41&caption=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text and text:match("^انطق (.*)$") then   
-local textntk = text:match("^انطق (.*)$")   
-UrlAntk = https.request('https://apiabs.ml/Antk.php?abs='..URL.escape(textntk)..'')   
-Antk = JSON.decode(UrlAntk)   
-if UrlAntk.ok ~= false then   
-download_to_file("https://translate"..Antk.result.google..Antk.result.code.."UTF-8"..Antk.result.utf..Antk.result.translate.."&tl=ar-IN",Antk.result.translate..'.mp3')    
-local curlm = 'curl "'..'https://api.telegram.org/bot'..token..'/sendDocument'..'" -F "chat_id='.. msg.chat_id_ ..'" -F "document=@'..''..textntk..'.mp3'..'"' io.popen(curlm) 
-end   
+if text == 'التواصل'  then
+database:del(bot_id..'Srt:Bot') 
+local Text = [[ 
+[TWL](t.me/mero_kol_heaty)
+]] 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = '˹ᴛᴀᴡᴏsʟ˼', url="t.me/mero_kol_heaty"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qtdao/34&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
------------------------------------------------------------------ انتهئ الاوامر الجديدة
+if text == 'العاب سوريا' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
+local Text = [[  
+ ● اهلا في قائمه الالعاب المتطوره سورس الديب● 
+تفضل اختر لعبه من القائمه 
+]]  
+keyboard = {}   
+keyboard.inline_keyboard = {  
+{{text = 'فلابي بيرد', url="https://t.me/awesomebot?game=FlappyBird"},{text = 'تحداني فالرياضيات',url="https://t.me/gamebot?game=MathBattle"}},   
+{{text = 'لعبه دراجات', url="https://t.me/gamee?game=MotoFX"},{text = 'سباق سيارات', url="https://t.me/gamee?game=F1Racer"}}, 
+{{text = 'تشابه', url="https://t.me/gamee?game=DiamondRows"},{text = 'كره القدم', url="https://t.me/gamee?game=FootballStar"}}, 
+{{text = 'ورق', url="https://t.me/gamee?game=Hexonix"},{text = 'لعبه 2048', url="https://t.me/awesomebot?game=g2048"}}, 
+{{text = 'SQUARES', url="https://t.me/gamee?game=Squares"},{text = 'ATOMIC', url="https://t.me/gamee?game=AtomicDrop1"}}, 
+{{text = 'CORSAIRS', url="https://t.me/gamebot?game=Corsairs"},{text = 'LumberJack', url="https://t.me/gamebot?game=LumberJack"}}, 
+{{text = 'LittlePlane', url="https://t.me/gamee?game=LittlePlane"},{text = 'RollerDisco', url="https://t.me/gamee?game=RollerDisco"}},  
+{{text = 'كره القدم 2', url="https://t.me/gamee?game=PocketWorldCup"},{text = 'جمع المياه', url="https://t.me/gamee?game=BlockBuster"}},  
+{{text = 'لا تجعلها تسقط', url="https://t.me/gamee?game=Touchdown"},{text = 'GravityNinja', url="https://t.me/gamee?game=GravityNinjaEmeraldCity"}},  
+{{text = 'Astrocat', url="https://t.me/gamee?game=Astrocat"},{text = 'Skipper', url="https://t.me/gamee?game=Skipper"}},  
+{{text = 'WorldCup', url="https://t.me/gamee?game=PocketWorldCup"},{text = 'GeometryRun', url="https://t.me/gamee?game=GeometryRun"}},  
+{{text = 'Ten2One', url="https://t.me/gamee?game=Ten2One"},{text = 'NeonBlast2', url="https://t.me/gamee?game=NeonBlast2"}},  
+{{text = 'Paintio', url="https://t.me/gamee?game=Paintio"},{text = 'onetwothree', url="https://t.me/gamee?game=onetwothree"}},  
+{{text = 'BrickStacker', url="https://t.me/gamee?game=BrickStacker"},{text = 'StairMaster3D', url="https://t.me/gamee?game=StairMaster3D"}},  
+{{text = 'LoadTheVan', url="https://t.me/gamee?game=LoadTheVan"},{text = 'BasketBoyRush', url="https://t.me/gamee?game=BasketBoyRush"}},  
+{{text = 'GravityNinja21', url="https://t.me/gamee?game=GravityNinja21"},{text = 'MarsRover', url="https://t.me/gamee?game=MarsRover"}},  
+{{text = 'LoadTheVan', url="https://t.me/gamee?game=LoadTheVan"},{text = 'GroovySki', url="https://t.me/gamee?game=GroovySki"}},  
+{{text = 'PaintioTeams', url="https://t.me/gamee?game=PaintioTeams"},{text = 'KeepItUp', url="https://t.me/gamee?game=KeepItUp"}},  
+{{text = 'SunshineSolitaire', url="https://t.me/gamee?game=SunshineSolitaire"},{text = 'Qubo', url="https://t.me/gamee?game=Qubo"}},  
+{{text = 'PenaltyShooter2', url="https://t.me/gamee?game=PenaltyShooter2"},{text = 'Getaway', url="https://t.me/gamee?game=Getaway"}},  
+{{text = 'PaintioTeams', url="https://t.me/gamee?game=PaintioTeams"},{text = 'SpikyFish2', url="https://t.me/gamee?game=SpikyFish2"}},  
+{{text = 'GroovySki', url="https://t.me/gamee?game=GroovySki"},{text = 'KungFuInc', url="https://t.me/gamee?game=KungFuInc"}},  
+{{text = 'SpaceTraveler', url="https://t.me/gamee?game=SpaceTraveler"},{text = 'RedAndBlue', url="https://t.me/gamee?game=RedAndBlue"}},  
+{{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
+{{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}},
+}  
+local msg_id = msg.id_/2097152/0.5  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/vagwg/6&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "تعطيل الزخرفه" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '✭︙ تم تعطيل الزخرفه')
 database:set(bot_id.." sofi:zhrf_Bots"..msg.chat_id_,"close")
@@ -12653,899 +14241,1266 @@ local Chat_id = data.chat_id_
 local Msg_id = data.message_id_
 local msg_idd = Msg_id/2097152/0.5
 local Text = data.payload_.data_
-if Text == '/help1' then
+Ok_id  = Text:match("(%d+)")  
+if text == 'okCaptcha'..data.sender_user_id_ then  
+DeleteMessage(Chat_id, {[0] = Msg_id}) 
+return https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id="..Ok_id .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+end
+if text == '/ven3' then
+if not CoSu(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
+if link then                              
+send(msg.chat_id_,msg.id_,'.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..link..')')                          
+else                
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
+if linkgpp.ok == true then 
+linkgp = '• 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..linkgpp.result..')\nـــــــــــــــــــــــــ\n  ['..linkgpp.result..']'
+else
+linkgp = ' لا يوجد رابط ارسل ضع رابط'
+end  
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+send(msg.chat_id_, msg.id_,linkgp)              
+end      
+end,nil)
+end
+if text == '/ven1' then
+if not CoSu(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or database:get(bot_id.."Private:Group:Link"..msg.chat_id_) 
+if linkgpp.ok == true then 
+local linkgp = '• 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..linkgpp.result..')\nـــــــــــــــــــــــــ\n  ['..linkgpp.result..']'
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = ta.title_, url=linkgpp.result}},}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(linkgp).."&parse_mode=markdown&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,'● لا يوجد رابط ارسل ضع رابط') 
+end 
+end,nil) 
+end
+if text == '/ven2' then
+if not CoSu(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_)) or database:get(bot_id.."Private:Group:Link"..msg.chat_id_) 
+if linkgpp.ok == true then 
+local linkgp = '• 🖤 |ＬＩＮＫ ＧＲＯＵＰ.\nـــــــــــــــــــــــــ\n ['..ta.title_..']('..linkgpp.result..')\nـــــــــــــــــــــــــ\n  ['..linkgpp.result..']'
+local inline = {{{text = ta.title_, url=linkgpp.result}},} 
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+send_inline_key(msg.chat_id_,linkgp,nil,inline,msg.id_/2097152/0.5) 
+else 
+send(msg.chat_id_, msg.id_,'● لا يوجد رابط ارسل ضع رابط') 
+end 
+end,nil) 
+end
+if text == '/help1' then
 if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ اكتب الامر الذي تريد تنفيذه..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
+⇊ اوامر القفل والفتح ●
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قفل الاضافه ◉', callback_data=data.sender_user_id_.."/lockjoine"},{text = 'فتح الاضافه ◉', callback_data=data.sender_user_id_.."/unlockjoine"},
+{text = 'قفل الاباحي', callback_data="/lockdul"},{text = 'فتح الاباحي', callback_data="/oppor"},
 },
 {
-{text = 'قفل الدردشه ◉', callback_data=data.sender_user_id_.."/lock:text"},{text = 'فتح الدردشه ◉', callback_data=data.sender_user_id_.."/unlockchat"},
+{text = 'قفل الازعاج', callback_data="/ayq79"},{text = 'فتح الازعاج', callback_data="/Andrew"},
 },
 {
-{text = 'قفل الدخول ◉', callback_data=data.sender_user_id_.."/lock_joine"},{text = 'فتح الدخول ◉', callback_data=data.sender_user_id_.."/unlock_joine"},
+{text = 'قفل السب', callback_data="/Louis"},{text = 'فتح السب', callback_data="/tho"},
 },
 {
-{text = 'قفل البوتات ◉', callback_data=data.sender_user_id_.."/lockbots"},{text = 'فتح البوتات ◉', callback_data=data.sender_user_id_.."/unlockbots"},
+{text = 'قفل المحن', callback_data="/Gogh"},{text = 'فتح المحن', callback_data="/Omni"},
 },
 {
-{text = 'قفل الاشعارات ◉', callback_data=data.sender_user_id_.."/locktags"},{text = 'فتح الاشعارات ◉', callback_data=data.sender_user_id_.."/unlocktags"},
+{text = 'قفل الدردشه', callback_data="/Lokll"},{text = 'فتح الدردشه', callback_data="/openqg"},
 },
 {
-{text = 'قفل التعديل ◉', callback_data=data.sender_user_id_.."/lockedit"},{text = 'فتح التعديل ◉', callback_data=data.sender_user_id_.."/unlockedit"},
+{text = 'قفل الدخول', callback_data="/lockaghv"},{text = 'فتح الاضافه', callback_data="/oppgagf"},
 },
 {
-{text = 'قفل الروابط ◉', callback_data=data.sender_user_id_.."/locklink"},{text = 'فتح الروابط ◉', callback_data=data.sender_user_id_.."/unlocklink"},
+{text = 'قفل البوتات', callback_data="/lockbot"},{text = 'فتح البوتات', callback_data="/opabot"},
 },
 {
-{text = 'قفل المعرفات ◉', callback_data=data.sender_user_id_.."/lockusername"},{text = 'فتح المعرفات ◉', callback_data=data.sender_user_id_.."/unlockusername"},
+{text = 'قفل الاشعارات', callback_data="/lockash"},{text = 'فتح الاشعارات', callback_data="/opaash"},
 },
 {
-{text = 'قفل التاك ◉', callback_data=data.sender_user_id_.."/locktag"},{text = 'فتح التاك ◉', callback_data=data.sender_user_id_.."/unlocktag"},
+{text = 'قفل الروابط', callback_data="/locklink"},{text = 'فتح الروابط', callback_data="/opalink"},
 },
 {
-{text = 'قفل الملصقات ◉', callback_data=data.sender_user_id_.."/locksticar"},{text = 'فتح الملصقات ◉', callback_data=data.sender_user_id_.."/unlocksticar"},
+{text = 'قفل التثبيت', callback_data="/lockpin"},{text = 'فتح التثبيت', callback_data="/opapin"},
 },
 {
-{text = 'قفل المتحركه ◉', callback_data=data.sender_user_id_.."/lockgif"},{text = 'فتح المتحركه ◉', callback_data=data.sender_user_id_.."/unlockgif"},
+{text = 'قفل التعديل', callback_data="/lockedit"},{text = 'فتح التعديل', callback_data="/opaedit"},
 },
 {
-{text = 'قفل الفيديو ◉', callback_data=data.sender_user_id_.."/lockvideo"},{text = 'فتح الفيديو ◉', callback_data=data.sender_user_id_.."/unlockvideo"},
+{text = 'قفل الفارسيه', callback_data="/lockFars"},{text = 'فتح الفارسيه', callback_data="/opaFars"},
 },
 {
-{text = 'قفل الصور ◉', callback_data=data.sender_user_id_.."/lockphoto"},{text = 'فتح الصور ◉', callback_data=data.sender_user_id_.."/unlockphoto"},
+{text = 'قفل الانكليزيه', callback_data="/lockEngilsh"},{text = 'فتح الانكليزيه', callback_data="/opaEngilsh"},
 },
 {
-{text = 'قفل الاغاني ◉', callback_data=data.sender_user_id_.."/lockvoise"},{text = 'فتح الاغاني ◉', callback_data=data.sender_user_id_.."/unlockvoise"},
+{text = 'قفل تعديل الميديا', callback_data="/lockeditmed"},{text = 'فتح تعديل الميديا', callback_data="/opaeditmed"},
 },
 {
-{text = 'قفل الصوت ◉', callback_data=data.sender_user_id_.."/lockaudo"},{text = 'فتح الصوت ◉', callback_data=data.sender_user_id_.."/unlockaudo"},
+{text = 'قفل الانلاين', callback_data="/lockinline"},{text = 'فتح الانلاين', callback_data="/opainline"},
 },
 {
-{text = 'قفل التوجيه ◉', callback_data=data.sender_user_id_.."/lockfwd"},{text = 'فتح التوجيه ◉', callback_data=data.sender_user_id_.."/unlockfwd"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
 },
 {
-{text = 'قفل الملفات ◉', callback_data=data.sender_user_id_.."/lockfile"},{text = 'فتح الملفات ◉', callback_data=data.sender_user_id_.."/unlockfile"},
-},
-{
-{text = 'قفل الجهات ◉', callback_data=data.sender_user_id_.."/lockphone"},{text = 'فتح الجهات ◉', callback_data=data.sender_user_id_.."/unlockphone"},
-},
-{
-{text = 'قفل الكلايش ◉', callback_data=data.sender_user_id_.."/lockposts"},{text = 'فتح الكلايش ◉', callback_data=data.sender_user_id_.."/unlockposts"},
-},
-{
-{text = 'قفل التكرار ◉', callback_data=data.sender_user_id_.."/lockflood"},{text = 'فتح التكرار ◉', callback_data=data.sender_user_id_.."/unlockflood"},
-},
-{
-{text = 'قفل الفارسيه ◉', callback_data=data.sender_user_id_.."/lockfarse"},{text = 'فتح الفارسيه ◉', callback_data=data.sender_user_id_.."/unlockfarse"},
-},
-{
-{text = 'قفل السب ◉', callback_data=data.sender_user_id_.."/lockfshar"},{text = 'فتح السب ◉', callback_data=data.sender_user_id_.."/unlockfshar"},
-},
-{
-{text = 'قفل الانجليزيه ◉', callback_data=data.sender_user_id_.."/lockenglish"},{text = 'فتح الانجليزيه ◉', callback_data=data.sender_user_id_.."/unlockenglish"},
-},
-{
-{text = 'قفل الانلاين ◉', callback_data=data.sender_user_id_.."/lockinlene"},{text = 'فتح الانلاين ◉', callback_data=data.sender_user_id_.."/unlockinlene"},
-},
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help2' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ اكتب الامر الذي تريد تنفيذه..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'تعطيل التنزيل ◉', callback_data=data.sender_user_id_.."/lockdul"},{text = 'تفعيل التنزيل ◉', callback_data=data.sender_user_id_.."/unlockdul"},
-},
-{
-{text = 'تعطيل الرابط ◉', callback_data=data.sender_user_id_.."/lock_links"},{text = 'تفعيل الرابط ◉', callback_data=data.sender_user_id_.."/unlock_links"},
-},
-{
-{text = 'تعطيل الترحيب ◉', callback_data=data.sender_user_id_.."/lockwelcome"},{text = 'تفعيل الترحيب ◉', callback_data=data.sender_user_id_.."/unlockwelcome"},
-},
-{
-{text = 'تعطيل الردود العامه ◉', callback_data=data.sender_user_id_.."/lockrepall"},{text = 'تفعيل الردود العامه ◉', callback_data=data.sender_user_id_.."/unlockrepall"},
-},
-{
-{text = 'تعطيل الايدي ◉', callback_data=data.sender_user_id_.."/lockide"},{text = 'تفعيل الايدي ◉', callback_data=data.sender_user_id_.."/unlockide"},
-},
-{
-{text = 'تعطيل الايدي بالصوره ◉', callback_data=data.sender_user_id_.."/lockidephoto"},{text = 'تفعيل الايدي بالصوره ◉', callback_data=data.sender_user_id_.."/unlockidephoto"},
-},
-{
-{text = 'تعطيل الحظر ◉', callback_data=data.sender_user_id_.."/lockkiked"},{text = 'تفعيل الحظر ◉', callback_data=data.sender_user_id_.."/unlockkiked"},
-},
-{
-{text = 'تعطيل الرفع ◉', callback_data=data.sender_user_id_.."/locksetm"},{text = 'تفعيل الرفع ◉', callback_data=data.sender_user_id_.."/unlocksetm"},
-},
-{
-{text = 'تعطيل اطردني ◉', callback_data=data.sender_user_id_.."/lockkikedme"},{text = 'تفعيل اطردني ◉', callback_data=data.sender_user_id_.."/unlockkikedme"},
-},
-{
-{text = 'تعطيل الالعاب ◉', callback_data=data.sender_user_id_.."/lockgames"},{text = 'تفعيل الالعاب ◉', callback_data=data.sender_user_id_.."/unlockgames"},
-},
-{
-{text = 'تعطيل الردود ◉', callback_data=data.sender_user_id_.."/lockrepgr"},{text = 'تفعيل الردود ◉', callback_data=data.sender_user_id_.."/unlockrepgr"},
-},
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help3' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر الحماية..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ قـفـل او فـتـح + الامــر.
-◉ قفل او فتح الامر بالتقييد.
-◉ قفل او فتح الامر بالـطرد.
-◉ قـفل او فتح الامر بالكتم.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ الـروابـط. 
-◉ المعرفات.
-◉ الشاررحه.
-◉ التـعديل.
-◉ التـثبيت.
-◉ المتحركه.
-◉ المـلفات.
-◉ الـصـور.
-◉ الـتـاك.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ المـلصقات.
-◉ الاشعارات.
-◉ الـدردشه.
-◉ الفـيديو.
-◉ لاننلاين.
-◉ التوجيه.
-◉ الاغاني.
-◉ الصوت.
-◉ الجهات.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ المـاركداون.
-◉ الكـلايش.
-◉ الممنوعه.
-◉ السيلفي.
-◉ البوتات.
-◉ التكرار.
-◉ السب.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help4' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر الادمنية..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع او تنزيل مميز.
-◉ عدد الجروب.
-◉ الغاء تقـييد.
-◉ المحظورين.
-◉ المـكتومين.
-◉ الصتلاحيات.
-◉ قائمه الـمنع.
-◉ الغاء حظر.
-◉ تاك للكل.
-◉ الغاء كتم.
-◉ الغاء منع.
-◉ المميزين.
-◉ تقييد.
-◉ كـتـم.
-◉ حـظر.
-◉ طـرد.
-◉ مـنع.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ الغاء تثـبيت.
-◉ تـثـبـيـت.
-◉ الاعدادات.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ الرابط.
-◉ القوانين.
-◉ الترحيب.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ تفعيل او تعطيل الترحيب.↑↓
-◉ اضف او مسح صلاحيه.↑↓
-◉ وضع تكرار + العدد.↑↓
-◉ كشف البوتات.↑↓
-◉ ايـدي.
-◉ جهـاتي.
-◉ رسائـلي.
-◉ سحكاتي.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ وضع + الاوامر الادناه..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ اسـم.
-◉ رابـط.
-◉ صـوره.
-◉ وصـف.
-◉ قـوانين.
-◉ ترحـيب.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ مسح + الاوامر الادناه..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ قائمه المـنع.
-◉ الصـلاحيات.
-◉ المـحظورين.
-◉ المـكتومين.
-◉ المطرودين.
-◉ الممـيزين.
-◉ القـوانين.
-◉ البـوتات.
-◉ الصـوره.
-◉ الرابـط.
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help5' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر المدراء والمنشئ..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع او تنزيل ادمن
-◉ رفع او كشف القيود
-◉ تنزيل الكل
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ تفعيل او تعطيل الايدي بالصوره
-◉ تفعيل او تعطيل الايدي
-◉ تفعيل او تعطيل الردود العامه
-◉ تفعيل او تعطيل الالعاب
-◉ تفعيل او تعطيل الردود
-◉ تفعيل او تعطيل اطردني
-◉ تفعيل او تعطيل الرفع
-◉ تفعيل او تعطيل الحظر
-◉ تفعيل او تعطيل الرابط
-◉ تفعيل او تعطيل اوامر التسليه
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ تعين او مسح الايدي..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع الادمنيه
-◉ اضف او مسح رد
-◉ الادمنيه
-◉ الردود
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ مسح + عدد
-◉ مسح الادمنيه
-◉ مسح الردود
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ اوامر المنشئين الاساسين..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع او تنزيل منشئ
-◉ مسح المنشئين
-◉ المنشئين
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ اوامر المنشئين..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ مسح او مسح الاوامر المضافه
-◉ اضف مجوهرات + العدد بالرد
-◉ اضف رسائل + العدد بالرد
-◉ تعين او مسح الايدي
-◉ اضف او مسح امر
-◉ رفع/تنزيل مدير
-◉ الاوامر المضافه
-◉ مسح المدراء
-◉ الـمـدراء
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help6' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر المطورين..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ المـطور الـعـادي..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ اذاعه بالتوجيه للمجموعات
-◉ اذاعه موجهه بالتـثبيت
-◉ جلب نسخه احتياطيه
-◉ اذاعه بالتوجيه خاص
-◉ رفع نسخه احتياطيه
-◉ تغيير رابط الجروب
-◉ رفع او تنزيل مالك
-◉ اذاعه بالمجموعات
-◉ اذاعه بالتـثبيت
-◉ مسح المالكين
-◉ اذاعه خـاص
-◉ الاحصائيات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ المطور الاساسي..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ جلب او رفع نسخه احتياطيه
-◉ اذاعه بالتوجيه للمجموعات
-◉ رفع او تنزيل  مميز عام 
-◉ اذاعه موجهه بالتثبيت
-◉ اضف او مسح رد عام
-◉ اذاعه بالتوجيه خاص
-◉ تغيير رساله المغادره
-◉ مسح المميزين عام
-◉ مسح الردود العامه
-◉ رفع او تنزيل مطور 
-◉ مسح المطورين
-◉ حظر او كتم عام 
-◉ المكتومين  عام 
-◉ المحظورين عام
-◉ ضع اسم للبوت
-◉ اذاعه بالتثبيت
-◉ الاحصائيات
-◉ المطورين 
-◉ الغاء العام
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help7' or text == 'اوامر التسليه' then
-if not Mod(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قائمة اوامر التسليه..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← الامر
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← متوحد 
-◉ تاك للمتوحدين
-◉ مسح المتوحدين
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← رقاصه
-◉ تاك للرقصات
-◉ مسح الرقصات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← ابني
-◉ تاك لولادي
-◉ مسح ولادي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← بنتي
-◉ تاك لبناتي
-◉ مسح بناتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← قطتي
-◉ تاك للقطط
-◉ مسح القطط
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← دكري
-◉ تاك للدكراتي
-◉ مسح دكراتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← فاشل
-◉ تاك للفشله
-◉ مسح الفشله
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← حيوان
-◉ تاك للحيونات
-◉ مسح الحيوانات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← خاينه
-◉ تاك للخينات
-◉ مسح الخينات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← عبيط
-◉ تاك للعبايط
-◉ مسح العبايط
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← خاين
-◉ تاك للخونه
-◉ مسح الخونه
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← مراتي
-◉ تاك لمرتاتي
-◉ مسح مرتاتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← شاذ
-◉ تاك للشواذ
-◉ مسح الشواذ
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← خطبتي
-◉ تاك لخطبتي
-◉ مسح خطبتي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← علق
-◉ تاك للعلوق
-◉ مسح العلوق
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← مزه
-◉ تاك للمزز
-◉ مسح المزز
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← وتكه
-◉ تاك للوتكات
-◉ مسح الوتكات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← كلب
-◉ تاك للكلاب
-◉ مسح الكلاب
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← قرد 
-◉ تاك للقرود
-◉ مسح القرود
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← بقره
-◉ تاك للبقرات
-◉ مسح البقرات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← غبي
-◉ تاك للاغبياء
-◉ مسح الاغبياء
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← حمار
-◉ تاك للحمير
-◉ مسح الحمير
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل 
-◉ بقلبي او من قلبي
-◉ تاك للي بقلبي
-◉ مسح اللي بقلبي
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← زوجتي
-◉ تاك للزوجات
-◉ مسح الزوجات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ رفع + تنزيل ← مطلقه
-◉ تاك للمطلقات
-◉ مسح المطلقات
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '☊.رجوع.☊', callback_data="/help90"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/help8' then
-if not Sudo(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local Teext =[[
-◉ قم بأختيار اللغه.. ↑↓
-◉ Choose language.. ↑↓ 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'english 𝅘𝅥𝅮', callback_data="/add"},{text = 'عربي 𝅘𝅥𝅮', callback_data="/help90"},
-},
-{
-{text = '𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ', url="t.me/X_G_33 "},
-},
-{
-{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"},
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 
-if Text == '/help90' then
-if not Sudo(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+
+
+if text == '/help2' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ اهلا بك في قسم الاوامر ..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ اليك الاوامر الخاص بسورس سوريا .
-◉ اختر الامر الذي تريده من الازرار بلاسفل .
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ  ](t.me/X_G_33 )
+⇊ 『اوامر التفعيل』 والتعطي ●
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '◉ اوامر الحمايه .', callback_data="/help3"},{text = '◉ اوامر الادمنيه .', callback_data="/help4"},
+{text = 'تفعيل اطردني', callback_data="/opCick"},{text = 'تعطيل اطردني', callback_data="/lockCick"},
 },
 {
-{text = '◉ اوامر الاداره .', callback_data="/help5"},{text = '◉ اوامر المطور .', callback_data="/help6"},
+{text = 'تفعيل التحقق', callback_data="/lockCickp"},{text = 'تعطيل التحقق', callback_data="/opCickp"},
 },
 {
-{text = '◉ اوامر التسليه .', callback_data="/help7"},
+{text = 'تفعيل الرابط', callback_data="/locklinka"},{text = 'تعطيل الرابط', callback_data="/opalinka"},
 },
 {
-{text = '◉ اوامر القفل .', callback_data="/help1"},{text = '◉ اوامر التعطيل .', callback_data="/help2"},
+{text = 'تفعيل مريم', callback_data="/Loumarem"},{text = 'تعطيل مريم', callback_data="/thomarem"},
 },
 {
-{text = '☊.BACK.☊', callback_data="/help8"},
+{text = 'تفعيل صورتي', callback_data="/lookpohi"},{text = 'تعطيل صورتي', callback_data="/opphotop"},
+},
+{
+{text = 'تفعيل الزخرفه', callback_data="/Lokzal"},{text = 'تعطيل الزخرفه', callback_data="/opeza"},
+},
+{
+{text = 'تفعيل  انا مين', callback_data="/lockanmen"},{text = 'تعطيل انا مين', callback_data="/oppganmen"},
+},
+{
+{text = 'تفعيل ضافني', callback_data="/lockbafne"},{text = 'تعطيل ضافني', callback_data="/opaDRGfe"},
+},
+{
+{text = 'تفعيل الالعاب', callback_data="/lockgams"},{text = 'تعطيل الالعاب', callback_data="/opagams"},
+},
+{
+{text = 'تفعيل الايدي', callback_data="/lockid"},{text = 'تعطيل الايدي', callback_data="/opaid"},
+},
+{
+{text = 'تفعيل الترحيب', callback_data="/lockwelcm"},{text = 'تعطيل الترحيب', callback_data="/opawelcm"},
+},
+{
+{text = 'تفعيل نسبه الكره', callback_data="/locnspm"},{text = 'تعطيل نسبه الكره', callback_data="/opansamp"},
+},
+{
+{text = 'تفعيل نسبه الانوثه ', callback_data="/locknsamgk"},{text = 'تعطيل نسبه الانوثه ', callback_data="/opansamg"},
+},
+{
+{text = 'تفعيل نسبة الحب', callback_data="/locknsak"},{text = 'تعطيل نسبة الحب', callback_data="/opanams"},
+},
+{
+{text = 'تفعيل نسبة الرجوله', callback_data="/lockman"},{text = 'تعطيل  نسبة الرجوله', callback_data="/opamanh"},
+},
+{
+{text = 'تفعيل نسبه جمالي', callback_data="/lockgmale"},{text = 'تعطيل نسبه جمالي', callback_data="/opagmale"},
+},
+{
+{text = 'تفعيل حساب العمر', callback_data="/lockamr"},{text = 'تعطيل حساب العمر', callback_data="/opamar"},
+},
+{
+{text = 'تفعيل all', callback_data="/lockall"},{text = 'تعطيل all', callback_data="/opaall"},
+},
+{
+{text = 'تفعيل ردود السورس', callback_data="/lockreb"},{text = 'تعطيل ردود السورس', callback_data="/opareb"},
+},
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
------------------------------- callback add dev mr sofi
-if Text == '/mute-name' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+
+if text == '/help3' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉️ ❬ m 1 ❭ Orders Protect Group ⇊
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Lock «Open + it
-◉ Lock «» Open ❬ All ❭
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Chat
-◉ Knows
-◉ Pictures
-◉ videos
-◉ Sticker
-◉ files
+ ●️ 『 m 1 』 Orders Protect Group ⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Lock ↵Open + it
+● Lock ↵» Open 『 All 』
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Chat
+● Knows
+● Pictures
+● videos
+● Sticker
+● files
 Mobile moving
-◉ Lift
-◉ Audio
-◉ Optiments
-◉ Welcome
-◉ The decorative
-◉ Translate
-◉ Responses
-◉ Guidance
-◉ Notifications
-◉ Crown
-◉ Delete link
-◉ expulsion
-◉ Games
-◉ Novels
-◉ towers
-◉ Meanings of names
-◉ Welcome
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Links
-◉ Guidance
-◉ popcorn
-◉ Bots
-◉ Prohibited
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+● Lift
+● Audio
+● Optiments
+● Welcome
+● The decorative
+● Translate
+● Responses
+● Guidance
+● Notifications
+● Crown
+● Delete link
+● expulsion
+● Games
+● Novels
+● towers
+● Meanings of names
+● Welcome
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Links
+● Guidance
+● popcorn
+● Bots
+● Prohibited
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/sofi' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text == '/help4' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 2 ❭ 2 ◉ entertainment orders ⇊
-◉ Lifting «» Download + it
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ and Take
-◉ Crown for Soutat
-◉ Wipe Wattat
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉
-◉ Crown for drapes
-◉ Clear Docks
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Jeep
-◉ Crown for bodies
-◉ Scanning
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ animal
-◉ Crown for animals
-◉ Animals
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ failed
-◉ Crown for failure
-◉ Scan of failure
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Dermatology
-◉ Crown for perforation
-◉ Scanning
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Catte
-◉ Crown for cats
-◉ Cats survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
+ ● 『 m 3 』 3 ● Tall orders ⇊
+● Lifting ↵ Download + it
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● my son
+● Crown for children
+● Survey sons
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Crown for girls
+● Clear the girls
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+    ● Habayeb survey..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● my husDRGd
+● Crown for couples
+● Survey of couples
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● My wife
+● Crown for the wives
+● Wipe waves
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Khayen
+● Crown for him
+● Clear the moon
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Crown for the two
+● Khiennine survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Abit
+● Crown for the mixture
+● Survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Crown for Paradise
+● Storage survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☊.BACK.☊', callback_data="/add"}},
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
+},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-names' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text == '/hiddnt' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 3 ❭ 3 ◉ Tall orders ⇊
-◉ Lifting «← Download + it
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ my son
-◉ Crown for children
-◉ Survey sons
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Crown for girls
-◉ Clear the girls
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ Habayeb survey..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ my husband
-◉ Crown for couples
-◉ Survey of couples
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ My wife
-◉ Crown for the wives
-◉ Wipe waves
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Khayen
-◉ Crown for him
-◉ Clear the moon
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Crown for the two
-◉ Khiennine survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Abit
-◉ Crown for the mixture
-◉ Survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Crown for Paradise
-◉ Storage survey
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+● 『 m 4 』 Orders of members ⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Age account
+● Picture ↵
+● Quran
+● Settings
+● Qatari
+● Delete ↵ Sell 『 Qatari
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● My messages ↵ Delete 
+● Decorating ↵ Songs
+● Movies ↵ Cartoon
+● Translate + novels
+● YouTube ↵ Games
+● Weather + area
+● Dark ↵link
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● My name is 
+● My Juices ↵ Delete my juices
+● Powers ↵ Ping
+● Say + word
+● Prohibited Words
+● I am Maine
+● Say + word
+● Qatah ↵ dog
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Source ↵Developer
+● link ↵hands
+● Rank ↵ Revealed
+● Reply you, Bot
+● Any your opinion Yapot
+● Hino ↵ Hinha
+● Boso ↵ her pussy
+● Mido ↵ 
+● Delete link
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-id' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text == '/help5' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 4 ❭ Orders of members ⇊
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Age account
-◉ Picture «←
-◉ Quran
-◉ Settings
-◉ Qatari
-◉ Delete «← Sell ❬ Qatari
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ My messages «← Delete 
-◉ Decorating «← Songs
-◉ Movies «← Cartoon
-◉ Translate + novels
-◉ YouTube ← Games
-◉ Weather + area
-◉ Dark «link
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ My name is 
-◉ My Juices «← Delete my juices
-◉ Powers «← Ping
-◉ Say + word
-◉ Prohibited Words
-◉ I am Maine
-◉ Say + word
-◉ Qatah «← dog
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Source «Developer
-◉ link «hands
-◉ Rank «← Revealed
-◉ Reply you, Bot
-◉ Any your opinion Yapot
-◉ Hino «← Hinha
-◉ Boso «← her pussy
-◉ Mido «← ←
-◉ Delete link
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+ ●مرحب بيك في اوامر للمطورين ●
+اوامر المطورين ⇊
+『المطور 』  ⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●تفعيل ⋙ تعطيل 
+ ●المجموعات ⋙ المشتركين ⋙ الاحصائيات
+ ●رفع ⋙ تنزيل منشئ اساسي
+ ●مسح الاساسين ⋙ المنشئين الاساسين
+ ●مسح المنشئين ⋙ المنشئين
+ ●اسم ~ ايدي + بوت غادر 
+ ●اذاعه 
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+『المطور الاساسي+ المطور الثانوي』
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●تفعيل
+ ●تعطيل
+ ●مسح الاساسين
+ ●المنشئين الاساسين
+ ●رفع/تنزيل منشئ اساسي
+ ●رفع/تنزيل مطور اساسي 
+ ●  رفع/تنزيل مدير عام
+ ●  رفع /تنزيل ادمن عام
+ ●مسح المطورين
+ ●المطورين
+ ●رفع | تنزيل مطور
+ ●اسم البوت + غادر
+ ●غادر
+ ●اسم بوت + الرتبه
+ ●تحديث السورس
+ ●حضر عام
+ ●كتم عام
+ ●الغاء العام
+ ●قائمه العام
+ ●مسح قائمه العام
+ ●جلب النسخه
+ ●رفع النسخه
+ ● جلب المشتركين
+ ● رفع المشتركين
+ ●اذاعه خاص
+ ●اذاعه
+ ●اذاعه بالتوجيه
+ ●اذاعه بالتوجيه خاص
+ ●اذاعه بالتثبيت
+ ●جلب نسخه البوت
+ ●رفع نسخه البوت
+ ●ضع عدد الاعضاء + العدد
+ ●ضع كليشه المطور
+ ●تفعيل/تعطيل الاذاعه
+ ●تفعيل/تعطيل البوت الخدمي
+ ●تفعيل/تعطيل التواصل
+ ●تغير اسم البوت
+ ●اضف/مسح رد عام
+ ●الردود العامه
+ ●مسح الردود العامه
+ ●الاشتراك الاجباري
+ ●تعطيل الاشتراك الاجباري
+ ●تفعيل الاشتراك الاجباري
+ ●مسح رساله الاشتراك
+ ●تغير رساله الاشتراك
+ ●تغير الاشتراك
+ ●الاحصائيات
+ ●المشتركين
+ ●المجموعات 
+ ●تفعيل/تعطيل المغادره
+ ●مسح الجروبات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-photo' then
-if not Constructor(data) then
-local notText = 'المعذره هذا الامر ليس لك..🙂♥️'
+if text == '/help6' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
 local Teext =[[
-◉ ❬ m 5 ❭ Orders of developers ⇊
-◉ Developer ←⇊
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Lifting «download ❬ owner ❭
-◉ Change the group link
-◉ Destination of groups
-◉ Destination by guidance for groups
-◉ A radio face
-◉ Special radio
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ A special guidance
-◉ Fix the installation
-◉ bring back copy
-◉ raise its backup copy
-◉ Statistics
-◉ Delete owners
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-        ╔═══════════════╗        
-             ◉ Basic Developer..↑↓
-        ╚═══════════════╝        
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Add "← Delete a general response
-◉ Lifting «download ❬ special year ❭
-◉ Featured Survey
-◉ General responses
-◉ Delete public responses
-◉ A special guidance
-◉ Destination by guidance for groups
-◉ Fix the installation
-◉ A radio face
-◉ bring «← raising 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ Statistics
-◉ Lifting «download ❬ Developer ❭
-◉ Developers «← Delete developers
-◉ Put the name of the bot
-◉ Change the departing message
-◉ Prohibition «← Mute ❬ General ❭
-◉ General makers
-◉ Preventors General
-◉ Canceling the general
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+    『اوامر الاعضاء ⇊』     
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●   غنيلي ⇔ حساب العمر   
+ ●   صورتي ⇔ نسبه جمالي
+ ●   نقاطي
+ ●    مسح ⇔ بيع 『نقاطي 』 
+ ●   رسائلي ⇔  مسح 『رسائلي 』 
+ ●   زخرفه ⇔ اغاني 
+ ●   اسمي ⇔ الرتبه
+ ●  جهاتي 
+ ●  صلاحياتي
+ ●  قول +الكلمه
+ ●  تفعيل  تعطيل+ اطردني   
+ ●   سورس ⇔ المطور
+ ●   الرابط ⇔ ايدي
+ ●   رتبتي ⇔ كشف
+ ●   رد  انت يا بوت
+ ●  ي رايك يابوت
+ ●   هينو ⇔ هينها
+ ●   بوسو ⇔ بوسها
+ ●   بتحب دي ⇔ بتحب ده
+ ●  بوت الحذف⇔رابط الحذف
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '☊.BACK.☊', callback_data="/add"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
---- callback added
-if Text == '/add' then
+if text == '/help7' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
 local Teext =[[
-◉ Welcome to the orders section.. ↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ You can use the buttons..↑↓
-◉ By putting pressure on them..↑↓
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
-◉ 𝘾𝙃 - [𝗦𝗨𝗥𝗖𝗘 𝗦𝗜𝗥𝗜𝗔 ঌ ](t.me/X_G_33) 
-╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸
+اوامر 『التسليه』  ⇊
+رفع ⇔ تنزيل + الامر
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ متوحد
+ ●تاك للمتوحدين
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ كلب
+ ●تاك للكلاب
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ قرد
+ ●تاك للقرود
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ زوجتي
+ ●تاك للزوجات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ قلبي
+ ●تاك لقلبي
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ بقره
+ ●تاك للبقرات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ ارمله
+ ●تاك للارامل
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ خول
+ ●تاك للخولات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ حمار
+ ●تاك للحمير
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ مزه
+ ●تاك للمزز
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ وتكه
+ ●تاك للوتكات
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ كس
+ ●تاك للاكساس
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ ابني
+ ●تاك لولادي 
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ بنتي
+ ●تاك لبناتي
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع + تنزيل ⋙ خاين
+ ●تاك للخاينين
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●رفع  ⋙ علي زبي
+ ●تنزيل ⋙من زبي 
+ ●تاك للمتناكين
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '◉ protection', callback_data="/mute-name"},{text = '◉ addictive', callback_data="/sofi"},
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
 },
 {
-{text = '◉ Administration', callback_data="/change-names"},
-},
-{
-{text = '◉ Developer', callback_data="/change-id"},{text = '◉ Disabled orders', callback_data="/change-photo"},
-},
-{
-{text = '☊.BACK.☊', callback_data="/help8"},
+{text = 'اخفاء الاوامر', callback_data="/hide"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
+
+if text == '/hide' then
+local hide = 'تم اخفاء الاوامر'
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(hide)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
 end
-if data.ID == "UpdateNewMessage" then  -- new msg
-msg = data.message_
-text = msg.content_.text_
------------------------------- callback add dev mr sofi
-if Text == '/mute-name' then
+if text == '/help8' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
 local Teext =[[
- ✭أنت الآن في العاب السورس ✭
-اتبع الازار الي في الاسفل⇣
+ اهلا بك في قسم الاوامر ..↑↓
+اختر الامر الذي تريدها .↑↓
+ده من الازرار بلاسفل . ↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '◗اوامر المطورين◖', callback_data="/help5"},{text = '◗اوامر التسليه◖', callback_data="/help7"},
+},
+{
+{text = '◗اوامر الاعضاء◖', callback_data="/help6"},
+},
+{
+{text = '◗اوامر التعطيل◖', callback_data="/help2"},{text = '◗اوامر القفل◖', callback_data="/help1"},
+},
+{
+{text = '•تــغــير الــلــغــه•', callback_data="/help90"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+
+if text == '/help9' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Teext =[[
+● 『 m 5 』 Orders of developers ⇊
+● Developer ⋙⇊
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Lifting «download 『 owner 』
+● Change the group link
+● Destination of groups
+● Destination by guidance for groups
+● A radio face
+● Special radio
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● A special guidance
+● Fix the installation
+● bring back copy
+● raise its backup copy
+● Statistics
+● Delete owners
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+   ● Basic Developer..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Add "← Delete a general response
+● Lifting «download 『 special year 』
+● Featured Survey
+● General responses
+● Delete public responses
+● A special guidance
+● Destination by guidance for groups
+● Fix the installation
+● A radio face
+● bring ↵ raising 
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Statistics
+● Lifting «download 『 Developer 』
+● Developers ↵ Delete developers
+● Put the name of the bot
+● Change the departing message
+● Prohibition ↵ Mute 『 General 』
+● General makers
+● Preventors General
+● Canceling the general
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text == '/help10' then
+local help_text = database:get(bot_id..'help10_text')
+local Teext =[[
+● 『 m 2 』 2 ● entertainment orders ⇊
+● Lifting ↵» Download + it
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● and Take
+● Crown for Soutat
+● Wipe Wattat
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+●
+● Crown for drapes
+● Clear Docks
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Jeep
+● Crown for bodies
+● Scanning
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● animal
+● Crown for animals
+● Animals
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● failed
+● Crown for failure
+● Scan of failure
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Dermatology
+● Crown for perforation
+● Scanning
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+● Catte
+● Crown for cats
+● Cats survey
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help90"},
+},
+{
+{text = 'اخفاء الاوامر', callback_data="/hide"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+
+if text == '/help90' then
+local Teext =[[
+● Welcome to the orders section↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '˹protection˼', callback_data="/help3"},{text = '˹addictive˼', callback_data="/help10"},
+},
+{
+{text = '˹Administration˼', callback_data="/help4"},
+},
+{
+{text = '˹Developer˼', callback_data="/help9"},{text = '˹Disabled orders˼', callback_data="/hiddnt"},
+},
+{
+{text = '•تــغــير الــلــغــه•', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+------------------------------ callback add dev mr DRG
+if text == '/may' then
+local Teext =[[
+• يلا بنا نبحث عن المنزل •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'هيا بنا', callback_data="/afkl"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/afkl' then
+local Teext =[[
+• في صوت هل صدر من الامام ام الخلف •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الامام', callback_data="/amen"},{text = 'الخلف', callback_data="/should"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/amen' then
+local Teext =[[
+• هيا بنا نذهب الي الامام لنرا المنزل •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'هيا', callback_data="/have"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/should' then
+local Teext =[[
+• هيا بنا نذهب الي الخلف لنرا المنزل •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'هيا', callback_data="/have"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/have' then
+local Teext =[[
+• لقد وصلنا الى المنزل شكراَ جزيلَ انتطرني ثواني وسوف اعود •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'منتظر', callback_data="/VBV"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/VBV' then
+local Teext =[[
+• لقد عودت إليك ظهر شيئ •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'احد ما خرج من المنزل', callback_data="/ALLL"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/ALLL' then
+local Teext =[[
+• هيا نذهب داخل المنزل •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'هيا', callback_data="/Jake"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Jake' then
+local Teext =[[
+•  نحنو نتوه في هذه المكان •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تعالي نذهب الي الضوء', callback_data="/GGGG"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/GGGG' then
+local Teext =[[
+• لا يوجد ضواء في هذا المكان •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'ياالهي كان هناك', callback_data="/can"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/can' then
+local Teext =[[
+• تعالى نذهب الي الباب الرئيسي •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'انهو مغلق', callback_data="/zxz"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zxz' then
+local Teext =[[
+• انها النهاية هتكمل ولا لا •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'هكمل', callback_data="/optionis"},{text = 'انسحب', callback_data="/looks"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/optionis' then
+local Teext =[[
+• سارسل اليك  سوال مع اختيارت لو حليت صح ستنجو من العقاب لو خطأ سيقوم عليك العقاب •
+السوال هوا - شيء لا يتأثر بالماء حتى عندما يمر من خلالها فمن يكون؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'السمك', callback_data="/Kelly"},{text = 'المركب', callback_data="/kalalal"},
+},
+{
+{text = 'الضوء', callback_data="/klllag"},{text = 'الحوت', callback_data="/akakakk"},
+},
+{
+{text = 'الخضار', callback_data="/allowj"},{text = 'الموت', callback_data="/allaly"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/klllag' then
+local Teext =[[
+•مبروك لقد فوزت ونجيت من العقاب•
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '✅✅✅✅✅', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/allowj' then
+local Teext =[[
+• غلط القاب هوا-   خلاص سامحتك •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '❌❌❌❌❌', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/dulljob' then
+ght = math.random(1,57); 
+local Text ='اكتب ثيم وسيتم اختيار ثيم اخار' 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{
+{text = 'ثيم آخر 🌀', callback_data="/dulljob"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagedocument?chat_id='..Chat_id..'&document='..URL.escape(Text)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/allaly' then
+local Teext =[[
+• غلط القاب هوا-    سكر خشمك و قول كلمة من اختيار الاعبين الي معك•
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '❌❌❌❌❌', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/akakakk' then
+local Teext =[[
+• غلط القاب هوا-    اذهب الى واحد ماتعرفه وقل له انا كيوت وابي بوسه •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '❌❌❌❌❌', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/kalalal' then
+local Teext =[[
+• غلط القاب هوا-    روح المطبخ و اكسر صحن او كوب•
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '❌❌❌❌❌', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Kelly' then
+local Teext =[[
+• غلط القاب هوا-    تتصل على الوالده  و تقول لها تزوجت با سر•
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '❌❌❌❌❌', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+
+if text == '/looks' then
+local Teext =[[
+• انت ستندم سأقتلك •
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '❌❌❌❌❌', callback_data="/01ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/ahakaka' then
+local Teext = [[
+⍆ هل انت جهاز للعب ⍆
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'حسنا', callback_data="/guitar"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/WTT' then
+local Teext =[[
+✖ لقد خصرت العاب من جديد ✖
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'العاب مجدداً', callback_data="/ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/guitar' then
+local Teext =[[
+شيء لا يمشي إلا بالضرب فمن يكون؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الحمار', callback_data="/WTT"},{text = 'الكلب', callback_data="/WTT"},
+},
+{
+{text = 'المسمار', callback_data="/Karen"},{text = 'انت', callback_data="/WTT"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Karen' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'سوال اخر', callback_data="/whoa"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/whoa' then
+local Teext =[[
+شخص توجد قدماه في الأرض ورأسه عند النجوم فمن يكون؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الكوكب', callback_data="/WTT"},{text = 'برج خليفا', callback_data="/WTT"},
+},
+{
+{text = 'القمر', callback_data="/WTT"},{text = 'الضابط', callback_data="/fighting"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/fighting' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'سوال اخر', callback_data="/aliquots"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/aliquots' then
+local Teext =[[
+شيء كلما ذبحته بكيت عليه فمن هو؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الخروف', callback_data="/WTT"},{text = 'البصل', callback_data="/trait"},
+},
+{
+{text = 'ابي', callback_data="/WTT"},{text = 'الثوم', callback_data="/WTT"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/trait' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'سوال اخر', callback_data="/qqpi"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/qqpi' then
+local Teext =[[
+شيء يتحرك أمامك ولكن لم تشاهده فمن هو؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الجن', callback_data="/WTT"},{text = 'الفهد', callback_data="/WTT"},
+},
+{
+{text = 'الهواء', callback_data="/duio"},{text = 'النمله', callback_data="/WTT"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/duio' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'سوال اخر', callback_data="/yyuu"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/yyuu' then
+local Teext =[[
+شيء يوجد في الليل ثلاث مرات وفي النهار مرة واحدة فمن هو؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'النجوم', callback_data="/WTT"},{text = 'القمر', callback_data="/WTT"},
+},
+{
+{text = 'حرف الالف', callback_data="/WTT"},{text = 'حرف اللام', callback_data="/your"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/your' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'سوال اخر', callback_data="/oppp"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/oppp' then
+local Teext =[[
+يتحرك بلا أقدام ولا يدخل إلى بالأذنين فما هو؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'منظف الاذنين', callback_data="/WTT"},{text = 'الهواء', callback_data="/WTT"},
+},
+{
+{text = 'التراب', callback_data="/WTT"},{text = 'الصوت', callback_data="/plma"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/plma' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'سوال اخر', callback_data="/fusion"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/verp' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'نسبه الذكاء 100%', callback_data="/ججج"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/pulng' then
+local Teext =[[
+✖ لقد خصرت  ✖
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'نسبه الذكاء 70%', callback_data="/ججج"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/pullin' then
+local Teext =[[
+✖ لقد خصرت  ✖
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'نسبه الذكاء 40%', callback_data="/ججج"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/plling' then
+local Teext =[[
+✖ لقد خصرت  ✖
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'نسبه الذكاء 0%', callback_data="/ججج"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/fusion' then
+local Teext =[[
+نشأ القانون الدولي....؟
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'في الحرب العالمية', callback_data="/WTT"},{text = 'قبل الحرب العالمية', callback_data="/WTT"},
+},
+{
+{text = 'بعد الحرب العالمية', callback_data="/akkakak"},{text = 'في حرب فيتنام', callback_data="/WTT"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/akkakak' then
+local Teext =[[
+لقد كسبت مبروك ✓
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'لبدا العبه من جديد', callback_data="/ahakaka"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/mute-name' then
+local Teext =[[
+ ●أنت الآن في العاب السورس ..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13558,86 +15513,105 @@ keyboard.inline_keyboard = {
 {{text = 'لعبه كشف الكذب', callback_data="/help47"}},
 {{text = 'مريم', callback_data="/help36"},{text = 'عقاب', callback_data="/help42"}},
 {{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
-{{text = '《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"}},
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}},
 }
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 
-if Text == '/help30' then
-local Text = 'لتجربه العلبه عليك ان تكتب البات في الشات✭↯'
+if text == '/help30' then
+local Text = 'لتجربه العلبه عليك ان تكتب البات في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help31' then
-local Text = 'لتجربه العلبه عليك ان تكتب المختلف في الشات✭↯'
+if text == '/help31' then
+local Text = 'لتجربه العلبه عليك ان تكتب المختلف في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help32' then
-local Text = 'لتجربه العلبه عليك ان تكتب التخمين في الشات✭↯'
+if text == '/help32' then
+local Text = 'لتجربه العلبه عليك ان تكتب التخمين في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help33' then
-local Text = 'لتجربه العلبه عليك ان تكتب الاسرع في الشات✭↯'
+if text == '/help33' then
+local Text = 'لتجربه العلبه عليك ان تكتب الاسرع في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help34' then
-local Text = 'لتجربه العلبه عليك ان تكتب الحزوه في الشات✭↯'
+if text == '/help34' then
+local Text = 'لتجربه العلبه عليك ان تكتب الحزوه في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help35' then
-local Text = 'لتجربه العلبه عليك ان تكتب امثله في الشات✭↯'
+if text == '/help35' then
+local Text = 'لتجربه العلبه عليك ان تكتب امثله في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help36' then
-local Text = 'لتجربه العلبه عليك ان تكتب مريم في الشات✭↯'
+if text == '/help36' then
+local Text = 'لتجربه العلبه عليك ان تكتب مريم في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help37' then
-local Text = 'لتجربه العلبه عليك ان تكتب الرياضيات في الشات✭↯'
+if text == '/help37' then
+local Text = 'لتجربه العلبه عليك ان تكتب الرياضيات في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help38' then
-local Text = 'لتجربه العلبه عليك ان تكتب السمايلات في الشات✭↯'
+if text == '/help38' then
+local Text = 'لتجربه العلبه عليك ان تكتب السمايلات في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help39' then
-local Text = 'لتجربه العلبه عليك ان تكتب العكس في الشات✭↯'
+if text == '/help39' then
+local Text = 'لتجربه العلبه عليك ان تكتب العكس في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help40' then
-local Text = 'لتجربه العلبه عليك ان تكتب الانكليزي في الشات✭↯'
+if text == '/help40' then
+local Text = 'لتجربه العلبه عليك ان تكتب الانكليزي في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help41' then
-local Text = 'لتجربه العلبه عليك ان تكتب المعاني في الشات✭↯'
+if text == '/help41' then
+local Text = 'لتجربه العلبه عليك ان تكتب المعاني في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help42' then
-local Text = 'لتجربه العلبه عليك ان تكتب عقاب في الشات✭↯'
+if text == '/help42' then
+local Text = 'لتجربه العلبه عليك ان تكتب عقاب في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help47' then
-local Text = 'لتجربه العلبه عليك ان تكتب كشف الكذب في الشات✭↯'
+if text == '/help47' then
+local Text = 'لتجربه العلبه عليك ان تكتب كشف الكذب في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
+end
+function mahmoudr(chat_id, reply_to_message_id, audio, caption, markdown) 
+send_api = "https://api.telegram.org/bot"..token 
+local url = send_api.."/sendAudio?chat_id=" .. chat_id .. "&audio=" .. audio .."&caption=" .. URL.escape(caption) 
+if reply_to_message_id ~= 0 then 
+reply_to_message_id_ = reply_to_message_id
+url = url .. "&reply_to_message_id=" .. reply_to_message_id_ .."&parse_mode=Markdown" 
+end 
+return s_api(url) 
+end
+if text == 'صوت' then
+audio = 'هنا تحط رابط الاغنيه'
+caption = 'هنا تكتب النص اللي هيظهر مع الاغنيه'
+mahmoudr(msg.chat_id_, msg.id_/2097152/0.5,audio,caption)
 end
 
-if Text == '/sofi' then
+
+
+
+
+
+if text == '/DRG' then
 local Teext =[[
- ✭ اهلا في قائمه الالعاب المتطوره سورس سوريا ✭ 
-تفضل اختر لعبه من القائمه 
+ ● مرحبا بيك في الالعاب  الالكترونيه ..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13667,36 +15641,36 @@ keyboard.inline_keyboard = {
 {{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
 {{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
 {{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
-{{text = '《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"}},
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}},
 }
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
-if Text == '/change-names' then
+if text == '/change-names' then
 local Teext =[[
-    ❲اوامر الاعضاء ⇊❳  
-⚚━━━━━⚚𝐓𝐑𝐄𝐕𝐎??⚚━━━━━⚚
- ✭   غنيلي ⌁ حساب العمر   
- ✭   صورتي ⌁ نسبه جمالي
- ✭   نقاطي
- ✭    مسح ⌁ بيع ❲نقاطي ❳ 
- ✭   رسائلي ⌁  مسح ❲رسائلي ❳ 
- ✭   زخرفه ⌁ اغاني 
- ✭   اسمي ⌁ الرتبه
- ✭  جهاتي 
- ✭  صلاحياتي
- ✭  قول +الكلمه
- ✭  تفعيل  تعطيل+ اطردني   
- ✭   سورس ⌁ المطور
- ✭   الرابط ⌁ ايدي
- ✭   رتبتي ⌁ كشف
- ✭   رد  انت يا بوت
- ✭  ي رايك يابوت
- ✭   هينو ⌁ هينها
- ✭   بوسو ⌁ بوسها
- ✭   بتحب دي ⌁ بتحب ده
- ✭  بوت الحذف⌁رابط الحذف
-⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚
- ❲[《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》 ](t.me/X_G_33)❳ 
+    『اوامر الاعضاء ⇊』  
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ ●   غنيلي ⇔ حساب العمر   
+ ●   صورتي ⇔ نسبه جمالي
+ ●   نقاطي
+ ●    مسح ⇔ بيع 『نقاطي 』 
+ ●   رسائلي ⇔  مسح 『رسائلي 』 
+ ●   زخرفه ⇔ اغاني 
+ ●   اسمي ⇔ الرتبه
+ ●  جهاتي 
+ ●  صلاحياتي
+ ●  قول +الكلمه
+ ●  تفعيل  تعطيل+ اطردني   
+ ●   سورس ⇔ المطور
+ ●   الرابط ⇔ ايدي
+ ●   رتبتي ⇔ كشف
+ ●   رد  انت يا بوت
+ ●  ي رايك يابوت
+ ●   هينو ⇔ هينها
+ ●   بوسو ⇔ بوسها
+ ●   بتحب دي ⇔ بتحب ده
+ ●  بوت الحذف⇔رابط الحذف
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13704,17 +15678,16 @@ keyboard.inline_keyboard = {
 {text = '◗القائمه الرائسيه◖', callback_data="/change-id"},
 },
 {
-{text = '《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"},
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-id' then
+if text == '/change-id' then
 local Teext =[[
- اتبع الاوامر الاعضاء
- تحت لي في الزر الأسفل⚚━━━━━𝗦 𝗜 𝗥 𝗜 𝗔  ✭━━━━━⚚
- 
- ..
+ ● الاوامر الاعضاء ..↑↓
+ تحت لي في الزر الأسفل↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13722,15 +15695,15 @@ keyboard.inline_keyboard = {
 {text = 'اوامر الاعضاء', callback_data="/change-names"},
 },
 {
-{text = '《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"},
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if Text == '/change-photo' then
+if text == '/change-photo' then
 local Teext =[[
- ✭مرحب  بك في مميزات سورس سوريا ✭
- ✭ مميزات الخاصه بسورس ✭
+● مرحباً بك في الالعاب المضافه حديثا ..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13738,121 +15711,2991 @@ keyboard.inline_keyboard = {
 {{text = 'لو خيروك', callback_data="/help20"},{text = 'لو خيروك بالصور', callback_data="/help25"}}, 
 {{text = 'انصحني', callback_data="/help13"},{text = 'كتبات', callback_data="/help19"}}, 
 {{text = 'الصراحه', callback_data="/help14"},{text = 'حروف', callback_data="/help21"}}, 
+{{text = 'اسالني', callback_data="/hakwl"},{text = 'اختبار الذكاء', callback_data="/wyauuu"}}, 
+{{text = 'مستقلبي', callback_data="/whklpp"},{text = 'الابراج', callback_data="/uwujjh"}}, 
 {{text = 'رزله', callback_data="/help15"},{text = 'رد عليه يابوت', callback_data="/help22"}}, 
 {{text = 'بتكره دا', callback_data="/help16"},{text = 'نكته', callback_data="/help23"}}, 
+{{text = 'حروف بالصور', callback_data="/Xcvb"},{text = 'اصنع', callback_data="/klpou6"}}, 
 {{text = 'غنيلي', callback_data="/help17"}},
 {{text = 'نسبه جمالي', callback_data="/help18"},{text = 'اليتيوب', callback_data="/help24"}},
 {{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
-{{text = '《𝙎𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 》', url="t.me/X_G_33"}},
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}},
 }
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
-if Text == '/help12' then
-local Text = 'لتجربه العلبه عليك ان تكتب تويت في الشات✭↯'
+if text == '/Xcvb' then
+local Text = 'لتجربه العلبه عليك ان تكتب حروف بالصور في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help13' then
-local Text = 'لتجربه العلبه عليك ان تكتب انصحني في الشات✭↯'
+if text == '/klpou6' then
+local Text = 'لو عايز يوزر ليك اكتب اصنع واستخرج يوزرك🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help14' then
-local Text = 'لتجربه العلبه عليك ان تكتب الصراحه في الشات✭↯'
+if text == '/hakwl' then
+local Text = 'لتجربه العلبه عليك ان تكتب اسالني في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help15' then
-local Text = 'لتجربه العلبه عليك ان تكتب رزله في الشات✭↯'
+if text == '/wyauuu' then
+local Text = 'لتجربه العلبه عليك ان تكتب اختبار الذكاء في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help16' then
-local Text = 'لتجربه العلبه عليك ان تكتب بتكره دا في الشات✭↯'
+if text == '/whklpp' then
+local Text = 'لتجربه العلبه عليك ان تكتب مستقبلي في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help17' then
-local Text = 'للاستماع للاغاني عليك ان تكتب غنيلي في الشات✭↯'
+if text == '/uwujjh' then
+local Text = 'لتجربه العلبه عليك ان تكتب الابراج في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help18' then
-local Text = 'لتجربه العلبه عليك ان تكتب نسبه جمالي في الشات✭↯'
+if text == '/help12' then
+local Text = 'لتجربه العلبه عليك ان تكتب تويت في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help19' then
-local Text = 'لتجربه العلبه عليك ان تكتب كتبات في الشات✭↯'
+if text == '/help13' then
+local Text = 'لتجربه العلبه عليك ان تكتب انصحني في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help20' then
-local Text = 'لتجربه العلبه عليك ان تكتب لو خيروك في الشات✭↯'
+if text == '/help14' then
+local Text = 'لتجربه العلبه عليك ان تكتب الصراحه في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help21' then
-local Text = 'لتجربه العلبه عليك ان تكتب حروف في الشات✭↯'
+if text == '/help15' then
+local Text = 'لتجربه العلبه عليك ان تكتب رزله في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help22' then
-local Text = 'لتجربه العلبه عليك ان تكتب رد عليه يابوت في الشات✭↯'
+if text == '/help16' then
+local Text = 'لتجربه العلبه عليك ان تكتب بتكره دا في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help23' then
-local Text = 'لتجربه العلبه عليك ان تكتب نكته في الشات✭↯'
+if text == '/help17' then
+local Text = 'للاستماع للاغاني عليك ان تكتب غنيلي في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help24' then
-local Text = 'لتحميل من المواقع عليك ان تكتب اليتيوب في الشات✭↯'
+if text == '/help18' then
+local Text = 'لتجربه العلبه عليك ان تكتب نسبه جمالي في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help25' then
-local Text = 'لتجربه العلبه عليك ان تكتب لو خيروك بالصور في الشات✭↯'
+if text == '/help19' then
+local Text = 'لتجربه العلبه عليك ان تكتب كتبات في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
-if Text == '/help56' then
-local Text = 'لتجربه العلبه عليك ان تكتب تويت بالصور في الشات✭↯'
+if text == '/help20' then
+local Text = 'لتجربه العلبه عليك ان تكتب لو خيروك في الشات🔰'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
+return false
+end
+if text == '/help21' then
+local Text = 'لتجربه العلبه عليك ان تكتب حروف في الشات🔰'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
+return false
+end
+if text == '/help22' then
+local Text = 'لتجربه العلبه عليك ان تكتب رد عليه يابوت في الشات🔰'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
+return false
+end
+if text == '/help23' then
+local Text = 'لتجربه العلبه عليك ان تكتب نكته في الشات🔰'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
+return false
+end
+if text == '/help24' then
+local Text = 'لتحميل من المواقع عليك ان تكتب اليتيوب في الشات🔰'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
+return false
+end
+if text == '/help25' then
+local Text = 'لتجربه العلبه عليك ان تكتب لو خيروك بالصور في الشات🔰'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
+return false
+end
+if text == '/help56' then
+local Text = 'لتجربه العلبه عليك ان تكتب تويت بالصور في الشات🔰'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(Text).."&show_alert=true")
 return false
 end
 --- callback added
-if Text == '/add' then
-if not Constructor(data) then
-local notText = '✘ عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
+if text == '/add' then
 local Teext =[[
-*اهلا انتツفي اضافات البوت*
-𖠕━┅┅┄⟞❲🆂🅸🆁🅸🅰❳⟝┄┉┉━𖠕
-* يمكنك معرفة حاله تفعيل الاضافات *
-* من خلال ارسال حاله الاضافات *
-⩹━━━━━━  𝙎𝙊𝙐𝙍??𝙀 𝘼𝙇𝙊𝙉𝙀 𖠱²² ━━━━━━⩺
-*يمكنك تصفح الاضافات من خلال*
-*الكيبورد الموجود في الأسفل*
-𖠕━┅┅┄⟞❲🆂🅸🆁🅸🅰❳⟝┄┉┉━𖠕
-[ 𝗦𝗢𝗨𝗥𝗖𝗘 𝑺𝑶𝑼𝑹𝑪𝑬 𝑺𝑰𝑹𝑰𝑨 𓏴  ](t.me/siria100)
+● اهلا بك في قسم الالعاب ..↑↓
+ اختر العبه الذي تريدها .↑↓
+ده من الازرار بلاسفل . ↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/sofi"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = '◗العاب السورس◖', callback_data="/mute-name"},{text = '◗الاضافات◖', callback_data="/change-photo"},
 },
 {
-{text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
+{text = '◗ متطوره◖', callback_data="/DRG"},
 },
 {
-{text = '🆂🅸🆁🅸🅰 ', url="t.me/siria100"},
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
 },
 }
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zDRGd' then
+local Teext =[[
+• اختر برجك عزيزي •📮،⍆
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '• الاسد ،🦁', callback_data="/zking"},{text = '• الثور 🐂', callback_data="/zzor"},
+},
+{
+{text = '• العقرب 🦂', callback_data="/zakrb"},{text = '• القوس 🏹', callback_data="/zkos"},
+},
+{
+{text = '• الحمل 🐐', callback_data="/zBanda"},
+},
+{
+{text = '• السرطان 🦀', callback_data="/zsltan"},{text = '• العذراء 🦋', callback_data="/zazra"},
+},
+{
+{text = '• الميزان ⚖', callback_data="/zmezan"},{text = '• الجدي 🦌', callback_data="/zgagy"},
+},
+{
+{text = ' معرفة برجك 🧭', callback_data="/zporg"},
+},
+{
+{text = '• الحوت 🐋', callback_data="/zhot"},
+},
+{
+{text = '• الجوزاء 🌩', callback_data="/zguza"},{text = '• الدلو 🦯', callback_data="/zdlu"},
+},
+{
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/change-hhh' then
+local Teext =[[ 
+● اليك قائمه الاسعار في الاسفل ..↑↓
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'اسعار التنصيب', callback_data="/change-hklp"},{text = 'اسعار السورسات', callback_data="/change-gfgjo"},
+},
+{
+{text = 'نبذه عن السورس', callback_data="/change-ghjjgyy"},
+},
+{
+{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/change-hklp' then
+local Teext =[[
+ سعر التنصيب علي سورس سوريا
+ سعر التنصيب العادي 25ج
+ سعر التنصيب المميز 35 ج
+تواصل مع المطورين لتنصيب
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '•ᴅᴇᴠɪᴅ♪',url="t.me/de_vi_d"},{text = '•ʀᴏʙᴏᴛ♪', url="t.me/P_X_U"}},
+{{text = '˹ᴛᴀᴡᴏsʟ˼',url="t.me/mero_kol_heaty"}}, 
+{{text = '●𝙱𝙰𝙲??↵', callback_data="/change-hhh"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/change-gfgjo' then
+local Teext =[[
+سعر السورس عندنا
+ السورسات بتبدا مت100لي 240ج
+ سعر المصنع200
+ سعر السيرفر ،100,و 4 بي120, 170
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'الــمــبــرمــج بــانــدا', url="t.me/QSDRG"}},
+{{text = 'تــواصــل بــانــدا',url="t.me/mero_kol_heaty"}}, 
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/change-hhh"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/change-ghjjgyy' then
+local Teext =[[
+📬 • 𝐚𝐛𝐨𝐮𝐭 𝐭𝐡𝐞 𝐬𝐨𝐮𝐫𝐜𝐞
+●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+●سورس خاص في حماية المجموعات من التفليش 🚸 . 
+●تستطيع تنصيب بوتك وتصبح المطور الاساسي 👨🏼‍✈️.
+●تستطيع اضافة قناتك اشتراك اجباري في بوتك ⚠️ .
+●سرعة في اداء البوت ومزايا حصرية فقط لسورسنا 〽️ .
+●لمعرفة ميزات اكثر عن السورس زور قناة التحديثات .
+●اطلب بوتك الأن 🌐 .
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ', url="t.me/X_G_33"}},
+{{text = '˹تــواصــل الـسـورس˼',url="t.me/mero_kol_heaty"}}, 
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/change-hhh"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/change-siusr' then
+local Teext =[[
+𖢜 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝙨𝙪𝙧𝙘𝙚 𝙨𝙞𝙧𝙞𝙖 ⇣
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '•𝑠𝑖𝑟𝑖𝑎 ♪',url="t.me/AHMED_MERO_love"},{text = '•ᴀʜᴍᴀᴅ♪', url="t.me/YYYBD"}},
+{{text = '•ᴅᴇᴠɪᴅ♪',url="t.me/de_vi_d"},{text = '•ʀᴏʙᴏᴛ♪', url="t.me/P_X_U"}},
+{{text = ' مــطــور الــبــوت🔰', url="http://t.me/"..sudos.UserName}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/bnada-yquio' then
+local Teext =[[
+ᴘʀᴏɢʀᴀᴍᴍᴇʀ ᴘᴀɴᴅᴀ
+ ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, 
+ғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ  
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝘼 𝙈 🇦🇽𝙎 𝙄 𝙍 𝙄 𝘼 ✹ ',url="t.me/AHMED_MERO_love"}},
+{{text = '•الــقــنــوات♪', callback_data="/Ajobanf"},{text = '•الــبــارات♪', callback_data="/banfai"}},  
+{{text = '•الــبــوتــات♪', callback_data="/gqjik"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Ajobanf' then
+local Teext =[[
+ᴘʀᴏɢʀᴀᴍᴍᴇʀ 𝒔𝒊𝒓𝒊𝒂 
+ ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, 
+ғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ  
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '⌯ ˹𓆩 ★ 𝙈𝙀𝙍𝙊 𐇑 .𖤐𓃠˼',url="t.me/MERO5O5"},{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url="t.me/X_G_33"}},
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/bnada-yquio"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/banfai' then
+local Teext =[[
+ᴘʀᴏɢʀᴀᴍᴍᴇʀ 𝒔𝒊𝒓𝒊𝒂 
+ ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, 
+ғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ  
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '™𓆩 ★ 𝐀𝐌 🇹🇷✞︎ 𝐓𝐄𝐀𝐌 𝐒𝐏𝐈𝐂𝐘 ★ 𓆪',url="t.me/mero_kol_heaty"}},
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/bnada-yquio"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/gqjik' then
+local Teext =[[
+ᴘʀᴏɢʀᴀᴍᴍᴇʀ 𝒔𝒊𝒓𝒊𝒂 
+ ᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ, 
+ғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ  
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'بوت زخرفه اسماء ✅',url="t.me/Quick_1bot"}},
+{{text = 'بوت تعليم اوامر السيرفر ✅',url="t.me/Qrao_bot"}},
+{{text = 'بوت دعم قنوات ✅',url="t.me/Qdja_bot"}},
+{{text = 'بوت حمايه الجروبات ✅',url="t.me/Qskr_bot"}},
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/bnada-yquio"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+if text == '/HHH' then
+local Teext =[[
+W𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒖𝒓𝒔𝒆 𝒔𝒊𝒓𝒊𝒂 ⧫ ??⇣
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '•ᴍʏ ᴅᴇᴠ♪', callback_data="/units"},{text = '•ᴍʏ ᴄʜᴀɴɴᴇʟ♪', callback_data="/theytry"}},   
+{{text = '♪مــطــور الــبــوت•', url="http://t.me/"..sudos.UserName}},
+{{text = '♪ اضغط لاضافه البوت لمجمعتك •' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"}}, 
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/theytry' then
+local Teext =[[
+W𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒖𝒓𝒔𝒆 𝒔𝒊𝒓𝒊𝒂 ⧫ 𝙼⇣
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙨𝙪𝙧𝙘𝙚 𝙨𝙞𝙧𝙞𝙖  ⤶',url="t.me/X_G_33"},{text = '𝙨𝙪𝙧𝙘𝙚 𝙨𝙞𝙧𝙞𝙖  1⤶', url="t.me/X_G_33"}},
+{{text = '•ᴛᴀᴡᴏsʟ♪',url="t.me/mero_kol_heaty"}}, 
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/HHH"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/units' then
+local Teext =[[
+W𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒖𝒓𝒔𝒆 𝒔𝒊𝒓𝒊𝒂 ⧫ 𝙼⇣
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '•𝑠𝑖𝑟𝑖𝑎 ♪',url="t.me/AHMED_MERO_love"},{text = '•ᴀʜᴍᴀᴅ♪', url="t.me/YYYBD"}},
+{{text = '•𝙺𝚂𝙰𝙷𝙰 ♪',url="t.me/MR_AAS"},{text = '•♡♪', url="t.me/AAa_HHh_MM_EE_DD"}},
+{{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/HHH"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zzor' then
+local Teext =[[
+برج الثور ( 20/4 - 20/5 )
+
+الكوكب : الزهرة
+
+أرقام الحظ : 11, 29, 29, 37, 56
+
+الأحجار : الزمرد , الفيروز
+
+البرج : ترابي
+
+يتوافق مع :  برج العذراء   و برج الجدي -  برج السرطان - برج الحوت 
+
+الأعمال الملائمة  : موظفي بنك- فنانين- محاسبين-موسيقيين- عمال
+
+إيجابيات برج الثور : صبور- يمكن الاعتماد عليه- محب- من طبعه الإصرار والتصميم- هادئ ويحب الطمأنينة
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zguza' then
+local Teext =[[
+برج الجوزاء ( 21/5 - 20 /6 ) كوكب برج الجوزاء : عطارد أرقام الحظ  لبرج الجوزاء: 12-21-30-48-47 أحجار برج الجوزاء : العقيق نوع برج الجوزاء : هوائي يتوافق برج الجوزاء مع : برج الميزان - برج الحمل - برج الأسد - برج القوس الأعمال الملائمة لبرج الجوزاء : برامج حوارية - تجار - مك
+إيجابيات  برج الجوزاء: ذكي - متقد الذهن - فصيح - لدية روح الشباب - متعدد المواهب - اجتماعي - متأقلم
+
+سلبيات برج الجوزاء : متوتر - غير ثابت على حال - عصبي - ماكر- فضولي
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/zdlu' then
+local Teext =[[
+برج الدلو ( 20/1 - 18/2 )
+
+الكوكب : زحل
+
+ارقام الحظ : 11- 29- 38-47- 56
+
+الاحجار : الفيروز
+
+البرج : هوائي
+
+يتوافق مع : برج الجوزاء - برج الميزان -برج الحمل -برج الجوزاء
+
+الاعمال الملائمة برج الدلو : مخترعين- سياسيين- كتاب- علماء- رواد فضاء- منجمين
+
+ايجابيات برج الدلو  : ودود، إنساني، صادق، وفي وصاحب ولاء، مبدئي، مبتكر
+
+سلبيات برج الدلو : مستقل وذكي. عنيد، يقف ضد الأمور، مشاكس، غير متوقع التصرفات، غير عاطفي وله استقلاليته.
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+if text == '/zhot' then
+local Teext =[[
+برج الحوت ( 19/2 - 20/3 )
+
+الكوكب : المشتري ارقام الحظ : 12- 21- 39- 48- 57
+
+الاحجار : حجر القمر
+
+البرج : مائي
+
+يتوافق مع : برج السرطان - برج العقرب -برج الثور
+
+الاعمال الملائمة : أطباء بيطريين- علماء أحياء- فنانين- أطباء-موسيقيين- علماء نفس
+
+ايجابيات برج الحوت : صاحب خيال، حساس، عاطفي، لطيف، غير أناني، لا تهمه الماديات، صاحب حدس وبديهة ويتعاطف مع الآخرين.
+
+سلبيات برج الحوت  : مثالي و يتهرب من الواقع، كتوم للأسرار وغامض، إرادته ضعيفة وسهل الانقياد.
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+if text == '/zakrb' then
+local Teext =[[
+برج العقرب ( 24/10 - 21/11 )
+
+الكوكب : المريخ
+
+ارقام الحظ : 17- 26- 35- 44-53
+
+الاحجار : الياقوت-العقيق
+
+البرج : مائي
+
+يتوافق مع : برج الحوت - برج السرطان - برج الثور
+
+الاعمال الملائمة : أطباء- محققين- علماء بيئة- مهندسين- عملاء سريين.
+
+ايجابيات برج العقرب: صاحب عزيمة- قوي- عاطفي- ذو حدس- ذو طاقة - مثير - شخصيته جذابة- كتوم للأسرار
+
+سلبيات برج العقرب : كثير الرفض- يحب السيطرة - محب للتملك- غيور -عنيد.
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/zkos' then
+local Teext =[[
+برج القوس ( 22/11 - 21/12)
+الكوكب : المشتري
+
+ارقام الحظ : 18-27- 36-45- 54
+
+الاحجار : الفيروز
+
+البرج : ناري
+
+يتوافق مع : الحمل - الاسد-الجوزاء
+
+الاعمال الملائمة : وكلاء سفر-مكتشفين-بروفيسورات- سفراء- تجار
+
+ايجابيات : متفائل، محب للحرية، مرح، له روح مرحة جميلة، صادق، مستقيم، ذكي وصاحب فلسفة
+سلبيات : متفائل بصورة عمياء، مهمل، غير مسؤول، سطحي، غير لبق، قلق
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+if text == '/zmezan' then
+local Teext =[[
+برج الميزان ( 23/9 - 23/10 )
+
+الكوكب : الزهرة
+
+ارقام الحظ : 6- 16- 25- 34- 43- 52
+
+الاحجار : الماس
+
+البرج : هوائي
+
+يتوافق مع : برج الدلو - برج الجوزاء - برج القوس
+
+الاعمال الملائمة : وظائف دبلوماسية- قضاة- مستشارين- أخصائيين نفسيين - فنانين
+
+ايجابيات برج الميزان : دبلوماسي، مؤدب، رومانسي، ساحر، سهل النقياد، اجتماعي، صاحب مبادئ ومسالم
+
+سلبيات برج الميزان : متردد، قابل للتغير، ساذج، يتأثر بسرعة، منطوي على نفسه.
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+
+if text == '/zazra' then
+local Teext =[[
+برج العذراء ( 23/8 - 22/9 )
+
+الكوكب : عطارد
+
+ارقام الحظ : 6- 15- 24- 33- 42- 51
+
+الاحجار : العقيق
+
+البرج : ارضي
+
+يتوافق: مع   برج الجدي   ، برج الثور ،برج السرطان ، برج العقرب
+
+الاعمال الملائمة : كيميائيين- أطباء-محققين- أخصائيي تغذية- أطباء بيطريين- مدراء- مقاولين
+ايجابيات برج العذراء : متواضع، خجول، دقيق، يمكن الاعتماد عليه، عملي، مجتهد، ذكي ويميل إلى التحليل
+سلبيات برج العذراء : سريع الانزعاج، كثير القلق، كثير الانتقاد، قاسي، يسعى نحو الكمالية ومحافظ
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zking' then
+local Teext =[[
+برج الأسد ( 23/6 - 22/8 )
+
+الكوكب : الشمس
+
+ارقام الحظ : 14- 13- 32-41- 50
+
+الاحجار : الياقوت،العنبر
+
+البرج : ناري
+
+يتوافق مع : برج القوس - برج الحمل - برج الدلو
+
+الاعمال الملائمة : مدراء، مهندسين معماريين، مخترعين، مدرسين، رياضيين ومدراء
+
+ايجابيات برج الأسد : كريم، دافئ القلب، مبدع، حماسي، واسع العقل، وفي محب
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/zsltan' then
+local Teext =[[
+برج السرطان ( 22/6 - 22/7 )
+
+الكوكب : القمر
+
+ارقام الحظ : 13- 22-31-40- 48- 57
+
+الاحجار : اللؤلؤ،العنبر-الياقوت
+
+البرج : مائي
+
+يتوافق مع : برج العقرب ، برج الحوت ،برج الجدي ،برج الثور
+
+الاعمال الملائمة : أطباء، صيادلة، مدرسوريا، أخصائيو تغذية، شيف، سماسرة
+
+ايجابيات برج السرطان : عاطفي، محب، صاحب حدس وبديهة، صاحب خيال واسع
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zBanda' then
+local Teext =[[
+برج الحمل :- ( 21/3 - 19/4 )
+
+الكوكب : المريخ
+
+أرقام الحظ : 10 ,19, 28, 37, 46, 55
+
+الأحجار : الياقوت - الماس
+
+البرج : نارى
+
+يتوافق مع :برج الاسد -برج  القوس - برج الجوزاء -برج  الدلو
+
+الأعمال الملائمة : رجل إطفاء ، طبيب ، ميكانيكي ، طبيب أسنان ، لاعب رياضي محترف أو رجل أعمال
+سلبيات برج الحمل : أناني - سريع الغضب - متهور - عديم الصبر – الطيش
+  مميّزات برج الحمل ١.١ الثقة العالية بالنّفس ١.٢ روح القيادة ١.٣ الطاقة الإيجابيّة ١.٤ الشجاعة ١.٥ الإبداع ١.٦ الطّموح ١.٧ حبّ المغامرة ١.٨ الإخلاص ١.٩ الاستقلاليّة ٢ عيوب برج الحمل ٢.١ الأنانيّة ٢.٢ حبّ لفت الانتباه ٢.٣ الغضب ٢.٤ احتكار الحديث ٢.٥ التسرّع
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/zgagy' then
+local Teext =[[
+برج الجدي ( 22/12 - 19/1 )
+
+الكوكب : زحل
+
+ارقام الحظ: 10-28- 37-46- 55
+
+الاحجار : العقيق اليماني
+
+البرج : ترابي
+
+يتوافق مع : برج الثور- برج العذراء
+
+الاعمال الملائمة : مدراء عامين- مدراء-وزراء، -مهندسي كومبيوتر.
+
+ايجابيات برج الجدي: عملي، عاقل- طموح- منظم- صبور- حذر- صاحب روح مرحة ومتحفظ
+
+سلبيات برج الجدي : متشائم- متعلق بالأقدار- بائس- حاقد، متمسك بالتقاليد أكثر من اللازم وجامد.
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/zporg' then
+local Teext =[[
+❣- برج الجدي: من 12/22 - الى 1/19•
+❣- برج الدلو: من 1/20 - الى 2/18•
+❣- برج الحوت: من 2/19 - الى 3/20•
+❣- برج الحمل: من 3/21 - الى 4/19•
+❣- برج الثور: من 4/20 - الى 5/20•
+❣- برج الجوزاء: من 5/21 - الى 6/20•
+❣- برج السرطان: من 6/21 - الى 7/21•
+❣- برج الاسد: من 7/23 - الى 8/22•
+❣- برج العذراء: من 8/23 - الى 9/22•
+❣- برج الميزان: من 9/23 - الى 10/22•
+❣- برج العقرب: من 10/23 - الى 11/21•
+❣- برج القوس: من 11/22 - الى 12/21•
+ ●○━━━━𝚜𝚒𝚛𝚒𝚊 ━━━━○●
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/zDRGd"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/lockwelcm' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل الترحيب '
+database:set(bot_id.."Chek:Welcome"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opawelcm' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل الترحيب '
+database:del(bot_id.."Chek:Welcome"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockCickp' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل التحقق '
+database:set(bot_id.."CAPTCHA"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opCickp' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل التحقق '
+database:del(bot_id.."CAPTCHA"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/lockreb' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل ردود السورس '
+database:set(bot_id.."my_GHoeq2:status"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opareb' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل ردود السورس '
+database:del(bot_id.."my_GHoeq2:status"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockamr' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل حساب العمر '
+database:set(bot_id.."DRG:age_Bots"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opamar' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل حساب العمر '
+database:del(bot_id.."DRG:age_Bots"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockgmale' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل نسبه جمالي '
+database:set(bot_id.."pp_photo:status"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opagmale' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل نسبه جمالي '
+database:del(bot_id.."pp_photo:status"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockman' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل نسبة الرجوله '
+database:set(bot_id.."Cick:rjo"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opamanh' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل نسبة الرجوله '
+database:del(bot_id.."Cick:rjo"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/locknsak' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل  نسبة الحب '
+database:set(bot_id.."Cick:lov"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opanams' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل  نسبة الحب '
+database:del(bot_id.."Cick:lov"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/locknsamgk' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل نسبه الانوثه '
+database:set(bot_id.."Cick:ano"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opansamg' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل نسبه الانوثه '
+database:del(bot_id.."Cick:ano"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/locnspm' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل نسبه الكره '
+database:set(bot_id.."Cick:krh"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opansamp' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل نسبه الكره '
+database:del(bot_id.."Cick:krh"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockid' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل الايدي '
+database:set(bot_id.."Bot:Id"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaid' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل الايدي '
+database:del(bot_id.."Bot:Id"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/lockgams' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل الالعاب '
+database:set(bot_id.."Lock:Games"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opagams' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل الالعاب '
+database:del(bot_id.."Lock:Games"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockbafne' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل ضافني '
+database:set(bot_id.."Added:Me"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaDRGfe' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل ضافني '
+database:del(bot_id.."Added:Me"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockanmen' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل انا مين '
+database:set(bot_id.."my_anamen:status"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/oppganmen' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل انا مين '
+database:del(bot_id.."my_anamen:status"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Lokzal' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل الزخرفه '
+database:set(bot_id.." ban:zhrf_Bots"..msg.chat_id_,"open")
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opeza' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل الزخرفه '
+database:del(bot_id.." ban:zhrf_Bots"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lookpohi' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل صورتي '
+database:set(bot_id.."my_photo:status"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+if text == '/opphotop' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل صورتي '
+database:del(bot_id.."my_photo:status"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+
+if text == '/Loumarem' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل مريم '
+database:set(bot_id.."my_maryam:status"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/thomarem' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل مريم '
+database:del(bot_id.."my_maryam:status"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/locklinka' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل الرابط '
+database:set(bot_id.."Link_Group:status"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opalinka' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل الرابط '
+database:del(bot_id.."Link_Group:status"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockCick' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تعطيل اطردني '
+database:set(bot_id.."Cick:Me"..Chat_id,true)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opCick' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم تفعيل اطردني '
+database:del(bot_id.."Cick:Me"..Chat_id)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+if text == '/lockdul' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الاباحي '
+database:set(bot_id.."lock:Lock:Sexy"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/oppor' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الاباحي '
+database:del(bot_id.."lock:Lock:Sexy"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Louis' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل السب '
+database:set(bot_id.."lock:Fshar"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/tho' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح السب '
+database:del(bot_id.."lock:Fshar"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/ayq79' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الازعاج '
+database:set(bot_id.."lock:Azag"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Andrew' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الازعاج '
+database:del(bot_id.."lock:Azag"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Gogh' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل المحن '
+database:set(bot_id.."lock:mahn"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Omni' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح المحن '
+database:del(bot_id.."lock:mahn"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/Lokll' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الدردشه '
+database:set(bot_id.."lock:text"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/openqg' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الدردشه '
+database:del(bot_id.."lock:text"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockgwg' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الاضافه '
+database:set(bot_id.."lock:AddMempar"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opengwg' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الاضافه '
+database:del(bot_id.."lock:AddMempar"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●??𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockaghv' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الدخول '
+database:set(bot_id.."lock:Join"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/oppgagf' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الدخول '
+database:del(bot_id.."lock:Join"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockbot' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل البوتات '
+database:set(bot_id.."lock:Bot:kick"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opabot' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح البوتات '
+database:del(bot_id.."lock:Bot:kick"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockash' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الاشعارات '
+database:set(bot_id.."lock:tagservr"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaash' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الاشعارات '
+database:del(bot_id.."lock:tagservr"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/locklink' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الروابط '
+database:set(bot_id.."lock:Link"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opalink' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الروابط '
+database:del(bot_id.."lock:Link"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockpin' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل التثبيت '
+database:set(bot_id.."lockpin"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opapin' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح التثبيت '
+database:del(bot_id.."lockpin"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockedit' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل التعديل '
+database:set(bot_id.."lock:edit"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaedit' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح التعديل '
+database:del(bot_id.."lock:edit"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockFars' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الفارسيه '
+database:set(bot_id.."lock:Fars"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaFars' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الفارسيه '
+database:del(bot_id.."lock:Fars"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockEngilsh' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الانكليزيه '
+database:set(bot_id.."lock:Engilsh"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaEngilsh' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الانكليزيه '
+database:del(bot_id.."lock:Engilsh"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockinline' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل الانلاين '
+database:set(bot_id.."lock:inline"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opainline' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح الانلاين '
+database:del(bot_id.."lock:inline"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/lockeditmed' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم قفل تعديل الميديا '
+database:set(bot_id.."lock_edit_med"..msg.chat_id_,'del')  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if text == '/opaeditmed' then
+if not Mod(data) then
+local notText = '✘ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = '• تم فتح تعديل الميديا '
+database:del(bot_id.."lock_edit_med"..msg.chat_id_)  
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '●𝙱𝙰𝙲𝙺↵', callback_data="/help8"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+
+
+
+
+if Text and Text:match('amr@(%d+)/user@(%d+)/setiinginfo') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/setiinginfo$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/voicetrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/voicetrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = '&can_manage_voice_chats=True'..manage..infoo..deletee..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/voicefalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/voicefalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = '&can_manage_voice_chats=false'..manage..infoo..deletee..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/managetrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/managetrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..'&can_manage_chat=True'..infoo..deletee..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/managefalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/managefalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..'&can_manage_chat=false'..infoo..deletee..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/addadmintrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/addadmintrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage..infoo..deletee..invitee..restrictt..pinn..'&can_promote_members=true' 
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/chenginfotrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/chenginfotrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage..'&can_change_info=True' ..deletee..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/delmsggtrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/delmsggtrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..'&can_delete_messages=True' ..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/banusertrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/banusertrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..deletee..invitee..'&can_restrict_members=True' ..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/pinmsgtrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/pinmsgtrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..deletee..invitee..restrictt..'&can_pin_messages=True' ..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/addlinktrue') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/addlinktrue$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..deletee..'&can_invite_users=True' ..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+
+
+if Text and Text:match('amr@(%d+)/user@(%d+)/addadminfalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/addadminfalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+if manage then
+local ListGruoup = voice..manage.. infoo..deletee..invitee..restrictt..pinn..'&can_promote_members=false'
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+end
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/chenginfofalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/chenginfofalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. '&can_change_info=false' ..deletee..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/delmsggfalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/delmsggfalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..'&can_delete_messages=false'..invitee..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/banuserfalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/banuserfalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..deletee..invitee..'&can_restrict_members=false' ..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/pinmsgfalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/pinmsgfalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..deletee..invitee..restrictt..'&can_pin_messages=false' ..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if Text and Text:match('amr@(%d+)/user@(%d+)/addlinkfalse') then
+local users = {string.match(Text,"^amr@(%d+)/user@(%d+)/addlinkfalse$")}
+if tonumber(users[1]) == tonumber(data.sender_user_id_) then
+local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. data.chat_id_ ..'&user_id='.. users[2])
+local Json_Info = JSON.decode(Chek_Info)
+if Json_Info.result.can_change_info == true then
+infoo = '&can_change_info=True' 
+else 
+infoo = '&can_change_info=false' 
+end
+if Json_Info.result.can_delete_messages == true then
+deletee = '&can_delete_messages=True' 
+else 
+deletee = '&can_delete_messages=false' 
+end
+if Json_Info.result.can_invite_users == true then
+invitee = '&can_invite_users=True' 
+else 
+invitee = '&can_invite_users=false' 
+end
+if Json_Info.result.can_pin_messages == true then
+pinn = '&can_pin_messages=True' 
+else 
+pinn = '&can_pin_messages=false' 
+end
+if Json_Info.result.can_restrict_members == true then
+restrictt = '&can_restrict_members=True' 
+else 
+restrictt = '&can_restrict_members=false' 
+end
+if Json_Info.result.can_promote_members == true then
+promotee = '&can_promote_members=true' 
+else 
+promotee = '&can_promote_members=false' 
+end 
+if Json_Info.can_manage_voice_chats == true then
+voice = '&can_manage_voice_chats=True' 
+else 
+voice = '&can_manage_voice_chats=false' 
+end
+if Json_Info.can_manage_chat == true then
+manage = '&can_manage_chat=True' 
+else 
+manage = '&can_manage_chat=false' 
+end
+local ListGruoup = voice..manage.. infoo..deletee..'&can_invite_users=false'  ..restrictt..pinn..promotee
+https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id="..data.chat_id_ .."&user_id="..users[2]..ListGruoup)
+sendin(Chat_id,msg_idd,data.sender_user_id_,users[2])
+end
+end
+if text == '/@jjjx33' then
+local Teext =[[
+@jjjx33
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Xccp' then
+local Teext =[[
+@Xccp
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Lj_llIll' then
+local Teext =[[
+@Lj_llIll
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/pivsn' then
+local Teext =[[
+@pivsn
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+
+if text == '/k1op' then
+local Teext =[[
+@k1op
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Q10d' then
+local Teext =[[
+@Q10d
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+
+if text == '/whoop' then
+local Teext =[[
+@llll_iiij
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+
+if text == '/Xjljlj' then
+local Teext =[[
+@Xjljlj
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Xjak' then
+local Teext =[[
+@Xjak
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/jk1bn' then
+local Teext =[[
+@jk1bn
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/A0op' then
+local Teext =[[
+@A0op
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/vip_iij' then
+local Teext =[[
+@vip_iij
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/YtIIIl' then
+local Teext =[[
+@YtIIIl
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/iii_llij' then
+local Teext =[[
+@iii_llij
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/vbvy' then
+local Teext =[[
+@vbvy
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/hjljilj' then
+local Teext =[[
+@hjljilj
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Diiolk' then
+local Teext =[[
+@Diiolk
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Bi01j' then
+local Teext =[[
+@Bi01j
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/frrili' then
+local Teext =[[
+@frrili
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+if text == '/Xcvb' then
+local Teext =[[
+@Xcvb
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+
+if text == '/Dlik' then
+local Teext =[[
+@Dlik
+]]
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+end
+
+if Text and Text:match("^yesS(.*)$") then  
+local delallph = Text:match("^yesS(.*)$")
+if msg.sender_user_id_ == tonumber(SUDO) then 
+local Texxt = "🚧 ┇ حسننا الان يمكنك ارسال معرف المطور الاساسي الجديد ..."
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = 'إالـغـاء الأمـر', callback_data="noS"..msg.sender_user_id_}}}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..msg.chat_id_..'&text='..URL.escape(Texxt).."&message_id="..msg_idd.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+database:set(bot_id..":SUDO:USERNAME:"..msg.sender_user_id_,data.message_id_)
+return false
+end
+end
+if Text and Text:match("^noS(.*)$") then  
+local delallph = Text:match("^noS(.*)$")
+print(msg.sender_user_id_,SUDO)
+print(msg.sender_user_id_== tonumber(SUDO))
+if msg.sender_user_id_ == tonumber(SUDO) then 
+--DeleteMessage(msg.chat_id_,{[0] = msg.message_id_})
+local Teext = "🚧 ┇ تم الغاء الامر بنجاح ."
+database:del(bot_id..":SUDO:USERNAME:"..msg.sender_user_id_)
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..msg.chat_id_..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
+return false
+end
+end
+if text == 'nzllne'..data.sender_user_id_ then if database:sismember(bot_id.."Sudo:User",data.sender_user_id_) then dev = "المطور ،" else dev = "" end
+if database:sismember(bot_id..'CoSu'..msg.chat_id_, data.sender_user_id_) then cu = 'مالك ،' else cu = "" end
+if database:sismember(bot_id.."Basic:Constructor"..msg.chat_id_, data.sender_user_id_) then crr = "منشئ اساسي ،" else crr = "" end
+if database:sismember(bot_id..'Constructor'..msg.chat_id_, data.sender_user_id_) then cr = "منشئ ،" else cr = "" end
+if database:sismember(bot_id..'Manager'..msg.chat_id_, data.sender_user_id_) then own = "مدير ،" else own = "" end
+if database:sismember(bot_id..'S00F4:MN:TF'..msg.chat_id_, data.sender_user_id_) then mn = 'منظف ،' else mn = '' end
+if database:sismember(bot_id..'Mod:User'..msg.chat_id_, data.sender_user_id_) then mod = "ادمن ،" else mod = "" end
+if database:sismember(bot_id..'Special:User'..msg.chat_id_, data.sender_user_id_) then vip = "مميز ،" else vip = "" end
+if Can_or_NotCan(data.sender_user_id_,msg.chat_id_) ~= false then local text = "\n ⦁ تم تنزيلك من الرتب التاليه \n ⦁  { "..dev..""..crr..""..cr..""..own..""..mod..""..mn..""..vip.." } \n"
+else
+local text = "\n ⦁ انت لاتمتلك رتبه \n"
+end
+database:srem(bot_id.."Sudo:User", data.sender_user_id_)
+database:srem(bot_id.."CoSu"..msg.chat_id_,data.sender_user_id_)
+database:srem(bot_id.."Basic:Constructor"..msg.chat_id_,data.sender_user_id_)
+database:srem(bot_id..'Constructor'..msg.chat_id_, data.sender_user_id_)
+database:srem(bot_id..'Manager'..msg.chat_id_, data.sender_user_id_)
+database:srem(bot_id..'Mod:User'..msg.chat_id_, data.sender_user_id_)
+database:srem(bot_id..'S00F4:MN:TF'..msg.chat_id_, data.sender_user_id_)
+database:srem(bot_id..'Special:User'..msg.chat_id_, data.sender_user_id_)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ● تم تنزيلك من جميع الرتب")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+
+
+if text == 'EndAddarray'..data.sender_user_id_ then  
+if database:get(bot_id..'Set:array'..data.sender_user_id_..':'..Chat_id) == 'true1' then
+database:del(bot_id..'Set:array'..data.sender_user_id_..':'..Chat_id)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+end
+if text == 'OkKikedMe'..data.sender_user_id_ then  
+tdcli_function({ID="ChangeChatMemberStatus",chat_id_=Chat_id,user_id_=data.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,data) 
+if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if (data and data.code_ and data.code_ == 3) then 
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙البوت ليس ادمن يرجى ترقيتي !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙عذرا لا استطيع طرد ادمنية الكروب*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if data and data.ID and data.ID == 'Ok' then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم الطرد بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+end,nil)   
+end
+if text == 'noKikedMe'..data.sender_user_id_ then  
+local Text ="● تم الغاء الأمر بنجاح "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text == 'YYYBD_aza3h1'..data.sender_user_id_ and msa3d(data) then  
+database:setex(bot_id.."Ss:Cs" .. Chat_id .. ":" .. data.sender_user_id_, 600, true) 
+local Text ="● ارسل الاذاعة لارسلها الي الجروبات "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text == 'YYYBD_aza3h2'..data.sender_user_id_ and msa3d(data) then  
+database:setex(bot_id.."Send:Bc:Pv" .. Chat_id .. ":" .. data.sender_user_id_, 600, true) 
+local Text ="● ارسل الاذاعة لارسلها الي الجروبات "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text == 'YYYBD_aza3h3'..data.sender_user_id_ and msa3d(data) then  
+database:setex(bot_id.."YYYBD_aza3h3" .. Chat_id .. ":" .. data.sender_user_id_, 600, true) 
+local Text ="● ارسل الاذاعة لارسلها الي المطور الاساسي و المساعد "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text == 'kahuna'..data.sender_user_id_ then 
+database:sadd(bot_id..'Sudo:User', result.sender_user_id_)
+local Text ="● تم الغاء الأمر بنجاح "
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙄𝙍𝙄𝘼 ',url='http://t.me/X_G_33'}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+if text == '/lp8qy' then
+Text = '✨🌻'
+ban = math.random(3,49); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'كتبات أخري', callback_data="/lp8qy"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/dfk9apa/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == '/asr4' then
+Text = 'مرحبا اليك لو خيروك بالصوره🍁🌝'
+ban = math.random(1,24); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'لوخيروك أخري', callback_data="/asr4"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/kbbnv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == '/ljljkj' then
+Text = 'مرحبا إليك تويت بالصوره✨🌚'
+ban = math.random(1,28); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'تويت أخري', callback_data="/ljljkj"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/wffhvv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
+if text == '/allstate' then
+Text = 'اليك اغنيه عشوائيه من البوت'
+ban = math.random(3,42); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'اغنيه اخري', callback_data="/allstate"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. Chat_id .. '&voice=https://t.me/faioo8/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == '/lklpo' then
+Text = 'دوس علي الزرار لاختيار استوري أخري 🍁'
+ban = math.random(4,74); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'استوري أخري', callback_data="/lklpo"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. Chat_id .. '&video=https://t.me/Qapplu/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == '/chair' then
+Text = 'اضغط علي الزر لاختيار ثيم اخر' 
+ban = math.random(1,57); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'ثيم أخري', callback_data="/chair"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. Chat_id .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if data.ID == "UpdateNewMessage" then  -- new msg
@@ -14643,927 +19486,7 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 
-if text == "كتبات" or text == "حكمه" or text == "قصيده" then 
-local TWEET_Msg = { 
-"‏من ترك أمرهُ لله، أعطاه الله فوق ما يتمنَّاه💙 ", 
-"‏من علامات جمال المرأة .. بختها المايل ! ",
-"‏ انك الجميع و كل من احتل قلبي🫀🤍",
-"‏ ‏ لقد تْعَمقتُ بكَ كَثيراً والمِيمُ لام .♥️",
-"‏ ‏ممكن اكون اختارت غلط بس والله حبيت بجد🖇️",
-"‏ علينا إحياء زَمن الرّسائل الورقيّة وسط هذه الفوضى الالكترونية العَارمة.𖠪💜",
-"‏ يجي اي الصاروخ الصيني ده جمب الصاروخ المصري لما بيلبس العبايه السوده.🤩♥️",
-"‏ كُنت أرقّ من أن أتحمّل كُل تلك القَسوة من عَينيك .🍍",
-"‏أَكَان عَلَيَّ أَنْ أغْرَس انيابي فِي قَلْبِك لتشعر بِي ؟.",
-"‏ : كُلما أتبع قلبي يدلني إليك .",
-"‏ : أيا ليت من تَهواه العينُ تلقاهُ .",
-"‏ ‏: رغبتي في مُعانقتك عميقة جداً .🥥",
-"ويُرهقني أنّي مليء بما لا أستطيع قوله.✨",
-"‏ من مراتب التعاسه إطالة الندم ع شيء إنتهى. 𖠪 ",
-"‏ ‏كل العالم يهون بس الدنيا بينا تصفي 💙",
-"‏ بعض الاِعتذارات يجب أن تُرفَضّ.",
-"‏ ‏تبدأ حياتك محاولاً فهم كل شيء، وتنهيها محاولاً النجاة من كل ما فهمت.",
-"‏ إن الأمر ينتهي بِنا إلى أعتياد أي شيء.",
-"‏ هل كانت كل الطرق تؤدي إليكِ، أم أنني كنتُ أجعلها كذلك.",
-"‏ ‏هَتفضل توآسيهُم وآحد ورآ التآني لكن أنتَ هتتنسي ومحدِش هَيوآسيك.",
-"‏ جَبَرَ الله قلوبِكُم ، وقَلبِي .🍫",
-"‏ بس لما أنا ببقى فايق، ببقى أبكم له ودان.💖",
-"‏ ‏مقدرش عالنسيان ولو طال الزمن 🖤",
-"‏ أنا لستُ لأحد ولا احد لي ، أنا إنسان غريب أساعد من يحتاجني واختفي.",
-"‏ ‏أحببتك وأنا منطفئ، فما بالك وأنا في كامل توهجي ؟",
-"‏ لا تعودني على دفء شمسك، إذا كان في نيتك الغروب .َ",
-"‏ وانتهت صداقة الخمس سنوات بموقف.",
-"‏ ‏لا تحب أحداً لِدرجة أن تتقبّل أذاه.",
-"‏ إنعدام الرّغبة أمام الشّيء الّذي أدمنته ، انتصار.",
-"‏ ",
-} 
-send(msg.chat_id_, msg.id_,'['..TWEET_Msg[math.random(#TWEET_Msg)]..']')  
-return false 
-end
 
-
-if text == "نكت" or text == "ضحكني" or text == "متت" then 
-local TWEET_Msg = { 
-"‏◍ مرة واحد اتخانق هو ومراته بالليل ومابيكلموش بعض.. حط لها ورقة جنب السرير قال لها صحيني الصبح الساعة ستة ونص.. صحي الصبح بيبص ف الساعة لقى الساعة عشرة.. ولقى جنبه ورقة مكتوب فيها اصحى الساعة بقت ستة ونص. ", 
-"‏◍ مره واحد بلديتنا كان بيدق مسمار فى الحائط فالمسمار وقع منه فقال له :تعالى ف مجاش, فقال له: تعالي ف مجاش. فراح بلديتنا رامي على المسمار شوية مسمامير وقال: هاتوه. ",
-"‏ ‏◍ واحدة عملت حساب وهمي ودخلت تكلم جوزها منه.. ومبسوطة أوي وبتضحك.. سألوها بتضحكي على إيه؟ قالت لهم أول مرة يقول لي كلام حلو من ساعة ما اتجوزنا.",
-"◍  مره اسكندراني دعك المصباح طلعله جني..   جاب بيه مستيكة.",
-"‏ ◍ واحد بلدياتنا عمل 2 إيميل، واحد دوت كوم للشتاء وواحد نص كوم للصيف",
-"‏ ◍ ﺻﻌﻴﺪي ﻟﻐﻲ ﻣﻮﻋﺪه ﻣﻊ اﻟﺪﻛﺘﻮر!   عشان كان ﻣﺮﻳﺾ.",
-"‏◍ بيقولك مره واحد نام ساعه..    صحي لقى نفسه حظاظه..",
-"‏ ◍ مره واحد اشترى فراخ..   علشان يربيها فى قفص صدره. .",
-"‏ ◍ واحدة عملت حساب وهمي ودخلت تكلم جوزها منه.. ومبسوطة أوي وبتضحك.. سألوها بتضحكي على إيه؟ قالت لهم أول مرة يقول لي كلام حلو من ساعة ما اتجوزنا..",
-"‏ ‏: ◍ مرة مهندس برمجة اتجوز وخلف بنتين توأم .. سمى واحدة لوجين والتانية Log out.",
-"◍ واحد بلدياتنا عمل 2 إيميل، واحد دوت كوم للشتاء وواحد نص كوم للصيف",
-"‏ ◍ مرة واحد اتخانق هو ومراته بالليل ومابيكلموش بعض.. حط لها ورقة جنب السرير قال لها صحيني الصبح الساعة ستة ونص.. صحي الصبح بيبص ف الساعة لقى الساعة عشرة.. ولقى جنبه ورقة مكتوب فيها اصحى الساعة بقت ستة ونص.",
-"‏ ‏◍ واحد أخوه مات ومش عاوز يصدم مراته بالخبر مرة واحدة.. دخل عليها وقال لها: جوزك اتجوز عليكي.. صوتت وقالت إلهي أشوفه داخل ميت.. قال لأصحابه: دخلوه يا رجالة.",
-} 
-send(msg.chat_id_, msg.id_,'['..TWEET_Msg[math.random(#TWEET_Msg)]..']')  
-return false 
-end
-
-
-if text == "انصحني" or text == "انصحنى" or text == "انصح" then 
-local TWEET_Msg = { 
-"عامل الناس بأخلاقك ولا بأخلاقهم", 
-"الجمال يلفت الأنظار لكن الطيبه تلفت القلوب ", 
-"الاعتذار عن الأخطاء لا يجرح كرامتك بل يجعلك كبير في نظر الناس ",
-"لا ترجي السماحه من بخيل.. فما في البار لظمان ماء",
-"لا تحقرون صغيره إن الجبال من الحصي",
-"لا تستحي من إعطاء فإن الحرمان أقل منه ", 
-"لا تظلم حتى لا تتظلم ",
-"لا تقف قصاد الريح ولا تمشي معها ",
-"لا تكسب موده التحكم الا بالتعقل",
-"لا تمد عينك في يد غيرك ",
-"لا تملح الا لمن يستحقاها ويحافظ عليها",
-"لا حياه للإنسان بلا نبات",
-"لا حياه في الرزق.. ولا شفاعه في الموت",
-"كما تدين تدان",
-"لا دين لمن لا عهد له ",
-"لا سلطان على الدوق فيما يحب أو بكره",
-"لا مروه لمن لادين له ",
-"لا يدخل الجنه من لايأمن من جازه بوائقه",
-"يسروا ولا تعسروا... ويشورا ولا تنفروا",
-"يدهم الصدر ما يبني العقل الواسع ",
-"أثقل ما يوضع في الميزان يوم القيامة حسن الخلق ",
-"أجهل الناس من ترك يقين ما عنده لظن ما عند الناس ",
-"أحياناً.. ويصبح الوهم حقيقه ", 
-} 
-send(msg.chat_id_, msg.id_,'['..TWEET_Msg[math.random(#TWEET_Msg)]..']')  
-return false 
-end
-if text == "تويت" or text == "كت تويت" then 
-local TWEET_Msg = { 
-"اخر افلام شاهدتها", 
-"ما هي وظفتك الحياه", 
-"اعز اصدقائك ?", 
-"اخر اغنية سمعتها ?", 
-"تكلم عن نفسك", 
-"ليه انت مش سالك", 
-"اخر كتاب قرآته", 
-"روايتك المفضله ?", 
-"اخر اكله اكلتها", 
-"اخر كتاب قرآته", 
-"افضل يوم ف حياتك", 
-"ليه مضيفتش كل جهاتك", 
-"حكمتك ف الحياه", 
-"لون عيونك", 
-"كتابك المفضل", 
-"هوايتك المفضله", 
-"علاقتك مع اهلك", 
-" ما السيء في هذه الحياة ؟ ", 
-"أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
-"سؤال ينرفزك ؟ ", 
-" اكثر ممثل تحبه ؟ ", 
-"قد تخيلت شي في بالك وصار ؟ ", 
-"شيء عندك اهم من الناس ؟ ", 
-"تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
-"وش أخر شي ضيعته؟ ", 
-"كم مره حبيت؟ ", 
-" اكثر المتابعين عندك باي برنامج؟", 
-" آخر مره ضربت عشره كانت متى ؟", 
-" نسبه الندم عندك للي وثقت فيهم ؟", 
-"تحب ترتبط بكيرفي ولا فلات؟", 
-" جربت شعور احد يحبك بس انت مو قادر تحبه؟", 
-" تجامل الناس ولا اللي بقلبك على لسانك؟", 
-" عمرك ضحيت باشياء لاجل شخص م يسوى ؟", 
-"مغني تلاحظ أن صوته يعجب الجميع إلا أنت؟ ", 
-" آخر غلطات عمرك؟ ", 
-" مسلسل كرتوني له ذكريات جميلة عندك؟ ", 
-" ما أكثر تطبيق تقضي وقتك عليه؟ ", 
-" أول شيء يخطر في بالك إذا سمعت كلمة نجوم ؟ ", 
-" قدوتك من الأجيال السابقة؟ ", 
-" أكثر طبع تهتم بأن يتواجد في شريك/ة حياتك؟ ", 
-"أكثر حيوان تخاف منه؟ ", 
-" ما هي طريقتك في الحصول على الراحة النفسية؟ ", 
-" إيموجي يعبّر عن مزاجك الحالي؟ ", 
-" أكثر تغيير ترغب أن تغيّره في نفسك؟ ", 
-"أكثر شيء أسعدك اليوم؟ ", 
-"اي رايك في الدنيا دي ؟ ", 
-"ما هو أفضل حافز للشخص؟ ", 
-"ما الذي يشغل بالك في الفترة الحالية؟", 
-"آخر شيء ندمت عليه؟ ", 
-"شاركنا صورة احترافية من تصويرك؟ ", 
-"تتابع انمي؟ إذا نعم ما أفضل انمي شاهدته ", 
-"يرد عليك متأخر على رسالة مهمة وبكل برود، موقفك؟ ", 
-"نصيحه تبدا ب -لا- ؟ ", 
-"كتاب أو رواية تقرأها هذه الأيام؟ ", 
-"فيلم عالق في ذهنك لا تنساه مِن روعته؟ ", 
-"يوم لا يمكنك نسيانه؟ ", 
-"شعورك الحالي في جملة؟ ", 
-"كلمة لشخص بعيد؟ ", 
-"صفة يطلقها عليك الشخص المفضّل؟ ", 
-"أغنية عالقة في ذهنك هاليومين؟ ", 
-"أكلة مستحيل أن تأكلها؟ ", 
-"كيف قضيت نهارك؟ ", 
-"تصرُّف ماتتحمله؟ ", 
-"موقف غير حياتك؟ ", 
-"اكثر مشروب تحبه؟ ", 
-"القصيدة اللي تأثر فيك؟ ", 
-"متى يصبح الصديق غريب ", 
-"وين نلقى السعاده برايك؟ ", 
-"تاريخ ميلادك؟ ", 
-"قهوه و لا شاي؟ ", 
-"من محبّين الليل أو الصبح؟ ", 
-"حيوانك المفضل؟ ", 
-"كلمة غريبة ومعناها؟ ", 
-"كم تحتاج من وقت لتثق بشخص؟ ", 
-"اشياء نفسك تجربها؟ ", 
-"يومك ضاع على؟ ", 
-"كل شيء يهون الا ؟ ", 
-"اسم ماتحبه ؟ ", 
-"وقفة إحترام للي إخترع ؟ ", 
-"أقدم شيء محتفظ فيه من صغرك؟ ", 
-"كلمات ماتستغني عنها بسوالفك؟ ", 
-"وش الحب بنظرك؟ ", 
-"حب التملك في شخصِيـتك ولا ؟ ", 
-"تخطط للمستقبل ولا ؟ ", 
-"موقف محرج ماتنساه ؟ ", 
-"من طلاسم لهجتكم ؟ ", 
-"اعترف باي حاجه ؟ ", 
-"عبّر عن مودك بصوره ؟ ",
-"آخر مره ضربت عشره كانت متى ؟", 
-"اسم دايم ع بالك ؟ ", 
-"اشياء تفتخر انك م سويتها ؟ ", 
-" لو بكيفي كان ؟ ", 
-} 
-send(msg.chat_id_, msg.id_,'['..TWEET_Msg[math.random(#TWEET_Msg)]..']')  
-return false 
-end
-
-if text == "صراحه" or text == "الصراحه" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-if not database:get(bot_id..'Cick:rkko'..msg.chat_id_) then
-database:set(bot_id..":"..msg.sender_user_id_..":rkko_Bots"..msg.chat_id_,"sendrkkoe")
-local LEADER_Msg = {
-"صراحه  |  صوتك حلوة؟",
-"صراحه  |  التقيت الناس مع وجوهين؟",
-"صراحه  |  شيء وكنت تحقق اللسان؟",
-"صراحه  |  أنا شخص ضعيف عندما؟",
-"صراحه  |  هل ترغب في إظهار حبك ومرفق لشخص أو رؤية هذا الضعف؟",
-"صراحه  |  يدل على أن الكذب مرات تكون ضرورية شي؟",
-"صراحه  |  أشعر بالوحدة على الرغم من أنني تحيط بك كثيرا؟",
-"صراحه  |  كيفية الكشف عن من يكمن عليك؟",
-"صراحه  |  إذا حاول شخص ما أن يكرهه أن يقترب منك ويهتم بك تعطيه فرصة؟",
-"صراحه  |  أشجع شيء حلو في حياتك؟",
-"صراحه  |  طريقة جيدة يقنع حتى لو كانت الفكرة خاطئة توافق؟",
-"صراحه  |  كيف تتصرف مع من يسيئون فهمك ويأخذ على ذهنه ثم ينتظر أن يرفض؟",
-"صراحه  |  التغيير العادي عندما يكون الشخص الذي يحبه؟",
-"صراحه  |  المواقف الصعبة تضعف لك ولا ترفع؟",
-"صراحه  |  نظرة و يفسد الصداقة؟",
-"صراحه  |  ‏‏إذا أحد قالك كلام سيء بالغالب وش تكون ردة فعلك؟",
-"صراحه  |  شخص معك بالحلوه والمُره؟",
-"صراحه  |  ‏هل تحب إظهار حبك وتعلقك بالشخص أم ترى ذلك ضعف؟",
-"صراحه  |  تأخذ بكلام اللي ينصحك ولا تسوي اللي تبي؟",
-"صراحه  |  وش تتمنى الناس تعرف عليك؟",
-"صراحه  |  ابيع المجرة عشان؟",
-"صراحه  |  أحيانا احس ان الناس ، كمل؟",
-"صراحه  |  مع مين ودك تنام اليوم؟",
-"صراحه  |  صدفة العمر الحلوة هي اني؟",
-"صراحه  |  الكُره العظيم دايم يجي بعد حُب قوي تتفق؟",
-"صراحه  |  صفة تحبها في نفسك؟",
-"صراحه  |  ‏الفقر فقر العقول ليس الجيوب  ، تتفق؟",
-"صراحه  |  تصلي صلواتك الخمس كلها؟",
-"صراحه  |  ‏تجامل أحد على راحتك؟",
-"صراحه  |  اشجع شيء سويتة بحياتك؟",
-"صراحه  |  وش ناوي تسوي اليوم؟",
-"صراحه  |  وش شعورك لما تشوف المطر؟",
-"صراحه  |  غيرتك هاديه ولا تسوي مشاكل؟",
-"صراحه  |  ما اكثر شي ندمن عليه؟",
-"صراحه  |  اي الدول تتمنى ان تزورها؟",
-"صراحه  |  متى اخر مره بكيت؟",
-"صراحه  |  تقيم حظك ؟ من عشره؟",
-"صراحه  |  هل تعتقد ان حظك سيئ؟",
-"صراحه  |  شـخــص تتمنــي الإنتقــام منـــه؟",
-"صراحه  |  كلمة تود سماعها كل يوم؟",
-"صراحه  |  **هل تُتقن عملك أم تشعر بالممل؟",
-"صراحه  |  هل قمت بانتحال أحد الشخصيات لتكذب على من حولك؟",
-"صراحه  |  متى آخر مرة قمت بعمل مُشكلة كبيرة وتسببت في خسائر؟",
-"صراحه  |  ما هو اسوأ خبر سمعته بحياتك؟",
-"‏صراحه  | هل جرحت شخص تحبه من قبل ؟",
-"صراحه  |  ما هي العادة التي تُحب أن تبتعد عنها؟",
-"‏صراحه  | هل تحب عائلتك ام تكرههم؟",
-"‏صراحه  |  من هو الشخص الذي يأتي في قلبك بعد الله – سبحانه وتعالى- ورسوله الكريم – صلى الله عليه وسلم؟",
-"‏صراحه  |  هل خجلت من نفسك من قبل؟",
-"‏صراحه  |  ما هو ا الحلم  الذي لم تستطيع ان تحققه؟",
-"‏صراحه  |  ما هو الشخص الذي تحلم به كل ليلة؟",
-"‏صراحه  |  هل تعرضت إلى موقف مُحرج جعلك تكره صاحبهُ؟",
-"‏صراحه  |  هل قمت بالبكاء أمام من تُحب؟",
-"‏صراحه  |  ماذا تختار حبيبك أم صديقك؟",
-"‏صراحه  | هل حياتك سعيدة أم حزينة؟",
-"صراحه  |  ما هي أجمل سنة عشتها بحياتك؟",
-"‏صراحه  |  ما هو عمرك الحقيقي؟",
-"‏صراحه  |  ما اكثر شي ندمن عليه؟",
-"صراحه  |  ما هي أمنياتك المُستقبلية؟‏",
-"صراحه  | هل قبلت فتاه؟"
-}
-send(msg.chat_id_, msg.id_,'['..LEADER_Msg[math.random(#LEADER_Msg)]..']') 
-return false
-end
-end
-if text and text ~="صراحه" and database:get(bot_id..":"..msg.sender_user_id_..":rkko_Bots"..msg.chat_id_) == "sendrkkoe" then
-numj = {"اي الكدب دا 🥺","فعلا بتتكلم صح🤗","يجدع قول كلام غير دا😹","حصل اوماال😹💔","طب عيني ف عينك كدا 👀","انت صح🙂♥",};
-sendnuj = numj[math.random(#numj)]
-xl = ' ※ '..text..' ★ \n '..sendnuj..'.'
-send(msg.chat_id_, msg.id_,xl) 
-database:del(bot_id..":"..msg.sender_user_id_..":rkko_Bots"..msg.chat_id_)
-end
-if text == "خيرني" or text == "لو خيروك" or text == "خيروك" then 
-local TWEET_Msg = { 
-"لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",
-"لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
-"لو خيروك |  أن تعيش قصة فيلم هل تختار الأكشن أو الكوميديا؟ ",
-"لو خيروك |  بين تناول البيتزا وبين الآيس كريم وذلك بشكل دائم؟ ",
-"لو خيروك |  بين إمكانية تواجدك في الفضاء وبين إمكانية تواجدك في البحر؟ ",
-"لو خيروك |  بين تغيير وظيفتك كل سنة أو البقاء بوظيفة واحدة طوال حياتك؟ ",
-"لو خيروك |  أسئلة محرجة أسئلة صراحة ماذا ستختار؟ ",
-"لو خيروك |  بين الذهاب إلى الماضي والعيش مع جدك أو بين الذهاب إلى المستقبل والعيش مع أحفادك؟ ",
-"لو كنت شخص آخر هل تفضل البقاء معك أم أنك ستبتعد عن نفسك؟ ",
-"لو خيروك |  بين الحصول على الأموال في عيد ميلادك أو على الهدايا؟ ",
-"لو خيروك |  بين القفز بمظلة من طائرة أو الغوص في أعماق البحر؟ ",
-"لو خيروك |  بين الاستماع إلى الأخبار الجيدة أولًا أو الاستماع إلى الأخبار السيئة أولًا؟ ",
-"لو خيروك |  بين أن تكون رئيس لشركة فاشلة أو أن تكون موظف في شركة ناجحة؟ ",
-"لو خيروك |  بين أن يكون لديك جيران صاخبون أو أن يكون لديك جيران فضوليون؟ ",
-"لو خيروك |  بين أن تكون شخص مشغول دائمًا أو أن تكون شخص يشعر بالملل دائمًا؟ ",
-"لو خيروك |  بين قضاء يوم كامل مع الرياضي الذي تشجعه أو نجم السينما الذي تحبه؟ ",
-"لو خيروك |  بين استمرار فصل الشتاء دائمًا أو بقاء فصل الصيف؟ ",
-"لو خيروك |  بين العيش في القارة القطبية أو العيش في الصحراء؟ ",
-"لو خيروك |  بين أن تكون لديك القدرة على حفظ كل ما تسمع أو تقوله وبين القدرة على حفظ كل ما تراه أمامك؟ ",
-"لو خيروك |  بين أن يكون طولك 150 سنتي متر أو أن يكون 190 سنتي متر؟ ",
-"لو خيروك |  بين إلغاء رحلتك تمامًا أو بقائها ولكن فقدان الأمتعة والأشياء الخاص بك خلالها؟ ",
-"لو خيروك |  بين أن تكون اللاعب الأفضل في فريق كرة فاشل أو أن تكون لاعب عادي في فريق كرة ناجح؟ ",
-"لو خيروك |  بين ارتداء ملابس البيت لمدة أسبوع كامل أو ارتداء البدلة الرسمية لنفس المدة؟ ",
-"لو خيروك |  بين امتلاك أفضل وأجمل منزل ولكن في حي سيء أو امتلاك أسوأ منزل ولكن في حي جيد وجميل؟ ",
-"لو خيروك |  بين أن تكون غني وتعيش قبل 500 سنة، أو أن تكون فقير وتعيش في عصرنا الحالي؟ ",
-"لو خيروك |  بين ارتداء ملابس الغوص ليوم كامل والذهاب إلى العمل أو ارتداء ملابس جدك/جدتك؟ ",
-"لو خيروك |  بين قص شعرك بشكل قصير جدًا أو صبغه باللون الوردي؟ ",
-"لو خيروك |  بين أن تضع الكثير من الملح على كل الطعام بدون علم أحد، أو أن تقوم بتناول شطيرة معجون أسنان؟ ",
-"لو خيروك |  بين قول الحقيقة والصراحة الكاملة مدة 24 ساعة أو الكذب بشكل كامل مدة 3 أيام؟ ",
-"لو خيروك |  بين تناول الشوكولا التي تفضلها لكن مع إضافة رشة من الملح والقليل من عصير الليمون إليها أو تناول ليمونة كاملة كبيرة الحجم؟ ",
-"لو خيروك |  بين وضع أحمر الشفاه على وجهك ما عدا شفتين أو وضع ماسكارا على شفتين فقط؟ ",
-"لو خيروك |  بين الرقص على سطح منزلك أو الغناء على نافذتك؟ ",
-"لو خيروك |  بين تلوين شعرك كل خصلة بلون وبين ارتداء ملابس غير متناسقة لمدة أسبوع؟ ",
-"لو خيروك |  بين تناول مياه غازية مجمدة وبين تناولها ساخنة؟ ",
-"لو خيروك |  بين تنظيف شعرك بسائل غسيل الأطباق وبين استخدام كريم الأساس لغسيل الأطباق؟ ",
-"لو خيروك |  بين تزيين طبق السلطة بالبرتقال وبين إضافة البطاطا لطبق الفاكهة؟ ",
-"لو خيروك |  بين اللعب مع الأطفال لمدة 7 ساعات أو الجلوس دون فعل أي شيء لمدة 24 ساعة؟ ",
-"لو خيروك |  بين شرب كوب من الحليب أو شرب كوب من شراب عرق السوس؟ ",
-"لو خيروك |  بين الشخص الذي تحبه وصديق الطفولة؟ ",
-"لو خيروك |  بين أمك وأبيك؟ ",
-"لو خيروك |  بين أختك وأخيك؟ ",
-"لو خيروك |  بين نفسك وأمك؟ ",
-"لو خيروك |  بين صديق قام بغدرك وعدوك؟ ",
-"لو خيروك |  بين خسارة حبيبك/حبيبتك أو خسارة أخيك/أختك؟ ",
-"لو خيروك |  بإنقاذ شخص واحد مع نفسك بين أمك أو ابنك؟ ",
-"لو خيروك |  بين ابنك وابنتك؟ ",
-"لو خيروك |  بين زوجتك وابنك/ابنتك؟ ",
-"لو خيروك |  بين جدك أو جدتك؟ ",
-"لو خيروك |  بين زميل ناجح وحده أو زميل يعمل كفريق؟ ",
-"لو خيروك |  بين لاعب كرة قدم مشهور أو موسيقي مفضل بالنسبة لك؟ ",
-"لو خيروك |  بين مصور فوتوغرافي جيد وبين مصور سيء ولكنه عبقري فوتوشوب؟ ",
-"لو خيروك |  بين سائق سيارة يقودها ببطء وبين سائق يقودها بسرعة كبيرة؟ ",
-"لو خيروك |  بين أستاذ اللغة العربية أو أستاذ الرياضيات؟ ",
-"لو خيروك |  بين أخيك البعيد أو جارك القريب؟ ",
-"لو خيروك |  يبن صديقك البعيد وبين زميلك القريب؟ ",
-"لو خيروك |  بين رجل أعمال أو أمير؟ ",
-"لو خيروك |  بين نجار أو حداد؟ ",
-"لو خيروك |  بين طباخ أو خياط؟ ",
-"لو خيروك |  بين أن تكون كل ملابس بمقاس واحد كبير الحجم أو أن تكون جميعها باللون الأصفر؟ ",
-"لو خيروك |  بين أن تتكلم بالهمس فقط طوال الوقت أو أن تصرخ فقط طوال الوقت؟ ",
-"لو خيروك |  بين أن تمتلك زر إيقاف موقت للوقت أو أن تمتلك أزرار للعودة والذهاب عبر الوقت؟ ",
-"لو خيروك |  بين أن تعيش بدون موسيقى أبدًا أو أن تعيش بدون تلفاز أبدًا؟ ",
-"لو خيروك |  بين أن تعرف متى سوف تموت أو أن تعرف كيف سوف تموت؟ ",
-"لو خيروك |  بين العمل الذي تحلم به أو بين إيجاد شريك حياتك وحبك الحقيقي؟ ",
-"لو خيروك |  بين معاركة دب أو بين مصارعة تمساح؟ ",
-"لو خيروك |  بين إما الحصول على المال أو على المزيد من الوقت؟ ",
-"لو خيروك |  بين امتلاك قدرة التحدث بكل لغات العالم أو التحدث إلى الحيوانات؟ ",
-"لو خيروك |  بين أن تفوز في اليانصيب وبين أن تعيش مرة ثانية؟ ",
-"لو خيروك |  بأن لا يحضر أحد إما لحفل زفافك أو إلى جنازتك؟ ",
-"لو خيروك |  بين البقاء بدون هاتف لمدة شهر أو بدون إنترنت لمدة أسبوع؟ ",
-"لو خيروك |  بين العمل لأيام أقل في الأسبوع مع زيادة ساعات العمل أو العمل لساعات أقل في اليوم مع أيام أكثر؟ ",
-"لو خيروك |  بين مشاهدة الدراما في أيام السبعينيات أو مشاهدة الأعمال الدرامية للوقت الحالي؟ ",
-"لو خيروك |  بين التحدث عن كل شيء يدور في عقلك وبين عدم التحدث إطلاقًا؟ ",
-"لو خيروك |  بين مشاهدة فيلم بمفردك أو الذهاب إلى مطعم وتناول العشاء بمفردك؟ ",
-"لو خيروك |  بين قراءة رواية مميزة فقط أو مشاهدتها بشكل فيلم بدون القدرة على قراءتها؟ ",
-"لو خيروك |  بين أن تكون الشخص الأكثر شعبية في العمل أو المدرسة وبين أن تكون الشخص الأكثر ذكاءً؟ ",
-"لو خيروك |  بين إجراء المكالمات الهاتفية فقط أو إرسال الرسائل النصية فقط؟ ",
-"لو خيروك |  بين إنهاء الحروب في العالم أو إنهاء الجوع في العالم؟ ",
-"لو خيروك |  بين تغيير لون عينيك أو لون شعرك؟ ",
-"لو خيروك |  بين امتلاك كل عين لون وبين امتلاك نمش على خديك؟ ",
-"لو خيروك |  بين الخروج بالمكياج بشكل مستمر وبين الحصول على بشرة صحية ولكن لا يمكن لك تطبيق أي نوع من المكياج؟ ",
-"لو خيروك |  بين أن تصبحي عارضة أزياء وبين ميك آب أرتيست؟ ",
-"لو خيروك |  بين مشاهدة كرة القدم أو متابعة الأخبار؟ ",
-"لو خيروك |  بين موت شخصية بطل الدراما التي تتابعينها أو أن يبقى ولكن يكون العمل الدرامي سيء جدًا؟ ",
-"لو خيروك |  بين العيش في دراما قد سبق وشاهدتها ماذا تختارين بين الكوميديا والتاريخي؟ ",
-"لو خيروك |  بين امتلاك القدرة على تغيير لون شعرك متى تريدين وبين الحصول على مكياج من قبل خبير تجميل وذلك بشكل يومي؟ ",
-"لو خيروك |  بين نشر تفاصيل حياتك المالية وبين نشر تفاصيل حياتك العاطفية؟ ",
-"لو خيروك |  بين البكاء والحزن وبين اكتساب الوزن؟ ",
-"لو خيروك |  بين تنظيف الأطباق كل يوم وبين تحضير الطعام؟ ",
-"لو خيروك |  بين أن تتعطل سيارتك في نصف الطريق أو ألا تتمكنين من ركنها بطريقة صحيحة؟ ",
-"لو خيروك |  بين إعادة كل الحقائب التي تملكينها أو إعادة الأحذية الجميلة الخاصة بك؟ ",
-"لو خيروك |  بين قتل حشرة أو متابعة فيلم رعب؟ ",
-"لو خيروك |  بين امتلاك قطة أو كلب؟ ",
-"لو خيروك |  بين الصداقة والحب ",
-"لو خيروك |  بين تناول الشوكولا التي تحبين طوال حياتك ولكن لا يمكنك الاستماع إلى الموسيقى وبين الاستماع إلى الموسيقى ولكن لا يمكن لك تناول الشوكولا أبدًا؟ ",
-"لو خيروك |  بين مشاركة المنزل مع عائلة من الفئران أو عائلة من الأشخاص المزعجين الفضوليين الذين يتدخلون في كل كبيرة وصغيرة؟ ",
-} 
-send(msg.chat_id_, msg.id_,'['..TWEET_Msg[math.random(#TWEET_Msg)]..']')  
-return false 
-end
-if text == "حروف" or text == "حرف" or text == "الحروف" then 
-local TWEET_Msg = { 
-" جماد بحرف ↚ ر  ", 
-" مدينة بحرف ↚ ع  ",
-" حيوان ونبات بحرف ↚ خ  ", 
-" اسم بحرف ↚ ح  ", 
-" اسم ونبات بحرف ↚ م  ", 
-" دولة عربية بحرف ↚ ق  ", 
-" جماد بحرف ↚ ي  ", 
-" نبات بحرف ↚ ج  ", 
-" اسم بنت بحرف ↚ ع  ", 
-" اسم ولد بحرف ↚ ع  ", 
-" اسم بنت وولد بحرف ↚ ث  ", 
-" جماد بحرف ↚ ج  ",
-" حيوان بحرف ↚ ص  ",
-" دولة بحرف ↚ س  ",
-" نبات بحرف ↚ ج  ",
-" مدينة بحرف ↚ ب  ",
-" نبات بحرف ↚ ر  ",
-" اسم بحرف ↚ ك  ",
-" حيوان بحرف ↚ ظ  ",
-" جماد بحرف ↚ ذ  ",
-" مدينة بحرف ↚ و  ",
-" اسم بحرف ↚ م  ",
-" اسم بنت بحرف ↚ خ  ",
-" اسم و نبات بحرف ↚ ر  ",
-" نبات بحرف ↚ و  ",
-" حيوان بحرف ↚ س  ",
-" مدينة بحرف ↚ ك  ",
-" اسم بنت بحرف ↚ ص  ",
-" اسم ولد بحرف ↚ ق  ",
-" نبات بحرف ↚ ز  ",
-"  جماد بحرف ↚ ز  ",
-"  مدينة بحرف ↚ ط  ",
-"  جماد بحرف ↚ ن  ",
-"  مدينة بحرف ↚ ف  ",
-"  حيوان بحرف ↚ ض  ",
-"  اسم بحرف ↚ ك  ",
-"  نبات و حيوان و مدينة بحرف ↚ س  ", 
-"  اسم بنت بحرف ↚ ج  ", 
-"  مدينة بحرف ↚ ت  ", 
-"  جماد بحرف ↚ ه  ", 
-"  اسم بنت بحرف ↚ ر  ", 
-" اسم ولد بحرف ↚ خ  ", 
-" جماد بحرف ↚ ع  ",
-" حيوان بحرف ↚ ح  ",
-" نبات بحرف ↚ ف  ",
-" اسم بنت بحرف ↚ غ  ",
-" اسم ولد بحرف ↚ و  ",
-" نبات بحرف ↚ ل  ",
-"مدينة بحرف ↚ ع  ",
-"دولة واسم بحرف ↚ ب  ",
-} 
-send(msg.chat_id_, msg.id_,'['..TWEET_Msg[math.random(#TWEET_Msg)]..']')  
-return false 
-end
-if text == 'يوتيوب' or text == 'بحث' or text == 'اليوتيوب' then
-local Text = [[
-اليك بوتات تحميل 🛑
-من جميع المواقع 🛑
-
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = 'بوت اليوتيوب 🇲🇦',url="t.me/Qeaa_bot"}},
-{{text = 'بوت تيك توك 🏴‍☠️',url="t.me/K0XBOT"}},
-{{text = 'بوت انستقرام 🎌',url="t.me/J33Bot"}},
-{{text = 'بوت قران 🏳️',url="t.me/quran_lbot"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/siria100/8&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-
-if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
-database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ◍ ارسل الان اذاعتك؟ \n ◍ للخروج ارسل الغاء ")
-return false
-end
-if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,' ◍ الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
-database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ◍ ارسل الان اذاعتك \n ◍ للخروج ارسل الغاء") 
-return false
-end 
-if text=="اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,' ◍ الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
-database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ◍ ارسل الان اذاعتك \n ◍ للخروج ارسل الغاء ") 
-return false
-end  
-if text=="اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,' ◍ الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
-database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ◍ ارسل لي التوجيه الان") 
-return false
-end 
-if text=="اذاعه بالتوجيه خاص" and msg.reply_to_message_id_ == 0  and SudoBot(msg) then 
-if database:get(bot_id..'Bc:Bots') and not DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_,' ◍  الاذاعه معطله من قبل المطور الاساسي')
-return false
-end
-if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,' ◍ لا تستطيع استخدام البوت \n ◍  يرجى الاشتراك بالقناه اولا \n ◍  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end
-database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_," ◍ ارسل لي التوجيه الان") 
-return false
-end 
-if text == "سوريا" then
-local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
-if TEXT_SUDO then 
-send(msg.chat_id_, msg.id_,TEXT_SUDO)
-else
-tdcli_function ({ID = "GetUser",user_id_ = 1950281200,},function(arg,result) 
-local function taha(extra, taha, success)
-if taha.photos_[0] then
-local Name = '𓌹 ✭ 𝚃𝙷𝙴 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙼𝙴𝚁 𝙰𝙽𝙳 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𝙾𝙵 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚈𝚁𝙸𝙰 𝙸𝚂 𝙰 𝙽𝙸𝙲𝙴 𝙿𝙴𝚁𝚂𝙾𝙽 𝚆𝙸𝚃𝙷 𝙰 𝚂𝙷𝙰𝚁𝙿 𝚃𝙴𝙼𝙿𝙴𝚁. 𝙽𝙾 𝙰𝙿𝙿𝚁𝙾𝙰𝙲𝙷𝙸𝙽𝙶 ♫✭𓌺\n['..result.first_name_..'](t.me/siria100)\n'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/siria100"},
-},
-{
-{text = '𝙈𝙔 𝘾𝙃𝘼𝙉𝙀𝙀𝙀𝙇  ', url="t.me/X_G_33"},
-},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
- end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1950281200, offset_ = 0, limit_ = 1 }, taha, nil)
-end,nil)
-end
-end
-if text == 'حسناء' or text == 'القمر' then  
-local Text = [[  
-✭احـلي وحده فلبنات 🌚❤️✭
-]]  
-keyboard = {}   
-keyboard.inline_keyboard = {  
-{{text = '✭𝒉𝒂𝒔𝒏𝒂𝒂 𝒎𝒐𝒉𝒂𝒎𝒆𝒅✭',url="t.me/HASNAA828"}},  
-
-}  
-local msg_id = msg.id_/2097152/0.5  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/HASNAA828&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == "غنيم" then
-local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
-if TEXT_SUDO then 
-send(msg.chat_id_, msg.id_,TEXT_SUDO)
-else
-tdcli_function ({ID = "GetUser",user_id_ = 1921104817,},function(arg,result) 
-local function taha(extra, taha, success)
-if taha.photos_[0] then
-local Name = '𓌹 گـأسـ‘ـر آلگآمـين ، مـ’ـقطـع’ـع وش التخ‘،ـين 〩𓌺\n['..result.first_name_..'](t.me/U_F_G)\n'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/U_F_G"},
-},
-{
-{text = '𝙈𝙔 𝘾𝙃𝘼𝙉𝙀𝙀𝙀𝙇  ', url="t.me/X_G_33"},
-},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
- end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1921104817, offset_ = 0, limit_ = 1 }, taha, nil)
-end,nil)
-end
-end
-
-if text == 'كساحه' or text == 'احمد كساحه' then  
-local Text = [[  
-✧مـطـور السـورس ✧
-]]  
-keyboard = {}   
-keyboard.inline_keyboard = {  
-{{text = '✧◐ᎠᎬ Ꮩ  ᏦᎪՏᎪᎻᎪ 𖤐✧',url="t.me/MR_AAS"}},  
-
-}  
-local msg_id = msg.id_/2097152/0.5  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/MR_AAS&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == "رد عليه يابوت" or text == "رد عليه" or text == "در انت يابوت" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"ولد ولا بنت 🤓"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "عقاب" or text == "قول عقاب" or text == "العقاب" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"قل لواحد ماتعرفه عطني كف 🧸","🧸سو مشهد تمثيلي عن مصرية بتولد","🧸صور اي شيء يطلبه منك الاعبين","🧸البس طرحه امك او اختك ","🧸لا خلاص معتش في سمحتك"," 🧸اتصل لاخوك و قول له انك سويت حادث و الخ....","🧸تكلم باللغة الانجليزية الين يجي دورك مرة ثانية لازم تتكلم اذا ما تكلمت تنفذ عقاب ثاني","🧸تروح عند شخص تقول له ","🧸 اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....","🧸اتصل على امك و قول لها انك ","🧸اذا انت ولد اكسر اغلى او احسن عطور عندك اذا انتي بنت اكسري الروج حقك او الميك اب حقك"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "تفعيل مريم"  then
-if Constructor(msg) then  
-database:set(bot_id.."my_maryam:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_," ◍تـم تـفعـيل مريم") 
-return false  
-end
-end
-
-if text == "تعطيل مريم"  then
-if Constructor(msg) then  
-database:del(bot_id.."my_maryam:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_," ◍ تـم تـعـطـيل مريم") 
-return false end
-end
-if text == "مريم" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-send(msg.chat_id_, msg.id_," ◍مريم  معطله") 
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"هل انت جاهز ؟🧟‍♀🧟‍♂ ❲لو هتكمل ارسل يلا❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "يلا" or text == "هيا بنا"  then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {" ؟لا تصدر اي صوت ! 🧟‍♀🧟‍♂ ❲لو هتكمل ارسال حاضر ❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "ماشي" or text == "حاضر"  then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {" لقد وصلنا الى المنزل شكراَ جزيلَ انتطرني ثواني وسوف اعود! 🧟‍♀🧟‍♂ ❲لو هتكمل ارسال مستني ❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "مستني" or text == "منتظر"  then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {" لقد عودت إليك ظهر شيئ 🧟‍♂🧟‍♀ ❲لو هتكمل إرسال احد ما خرج من المنزل! 🧟‍♀🧟‍♂❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "احد ما خرج من المنزل! 🧟‍♀🧟‍♂" or text == "احد ما خرج من المنزل"  then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"هيا نذهب داخل المنزل🧟‍♀🧟‍♂ ❲لو هتكمل ارسال هيا❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "هيا"  then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {" نحنو نتوه في هذه المكان🧟‍♀🧟‍♂❲لو هتكمل ارسال تعالي نذهب الي الضوء❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "تعالي نذهب الي الضوء"  then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"❲لو هتكمل ارسل ياالهي كان هناك❳ 🧟‍♀🧟‍♂لايوجد ضوء هناك انظر"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "ياالهي كان هناك" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"تع نذهب الي الباب الرئيسي🧟‍♀🧟‍♂ ❲لو هتكمل ارسل انهو مغلق❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "انهو مغلق" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"انها النهايه  ❲هتكمل ولا لا❳"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "هكمل" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"سارسل اليك اختيارت لو حليت صح ستنجو من العقاب لو خطأ سيقوم عليك العقاب🧟‍♀🧟‍♂❲عدد يقبل القسمة على 2,3,4,5,6 وعند القسمة في كل مرة يتبقى واحد، ما هو العدد؟❳❲61،44,00,121,90،99,70❳"}
-
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "لا" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"هي انت ستندم سأقتلك🧟‍♀🧟‍♂"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "61" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"لقد فازت ونجوت من العقاب 👻🌟"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "99" or text == "70" or text == "44" or text == "00" or text == "121" or text == "90" then
-local my_ph = database:get(bot_id.."my_maryam:status"..msg.chat_id_)
-if not my_ph then
-return false  
-end
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"قل لواحد ماتعرفه عطني كف خطأ العقاب هوا ؟؟","خطأ العقاب هوا ؟؟سو مشهد تمثيلي عن مصرية بتولد","خطأ العقاب هوا ؟؟صور اي شيء يطلبه منك الاعبين","خطأ العقاب هوا ؟؟البس طرحه امك او اختك ","خطأ العقاب هوا ؟؟لا خلاص معتش في سمحتك"," خطأ العقاب هوا ؟؟اتصل لاخوك و قول له انك سويت حادث و الخ....","خطأ العقاب هوا ؟؟تكلم باللغة الانجليزية الين يجي دورك مرة ثانية لازم تتكلم اذا ما تكلمت تنفذ عقاب ثاني","خطأ العقاب هوا ؟؟تروح عند شخص تقول له ","خطأ العقاب هوا ؟؟ اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....","خطأ العقاب هوا ؟؟اتصل على امك و قول لها انك ","خطأ العقاب هوا ؟؟اذا انت ولد اكسر اغلى او احسن عطور عندك اذا انتي بنت اكسري الروج حقك او الميك اب حقك"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "بنت" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"اي ي جامده تعي بف هاتي رقمك وهكلمك بليل ي وتكه انتي هاتي بوسه💋😉","اي ي جامده متجبي بوسه ولا اقولك هاتي رقمك اكلمك واتس واخلي بابا يتجوزك??💋🤸‍♂","ي بت كلمي بابا عايزك بف وابعتي رقمك ها بابا بيحبك 💋❤️🤍🤸‍♂🤸‍♂😉","يعم دي اقل من اني اديها رقمي 😎😜"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "ولد" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"دا عيل بيضااان","ولا بطيقه اصلا","اقل من اني افكر فيه","كسمو مش حوار"," ظريط سيببك منو"," يعم دا حكاك هتعمل عقلك بي","يابا دا اقل من انك ترد عليه","فكك منه م يستاهلش","احظره واريخ دماغي؟!!"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "بتحبو" or text == "بتحب دا" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"طبعا دا قلبي ♥🙄"," هحب فيه اي دا😹🙂","تؤ محصلش😹"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "بتكره دا" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"دا عيل بيضااان","ولا بطيقه اصلا","اقل من اني افكر فيه"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "هينه" or text == "رزله" or text == "هيني" or text == "رزلي" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"يابا دا اقل من انك ترد عليه","فكك منه م يستاهلش","احظره واريخ دماغي؟!! "}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "مصه" or text == "بوسه" or text == "بوسي" or text == "مصي" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"مووووووووواححح💋","الوجه ميساعد😒","تؤ مش ادام الناس😉","لا عيب","يوهه بتكثف🙄","مش بايس حد انا"}send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-if text == "استوري" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
-ght = math.random(4,74); 
-local Text ='اكتب استوري وسيتم بواسطة البوت اختيار استوري لك' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'اضف البوت الي مجموعتك' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qapplu/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == "ثيم" then  
-ght = math.random(1,33);  
-local Text ='الستخدم ثيم اخر اكتب ثيم'  
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '𓌹 ᯓ مــبـرمـج الســورس ★ 𓌺',url="t.me/siria100"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5  
-https.request("https://api.telegram.org/bot"..token..'/sendDocument?chat_id=' .. msg.chat_id_ .. '&document=https://t.me/ahmedthem1/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-
-if text == 'ميرو' or text == 'مريم' then  
-local Text = [[  
-✭ روح قـلب سـوريـآا ✭
-]]  
-keyboard = {}   
-keyboard.inline_keyboard = {  
-{{text = '✭مـيـرو✭',url="t.me/UUU_OOO1"}},  
-
-}  
-local msg_id = msg.id_/2097152/0.5  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/UUU_OOO1&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-
-if text == 'معلومات السيرفر' and DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_, io.popen([[
-linux_version=`lsb_release -ds`
-memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
-echo '⇗ نظام التشغيل ⇖•\n*←← '"$linux_version"'*' 
-echo '╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n◉✔{ الذاكره العشوائيه } ⇎\n*←← '"$memUsedPrc"'*'
-echo '╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n◉✔{ وحـده الـتـخـزيـن } ⇎\n*←← '"$HardDisk"'*'
-echo '╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n◉✔{ الـمــعــالــج } ⇎\n*←← '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n◉✔{ الــدخــول } ⇎\n*←← '`whoami`'*'
-echo '╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸\n◉✔{ مـده تـشغيـل الـسـيـرفـر }⇎\n*←← '"$uptime"'*'
-]]):read('*all'))  
-end
-
-if text == 'رفع المشتركين' and DevSoFi(msg) then 
-function by_reply(extra, result, success)    
-if result.content_.document_ then  
-local ID_FILE = result.content_.document_.document_.persistent_id_  
-local File_Name = result.content_.document_.file_name_ 
-local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) )  
-download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path, ''..File_Name)  
-local info_file = io.open('./users.json', "r"):read('*a') 
-local users = JSON.decode(info_file) 
-for k,v in pairs(users.users) do 
-database:sadd(bot_id..'User_Bot',v)  
-end 
-send(msg.chat_id_,msg.id_,'تم رفع المشتركين ') 
-end    
-end 
-tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
-end
-if text == 'جلب المشتركين' and DevSoFi(msg) then 
-local list = database:smembers(bot_id..'User_Bot') 
-local t = '{"users":['   
-for k,v in pairs(list) do 
-if k == 1 then 
-t =  t..'"'..v..'"' 
-else 
-t =  t..',"'..v..'"' 
-end 
-end 
-t = t..']}' 
-local File = io.open('./users.json', "w") 
-File:write(t) 
-File:close() 
-sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './users.json', ' عدد المشتركين { '..#list..'}') 
-end
-
-if text == 'جلب المطورين' then 
-local list = database:smembers(bot_id..'Sudo:User') 
-local t = '{"users":['   
-for k,v in pairs(list) do 
-if k == 1 then 
-t =  t..'"'..v..'"' 
-else 
-t =  t..',"'..v..'"' 
-end 
-end 
-t = t..']}' 
-local File = io.open('./sudos3.json', "w") 
-File:write(t) 
-File:close() 
-sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './sudos3.json', ' عدد المطورين { '..#list..'}') 
-end 
-if text == 'رفع المطورين' then 
-function by_reply(extra, result, success)    
-if result.content_.document_ then  
-local ID_FILE = result.content_.document_.document_.persistent_id_  
-local File_Name = result.content_.document_.file_name_ 
-local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) )  
-download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path, ''..File_Name)  
-local info_file = io.open('./sudos3.json', "r"):read('*a') 
-local users = JSON.decode(info_file) 
-for k,v in pairs(users.users) do 
-database:sadd(bot_id..'Sudo:User',v)  
-end 
-send(msg.chat_id_,msg.id_,'تم رفع المطورين ') 
-end    
-end 
-tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
-end
-if text == 'بايو' then   
-send(msg.chat_id_, msg.id_,getbio(msg.sender_user_id_)) 
-end 
-if text == "نسبه الانوثه" or text == "نسبه انوثه" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
-database:set(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_,"sendanoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال روان'
-send(msg.chat_id_, msg.id_,Text) 
-end
-end
-if text and text ~="نسبه الانوثه" and database:get(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_) == "sendanoe" then
-numj = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",};
-sendnuj = numj[math.random(#numj)]
-xl = 'نسبه الانوثه '..text..' هي : \n '..sendnuj..'%'
-send(msg.chat_id_, msg.id_,xl) 
-database:del(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_)
-end
 if text == 'حصل' then
 local Text = [[
 ]]
