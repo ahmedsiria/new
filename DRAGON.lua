@@ -15590,13 +15590,13 @@ DeleteMessage(msg.chat_id_, {[0] = msg.id_})
 return false  
 end
 --------------------------------------------------------------------------------------------------------------
-if msg.sender_user_id_ and Ban_User(msg.chat_id_,msg.sender_user_id_) then 
+if msg.sender_user_id_ and GDRG_User (msg.chat_id_,msg.sender_user_id_) then 
 chat_kick(msg.chat_id_,msg.sender_user_id_) 
 DeleteMessage(msg.chat_id_, {[0] = msg.id_}) 
 return false  
 end
 --------------------------------------------------------------------------------------------------------------
-if msg.content_ and msg.content_.members_ and msg.content_.members_[0] and msg.content_.members_[0].id_ and Ban_User(msg.chat_id_,msg.content_.members_[0].id_) then 
+if msg.content_ and msg.content_.members_ and msg.content_.members_[0] and msg.content_.members_[0].id_ and GDRG_User (msg.chat_id_,msg.content_.members_[0].id_) then 
 chat_kick(msg.chat_id_,msg.content_.members_[0].id_) 
 DeleteMessage(msg.chat_id_, {[0] = msg.id_}) 
 return false
@@ -15613,7 +15613,7 @@ DeleteMessage(msg.chat_id_, {[0] = msg.id_})
 return false 
 end
 --------------------------------------------------------------------------------------------------------------
-if msg.content_ and msg.content_.members_ and msg.content_.members_[0] and msg.content_.members_[0].id_ and GBan_User(msg.content_.members_[0].id_) then 
+if msg.content_ and msg.content_.members_ and msg.content_.members_[0] and msg.content_.members_[0].id_ and GGDRG_User (msg.content_.members_[0].id_) then 
 chat_kick(msg.chat_id_,msg.content_.members_[0].id_) 
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})  
 end 
